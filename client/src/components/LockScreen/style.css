@@ -1,0 +1,22 @@
+.lockScreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(148, 146, 146, 0.9);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockScreen div {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.lockScreen i {
+    font-size: 100px;
+    margin-left: 2rem;
+}

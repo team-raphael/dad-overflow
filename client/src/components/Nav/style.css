@@ -1,0 +1,36 @@
+  .reactNav .nav-wrapper {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .reactNav nav {
+    background-color: lightgrey !important;
+  }
+  
+  .reactNav a{
+    color: black;
+  }   
+
+  .bookLogo {
+    background-image: url(./logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    margin-top: 12px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .reactNav .brand-logo {
+      font-size: 1.7rem;
+    }
+
+    .reactNav .nav-wrapper {
+      padding-right: unset;
+      padding-left: unset;
+    }
+  
+
+    .reactNav .bookLogo {
+      display: none;
+    }
+  }
