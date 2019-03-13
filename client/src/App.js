@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Nav from './components/Nav';
-import Search from "./pages/Search";
-import Saved from "./pages/Saved";
+import Forum from "./pages/Forum";
 import './App.css';
 
 class App extends Component {
@@ -21,9 +20,8 @@ class App extends Component {
           <Nav />
 
           <Switch>
-            <Route exact path="/" component={Search} />
-            <Route exact path="/saved" component={Saved} />
-            <Route component={Search} />
+            <Route exact path="/" component={Forum} />
+            <Route component={Forum} />
           </Switch>
         </div>
       </BrowserRouter>

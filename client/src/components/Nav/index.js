@@ -24,14 +24,11 @@ class Nav extends React.Component {
 
                     <nav className="white">
                         <div className="nav-wrapper">
-                            <Link to={"/"} className="brand-logo"><i className="bookLogo"></i> Book Search</Link>
+                            <Link to={"/"} className="brand-logo"><i className="bookLogo"></i> Dad Overflow</Link>
                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down">
                                 <li className={window.location.pathname.toLowerCase() !== "/saved" ? "active" : ""}>
-                                    <Link to={"/"}>Search</Link>
-                                </li>
-                                <li className={window.location.pathname.toLowerCase() === "/saved" ? "active" : ""}>
-                                    <Link to={"/saved"}>Saved</Link>
+                                    <Link to={"/"}>Forum</Link>
                                 </li>
                             </ul>
                         </div>
@@ -41,10 +38,7 @@ class Nav extends React.Component {
 
                 <ul className="sidenav" id="mobile-demo">
                     <li className={window.location.pathname.toLowerCase() !== "/saved" ? "active" : ""}>
-                        <Link to={"/"} onClick={this.closeSideNav}>Search</Link>
-                    </li>
-                    <li className={window.location.pathname.toLowerCase() === "/saved" ? "active" : ""}>
-                        <Link to={"/saved"} onClick={this.closeSideNav}>Saved</Link>
+                        <Link to={"/"} onClick={this.closeSideNav}>Forum</Link>
                     </li>
                 </ul>
 
