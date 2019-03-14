@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Nav from './components/Nav';
 import Forum from "./pages/Forum";
 import ToDo from './pages/ToDo';
+import NoMatch from './pages/NoMatch';
 import './App.css';
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Forum} />
             <Route exact path="/todo" component={ToDo} />
-            <Route component={Forum} />
+            <Route component={NoMatch} />
           </Switch>
         </div>
       </BrowserRouter>
