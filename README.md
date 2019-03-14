@@ -1,4 +1,10 @@
 # Dad Overflow
+## Team
+  * Chris
+  * Noel
+  * Anton
+  * Min
+  * Cody
 
 # Steps to Run Application
 
