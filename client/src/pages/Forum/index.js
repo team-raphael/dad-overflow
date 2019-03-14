@@ -9,7 +9,7 @@ class Forum extends React.Component {
         return (
             <div>
                 <Jumbotron
-                    mainText="Dad Overflow Forum"
+                    mainText="Daddy Issues"
                     detailText="Q&amp;A for dads!"
                 />
 
