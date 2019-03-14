@@ -22,13 +22,16 @@ class Nav extends React.Component {
             <div className="reactNav">
                 <div className="navbar-fixed">
 
-                    <nav className="white">
+                    <nav>
                         <div className="nav-wrapper">
-                            <Link to={"/"} className="brand-logo"><i className="bookLogo"></i> Dad Overflow</Link>
+                            <Link to={"/"} className="brand-logo"><i className="logo"></i> Dad Overflow</Link>
                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down">
-                                <li className={window.location.pathname.toLowerCase() !== "/saved" ? "active" : ""}>
+                                <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
                                     <Link to={"/"}>Forum</Link>
+                                </li>
+                                <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                    <Link to={"/todo"}>To Do</Link>
                                 </li>
                             </ul>
                         </div>
@@ -37,8 +40,11 @@ class Nav extends React.Component {
                 </div>
 
                 <ul className="sidenav" id="mobile-demo">
-                    <li className={window.location.pathname.toLowerCase() !== "/saved" ? "active" : ""}>
+                    <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
                         <Link to={"/"} onClick={this.closeSideNav}>Forum</Link>
+                    </li>
+                    <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                        <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
                     </li>
                 </ul>
 

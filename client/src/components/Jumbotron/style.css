@@ -3,5 +3,17 @@
     /* background-image: url(./background2.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%; */
-    background-color: #8bb7f0; 
+    /* background-color: #8bb7f0;  */
+    background-color: rgba(104, 102, 102, 0);
 }
+
+.jumbotron h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 180px;
+}
+
+@media only screen and (max-width: 600px) {
+    .jumbotron h1 {
+        font-size: 100px;
+    }
+  }

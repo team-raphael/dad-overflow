@@ -3,18 +3,18 @@ import './style.css';
 import Jumbotron from '../../components/Jumbotron';
 import LockScreen from '../../components/LockScreen';
 
-class Forum extends React.Component {
+class ToDo extends React.Component {
 
     render() {
         return (
             <div className="white-text">
                 <Jumbotron
-                    mainText="Daddy Issues"
-                    detailText="Q&amp;A for dads!"
+                    mainText="Daddy Doodies"
+                    detailText="Your list to become #1 dad!"
                 />
 
                 <div className="container">
-                    <h1>This is the Forum Page</h1>
+                    <h1>This is the to do list Page</h1>
                 </div>
 
                 <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
@@ -23,4 +23,4 @@ class Forum extends React.Component {
     }
 }
 
-export default Forum;
+export default ToDo;
