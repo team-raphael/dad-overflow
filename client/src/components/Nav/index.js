@@ -82,7 +82,7 @@ class Nav extends React.Component {
                     </li>
                     {!this.state.currentUser &&
                         <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
-                            <Link className="waves-effect waves-light btn" to={"/login"}>Login</Link>
+                            <Link className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login</Link>
                         </li>
                     }
                     {this.state.currentUser &&
