@@ -1,6 +1,7 @@
-import firebaseApp from 'firebase/app';
-import 'firebase/auth';
+import * as FirebaseApp from 'firebase/app';
+import * as Firebaseui from 'firebaseui';
 
+//Set the firebase configuration info
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
@@ -12,20 +13,35 @@ const config = {
 
 class Firebase {
     constructor() {
-        firebaseApp.initializeApp(config);
+        // Initialize the firebase app
+        FirebaseApp.initializeApp(config);
 
-        this.auth = firebaseApp.auth();
+        // Initialize the FirebaseUI Widget using Firebase.
+        this.authUI = new Firebaseui.auth.AuthUI(FirebaseApp.auth());
     }
 
-    doCreateUserWithEmailAndPassword = (email, password) => this.auth.createUserWithEmailAndPassword(email, password);
+    //Method to start the rendering of the authentication UI in the provided css selector
+    startAuthUI = (cssSelector, uiConfig) => {
 
-    doSignInWithEmailAndPassword = (email, password) => this.auth.signInWithEmailAndPassword(email, password);
+        if (!uiConfig) {
+            uiConfig = {
+                signInSuccessUrl: '/',
+                signInOptions: [
+                    FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID
+                ],
+                // callbacks: {
+                //     uiShown: function () {
+                //         document.querySelectorAll('.firebaseui-button')
+                //             .forEach(element => element.classList.add("btn"));
+                //     }
+                // }
+            };
+        }
 
-    doSignOut = () => this.auth.signOut();
+        this.authUI.start(cssSelector, uiConfig);
+    }
 
-    doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
-
-    doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 }
+
 
 export default Firebase;
