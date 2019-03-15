@@ -12,9 +12,10 @@ class ToDo extends React.Component {
                     mainText="Daddy Doodies"
                     detailText="Your list to become #1 dad!"
                 />
-
-                <div className="container">
-                    <h1>This is the to do list Page</h1>
+                <div className="pageContainer">
+                    <div className="container">
+                        <h1>This is the to do list Page</h1>
+                    </div>
                 </div>
 
                 <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />

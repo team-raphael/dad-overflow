@@ -13,8 +13,10 @@ class Forum extends React.Component {
                     detailText="Q&amp;A for dads!"
                 />
 
-                <div className="container">
-                    <h1>This is the Forum Page</h1>
+                <div className="pageContainer">
+                    <div className="container">
+                        <h1>This is the Forum Page</h1>
+                    </div>
                 </div>
 
                 <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />

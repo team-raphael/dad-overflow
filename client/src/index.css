@@ -16,7 +16,7 @@ body {
 }
 
 .page-footer {
-  /* background-color: lightgrey !important; */
+  background-color: lightgrey !important; 
 }
 
 .btn {
@@ -45,4 +45,10 @@ body {
 
 .paddingRight {
   padding-right: 15px;
+}
+
+.pageContainer {
+  padding: 20px 0px 20px 0px;
+  background-color: white;
+  color: black;
 }
