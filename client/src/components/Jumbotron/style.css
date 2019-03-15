@@ -1,7 +1,28 @@
 .jumbotron {
-    padding: 30px 12px 60px 12px;
+    padding: 0px 12px 60px 12px;
     /* background-image: url(./background2.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%; */
-    background-color: #8bb7f0; 
+    /* background-color: #8bb7f0;  */
+    background-color: rgba(104, 102, 102, 0);
+    height: 100vh;
 }
+
+.jumbotron > div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.jumbotron h1 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 230px;
+}
+
+@media only screen and (max-width: 600px) {
+    .jumbotron h1 {
+        font-size: 100px;
+    }
+  }

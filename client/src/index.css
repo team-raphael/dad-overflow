@@ -3,6 +3,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
+  background-image: url(./backgroundImage.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* background-size: 100% 100%; */
+  font-family: 'Lato', sans-serif;
 }
 
 #root {
@@ -10,7 +16,7 @@ body {
 }
 
 .page-footer {
-  background-color: lightgrey !important;
+  /* background-color: lightgrey !important; */
 }
 
 .btn {
