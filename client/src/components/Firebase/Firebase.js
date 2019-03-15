@@ -3,12 +3,12 @@ import * as Firebaseui from 'firebaseui';
 
 //Set the firebase configuration info
 const config = {
-    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
-    databaseURL: process.env.REACT_APP_FIREBASE_DATABASEURL,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+    apiKey: "AIzaSyCgeYH7lMrR0u63G8RojJG1STnb5wReN4w",
+    authDomain: "dad-overflow.firebaseapp.com",
+    databaseURL: "https://dad-overflow.firebaseio.com",
+    projectId: "dad-overflow",
+    storageBucket: "dad-overflow.appspot.com",
+    messagingSenderId: "642793428247"
 };
 
 class Firebase {
