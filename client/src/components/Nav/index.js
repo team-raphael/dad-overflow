@@ -1,15 +1,34 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './style.css';
+import * as FirebaseApp from 'firebase/app';
 
 class Nav extends React.Component {
 
-    sideNavInstance;
+    state = {
+        currentUser: null
+    };
+
+    sideNavInstance = null;
 
     componentDidMount = () => {
         //Initialize the nav bar
         const sideNavElement = document.querySelector('.sidenav');
         this.sideNavInstance = window.M.Sidenav.init(sideNavElement);
+
+        //Setup a listener for when the user's login state changes so we can change what is visible on the nav bar
+        FirebaseApp.auth().onAuthStateChanged((user) => {
+
+            this.setState({
+                currentUser: user
+            });
+        }, (error) => {
+            console.log(error);
+
+            this.setState({
+                currentUser: null
+            });
+        });
     };
 
     //Method that closes the side nav
@@ -17,11 +36,16 @@ class Nav extends React.Component {
         this.sideNavInstance.close();
     };
 
+    //On click handler for the sign out button
+    signOutOnClick = () => {
+        FirebaseApp.auth().signOut();
+        this.closeSideNav();
+    };
+
     render() {
         return (
             <div className="reactNav">
                 <div className="navbar-fixed">
-
                     <nav>
                         <div className="container nav-wrapper">
                             <Link to={"/"} className="brand-logo"><i className="logo"></i> Dad Overflow</Link>
@@ -33,6 +57,16 @@ class Nav extends React.Component {
                                 <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
                                     <Link to={"/todo"}>To Do</Link>
                                 </li>
+                                {!this.state.currentUser &&
+                                    <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
+                                        <Link className="waves-effect waves-light btn" to={"/login"}>Login</Link>
+                                    </li>
+                                }
+                                {this.state.currentUser &&
+                                    <li>
+                                        <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </nav>
@@ -46,6 +80,16 @@ class Nav extends React.Component {
                     <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
                         <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
                     </li>
+                    {!this.state.currentUser &&
+                        <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
+                            <Link className="waves-effect waves-light btn" to={"/login"}>Login</Link>
+                        </li>
+                    }
+                    {this.state.currentUser &&
+                        <li>
+                            <a onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn" href="#!">Sign Off</a>
+                        </li>
+                    }
                 </ul>
 
             </div>
