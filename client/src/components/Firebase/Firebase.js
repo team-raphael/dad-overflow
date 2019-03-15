@@ -29,6 +29,7 @@ class Firebase {
                 signInOptions: [
                     FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID
                 ],
+                credentialHelper: Firebaseui.auth.CredentialHelper.NONE
                 // callbacks: {
                 //     uiShown: function () {
                 //         document.querySelectorAll('.firebaseui-button')
