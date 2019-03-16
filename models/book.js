@@ -12,7 +12,12 @@ const Schema = mongoose.Schema;
   //date: { type: Date, default: Date.now }
 //});
 
-const postsSchema( {});
+const postsSchema( {
+  title: String,
+  author: Array,
+  body: String ,
+  date: { type: Date, default: Date.now }
+});
 
 const commentsSchema({});
 
