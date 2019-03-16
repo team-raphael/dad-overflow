@@ -18,11 +18,17 @@
 
 .jumbotron h1 {
     font-family: 'Fjalla One', sans-serif;
-    font-size: 230px;
+    font-size: 15vw
 }
 
+.jumbotron h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 4vw
+}
+
+/* 
 @media only screen and (max-width: 600px) {
     .jumbotron h1 {
         font-size: 100px;
     }
-  }
+  } */
