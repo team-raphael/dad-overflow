@@ -19,7 +19,7 @@ module.exports = {
     },
     // find user by user unique id 
     findOne: function (req, res) {
-        const userId = req.params.id;
+        const userId = req.params.userId;
         db.Users
             .findOne({_id: userId})
             .then(user => res.json(user))
