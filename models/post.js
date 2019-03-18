@@ -17,13 +17,26 @@ const postsSchema( {
   author: Array,
   body: String ,
   date: { type: Date, default: Date.now }
+  time: {type: Time, default: Time.now}
 });
 
-const commentsSchema({});
+const commentsSchema({
+  author: Array,
+  body: String,
+  date: { type: Date, default: Date.now}
+  time: {type: Time, default: Time.now}
+});
 
-const todosSchema({});
+const todosSchema({
+  body: String ,
+  isComplete: True, 
+  reftoUsers:  
+});
 
-const userSchema({});
+const userSchema({
+  email: ,
+  image: 
+});
 
 const Book = mongoose.model("Book", bookSchema);
 
