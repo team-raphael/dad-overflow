@@ -9,22 +9,40 @@ ref to Users
 
 module.exports = {
 
-    // get user by user's id from User DB and then use that id to find all their tasks in the Tasks db.
-    getTaskByUserId: function (req, res) {
+    getUserTasks: function (req, res) {
+
+    },
+
+    createNewTask: function (req, res) {
+
+    },
+
+
+    // update a user's task by user's and task's id - MAY NOT BE RIGHT!
+    updateOneTask: function (req, res) {
         const userId = req.params.userId;
+        const body = req.body;
 
         db.Users
             .findOne({ _id: userId })
             .then(user => {
-                return db.Tasks.find({ _id: user })
+                return db.Tasks.update(
+                    { _id: user._id },
+                    {
+                        $set:
+                        {
+                            body: body.body,
+                            isComplete: body.isComplete
+                        }
+
+                    }
+                )
             })
             .then(userTasks => res.json(userTasks))
             .catch(err => res.json(err));
     },
 
-    getUserTasks: function (req, res) {
-        const userId = req.params.userId;
-        const taskId = req.params.taskId;
+    deleteOneTask: function (req, res) {
 
     }
 };
