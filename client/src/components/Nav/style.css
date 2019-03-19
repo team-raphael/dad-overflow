@@ -1,3 +1,32 @@
+  .profileImage {
+    margin-top: 12px;
+    margin-left: 10px;
+    width: 45px;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  #profileDropdown {
+    background-color: black;
+  }
+
+  #profileDropdown li:hover {
+    background-color: black;
+  }
+
+  #profileDropdown .noHighlight {
+    cursor: unset;
+  }
+
+  #profileDropdown button {
+    margin-left: 2px;
+  }
+
+  #profileDropdown .noHighlight:hover {
+    background-color: black;
+  }
+
   .reactNav .nav-wrapper {
     padding-right: 20px;
     padding-left: 20px;
@@ -32,7 +61,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: white;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
