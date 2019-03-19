@@ -9,7 +9,7 @@ ref to Users
 module.exports = {
 
     getUserTasks: function (req, res) {
-        db.Tasks.find()
+        db.Task.find()
             .then(tasks => json(tasks))
             .catch(err => json(err));
     },
@@ -17,7 +17,7 @@ module.exports = {
     createNewTask: function (req, res) {
         const body = req.body;
 
-        db.Tasks.create(body)
+        db.Task.create(body)
             .then(newTask => json(newTask))
             .catch(err => json(err));
     },
@@ -29,7 +29,7 @@ module.exports = {
         const body = req.body;
         const taskId = req.params.taskId;
 
-        db.Tasks.updateOne(
+        db.Task.updateOne(
             { userId, _id: taskId},
             {
                 $set:
@@ -46,7 +46,7 @@ module.exports = {
         const taskId = req.params.taskId;
         const userId = req.params.userId;
 
-        db.Tasks.deleteOne({ _id: taskId, userId })
+        db.Task.deleteOne({ _id: taskId, userId })
         // returns http code for success 
             .then(() => res.send())
             .catch(err => json(err));
