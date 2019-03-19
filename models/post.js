@@ -1,43 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//EXAMPLE Schema
-//const bookSchema = new Schema({
-  //bookId: { type: String, required: true, unique: true },
-  //smallThumbnail: String,
-  //infoLink: String,
-  //title: String,
-  //authors: Array,
-  //description: String,
-  //date: { type: Date, default: Date.now }
-//});
-
-const postsSchema( {
-  title: String,
-  author: Array,
-  body: String ,
-  date: { type: Date, default: Date.now }
-  time: {type: Time, default: Time.now}
-});
-
-const commentsSchema({
-  author: Array,
+const postSchema = new Schema({
+  title: { type: String, required: true },
+  author: { type: String, required: true },
   body: String,
-  date: { type: Date, default: Date.now}
-  time: {type: Time, default: Time.now}
+  date: { type: Date, default: Date.now }
 });
 
-const todosSchema({
-  body: String ,
-  isComplete: True, 
-  reftoUsers:  
-});
+const Post = mongoose.model("Post", postSchema);
 
-const userSchema({
-  email: ,
-  image: 
-});
-
-const Book = mongoose.model("Book", bookSchema);
-
-module.exports = Book;
+module.exports = Post;

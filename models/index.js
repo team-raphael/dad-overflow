@@ -1,4 +1,7 @@
 module.exports = {
-    Book: require("./book")
+    Comment: require("./comment")
+    Post: require("./post")
+    Task: require("./task")
+    User: require("./user")
   };
   
