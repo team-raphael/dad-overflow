@@ -103,10 +103,10 @@ class Nav extends React.Component {
 
                                         <ul id='profileDropdown' className='dropdown-content'>
                                             <li>
-                                                <Link to={"/profile"}>Profile</Link>
+                                                <Link className="profileLink" to={"/profile"}>Profile</Link>
                                             </li>
-                                            {/* <li className="divider" tabIndex="-1"></li> */}
-                                            <li class="noHighlight">
+                                            <li className="divider" tabIndex="-1"></li>
+                                            <li className="noHighlight">
                                                 <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
                                             </li>
                                         </ul>
