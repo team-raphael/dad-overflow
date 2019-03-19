@@ -8,5 +8,11 @@ export default {
         email
       }
     });
+  },
+  createUser: (user) => {
+    return axios.post("/api/users", user);
+  },
+  updateUser: (userId, user) => {
+    return axios.put(`/api/users/${userId}`, user);
   }
 };
