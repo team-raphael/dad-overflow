@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600');
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background-image: url(./backgroundImage.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   /* background-size: 100% 100%; */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 #root {
@@ -16,7 +18,11 @@ body {
 }
 
 .page-footer {
-  background-color: lightgrey !important; 
+  font-family: 'Work Sans';
+  font-weight: 400;
+  background-color: #232F34 !important; 
+  color: #fff !important;
+  text-align: center;
 }
 
 .btn {
