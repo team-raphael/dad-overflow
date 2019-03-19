@@ -2,19 +2,31 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './style.css';
 import * as FirebaseApp from 'firebase/app';
+import API from '../../services/APIService';
 
 class Nav extends React.Component {
 
     state = {
-        currentUser: null
+        currentUser: null,
+        dbUser: null
     };
 
     sideNavInstance = null;
+
+    componentDidUpdate = () => {
+        //Initialize profile drop down
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        window.M.Dropdown.init(elems, { coverTrigger: false, constrainWidth: false });
+    }
 
     componentDidMount = () => {
         //Initialize the nav bar
         const sideNavElement = document.querySelector('.sidenav');
         this.sideNavInstance = window.M.Sidenav.init(sideNavElement);
+
+        //Initialize profile drop down
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        window.M.Dropdown.init(elems);
 
         //Setup a listener for when the user's login state changes so we can change what is visible on the nav bar
         FirebaseApp.auth().onAuthStateChanged((user) => {
@@ -22,6 +34,28 @@ class Nav extends React.Component {
             this.setState({
                 currentUser: user
             });
+
+            //Check the database for this user and set the state to that user
+            if (user) {
+                API.getUserByEmail(user.email)
+                    .then(dbUsers => {
+                        if (dbUsers.data && dbUsers.data.length > 0) {
+                            console.log(dbUsers.data[0].image);
+                            this.setState({
+                                dbUser: dbUsers.data[0]
+                            });
+                        } else {
+                            this.setState({
+                                dbUser: null
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        window.M.toast({ html: 'Error obtaining user from the database!' });
+                    });
+            }
+
         }, (error) => {
             console.log(error);
 
@@ -40,6 +74,7 @@ class Nav extends React.Component {
     signOutOnClick = () => {
         FirebaseApp.auth().signOut();
         this.closeSideNav();
+        window.location.href = "/";
     };
 
     render() {
@@ -64,7 +99,17 @@ class Nav extends React.Component {
                                 }
                                 {this.state.currentUser &&
                                     <li>
-                                        <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
+                                        <img className="dropdown-trigger profileImage" data-target='profileDropdown' src={this.state.dbUser ? this.state.dbUser.image : "https://via.placeholder.com/225"} alt="profile"></img>
+
+                                        <ul id='profileDropdown' className='dropdown-content'>
+                                            <li>
+                                                <Link to={"/profile"}>Profile</Link>
+                                            </li>
+                                            {/* <li className="divider" tabIndex="-1"></li> */}
+                                            <li class="noHighlight">
+                                                <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
+                                            </li>
+                                        </ul>
                                     </li>
                                 }
                             </ul>
