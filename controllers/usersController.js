@@ -6,13 +6,14 @@ module.exports = {
     create: function (req, res) {
 
         const userBody = req.body;
+
         const newUser = {
             // need to match these properties with model schema
             email: userBody.email,
-            image: userBody.email,
+            image: userBody.image,
         };
 
-        db.Users
+        db.User
             .create(newUser)
             .then(newUser => res.json(newUser))
             .catch(err => res.status(422).json(err));
@@ -20,7 +21,7 @@ module.exports = {
     // find user by user unique id 
     findOne: function (req, res) {
         const userId = req.params.userId;
-        db.Users
+        db.User
             .findOne({_id: userId})
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
