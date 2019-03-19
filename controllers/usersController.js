@@ -18,6 +18,21 @@ module.exports = {
             .then(newUser => res.json(newUser))
             .catch(err => res.status(422).json(err));
     },
+    update: function (req, res) {
+        const valuesToUpdate = {};
+        if (req.body.email) {
+            valuesToUpdate.email = req.body.email;
+        }
+
+        if (req.body.image) {
+            valuesToUpdate.image = req.body.image;
+        }
+
+        db.User
+            .findByIdAndUpdate(req.params.userId, { $set: valuesToUpdate })
+            .then(updateUser => res.json(updateUser))
+            .catch(err => res.status(422).json(err));
+    },
     // find user by user unique id 
     findOne: function (req, res) {
         const userId = req.params.userId;
