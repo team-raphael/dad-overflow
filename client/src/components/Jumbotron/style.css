@@ -17,13 +17,15 @@
 }
 
 .jumbotron h1 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 15vw
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12vw;
+    font-weight: 700;
 }
 
 .jumbotron h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 4vw
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3vw;
+    font-weight: 400;
 }
 
 /* 
