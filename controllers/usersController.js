@@ -27,8 +27,15 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findAll: function (req, res) {
+        const filter = {};
+
+        //Filter by email if provided as a query parameter
+        if (req.query.email) {
+            filter.email = req.query.email
+        }
+
         db.User
-            .find()
+            .find(filter)
             .then(users => res.json(users))
             .catch(err => res.status(422).json(err));
     }
