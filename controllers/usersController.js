@@ -25,6 +25,11 @@ module.exports = {
             .findOne({_id: userId})
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
+    },
+    findAll: function (req, res) {
+        db.User
+            .find()
+            .then(users => res.json(users))
+            .catch(err => res.status(422).json(err));
     }
-
 };

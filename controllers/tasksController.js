@@ -10,16 +10,29 @@ module.exports = {
 
     getUserTasks: function (req, res) {
         db.Task.find()
-            .then(tasks => json(tasks))
-            .catch(err => json(err));
+            .then(tasks => res.json(tasks))
+            .catch(err => res.json(err));
+    },
+
+    getOneUserTask: function(req, res) {
+        db.Task.findOne({ 
+            _id: req.params.taskId,
+            userId: req.params.userId
+        })
+            .then(task => res.json(task))
+            .catch(err => res.json(err));
     },
 
     createNewTask: function (req, res) {
         const body = req.body;
 
+        if (!body.userId) {
+            body.userId = req.params.userId;
+        }
+
         db.Task.create(body)
-            .then(newTask => json(newTask))
-            .catch(err => json(err));
+            .then(newTask => res.json(newTask))
+            .catch(err => res.json(err));
     },
 
 
@@ -29,15 +42,18 @@ module.exports = {
         const body = req.body;
         const taskId = req.params.taskId;
 
+        const valuesToUpdate = {
+            body: body.body
+        };
+
+        if (body.isComplete != undefined && 
+            body.isComplete != null) {
+            valuesToUpdate.isComplete = body.isComplete;
+        }
+
         db.Task.updateOne(
-            { userId, _id: taskId},
-            {
-                $set:
-                {
-                    body: body.body,
-                    isComplete: body.isComplete
-                }
-            }
+            { userId, _id: taskId },
+            { $set: valuesToUpdate }
         ).then(userTasks => res.json(userTasks))
             .catch(err => res.json(err));
 
@@ -47,8 +63,8 @@ module.exports = {
         const userId = req.params.userId;
 
         db.Task.deleteOne({ _id: taskId, userId })
-        // returns http code for success 
+            // returns http code for success 
             .then(() => res.send())
-            .catch(err => json(err));
+            .catch(err => res.json(err));
     }
 };
