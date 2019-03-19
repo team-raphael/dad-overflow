@@ -27,9 +27,10 @@ module.exports = {
     updateOneTask: function (req, res) {
         const userId = req.params.userId;
         const body = req.body;
+        const taskId = req.params.taskId;
 
         db.Tasks.updateOne(
-            { userId },
+            { userId, _id: taskId},
             {
                 $set:
                 {
