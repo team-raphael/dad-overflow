@@ -1,3 +1,5 @@
+// Exporting model Schemas
+
 module.exports = {
     
    Comment: require("./comment"),
