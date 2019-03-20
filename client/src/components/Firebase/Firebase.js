@@ -19,6 +19,9 @@ class Firebase {
 
         // Initialize the FirebaseUI Widget using Firebase.
         this.authUI = new Firebaseui.auth.AuthUI(FirebaseApp.auth());
+
+        this.firebaseUserInfo = null;
+        this.dbUserInfo = null;
     }
 
     //Method to start the rendering of the authentication UI in the provided css selector
