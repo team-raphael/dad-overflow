@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 //Create an new schema for MongoDB
 const userSchema = new Schema({
-  
-  email: { type: String, required: true },
+
+  email: { type: String, required: true, unique: true },
   image: String,
   date: { type: Date, default: Date.now }
 

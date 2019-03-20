@@ -1,5 +1,6 @@
 import * as FirebaseApp from 'firebase/app';
 import * as Firebaseui from 'firebaseui';
+import API from '../../services/APIService';
 
 //Set the firebase configuration info
 const config = {
@@ -18,6 +19,9 @@ class Firebase {
 
         // Initialize the FirebaseUI Widget using Firebase.
         this.authUI = new Firebaseui.auth.AuthUI(FirebaseApp.auth());
+
+        this.firebaseUserInfo = null;
+        this.dbUserInfo = null;
     }
 
     //Method to start the rendering of the authentication UI in the provided css selector
@@ -29,17 +33,41 @@ class Firebase {
                 signInOptions: [
                     FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID
                 ],
-                credentialHelper: Firebaseui.auth.CredentialHelper.NONE
-                // callbacks: {
-                //     uiShown: function () {
-                //         document.querySelectorAll('.firebaseui-button')
-                //             .forEach(element => element.classList.add("btn"));
-                //     }
-                // }
+                credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
+                callbacks: {
+                    signInSuccessWithAuthResult: this.signInSuccessful
+                }
             };
         }
 
         this.authUI.start(cssSelector, uiConfig);
+    }
+
+    signInSuccessful = (authResult, redirectUrl) => {
+        //Save the user to the database if they don't already exist there
+        API.getUserByEmail(authResult.user.email)
+            .then(user => {
+                if (!user.data || user.data.length === 0) {
+
+                    const newUser = {
+                        email: authResult.user.email
+                    }
+                    API.createUser(newUser)
+                        .catch((err) => console.log("Error saving user to database: ", err))
+                        .finally(() => {
+                            window.location.href = "/profile";
+                            return false;
+                        });
+                } else {
+                    window.location.href = "/";
+                    return true;
+                }
+            })
+            .catch(err => {
+                console.log("Error getting user from database: ", err);
+                window.location.href = "/";
+                return true;
+            });
     }
 
 }
