@@ -40,7 +40,6 @@ class Nav extends React.Component {
                 API.getUserByEmail(user.email)
                     .then(dbUsers => {
                         if (dbUsers.data && dbUsers.data.length > 0) {
-                            console.log(dbUsers.data[0].image);
                             this.setState({
                                 dbUser: dbUsers.data[0]
                             });
@@ -99,7 +98,7 @@ class Nav extends React.Component {
                                 }
                                 {this.state.currentUser &&
                                     <li>
-                                        <img className="dropdown-trigger profileImage" data-target='profileDropdown' src={this.state.dbUser ? this.state.dbUser.image : "https://via.placeholder.com/225"} alt="profile"></img>
+                                        <img className="dropdown-trigger profileImage" data-target='profileDropdown' src={(this.state.dbUser && this.state.dbUser.image) ? this.state.dbUser.image : "https://via.placeholder.com/225"} alt="profile"></img>
 
                                         <ul id='profileDropdown' className='dropdown-content'>
                                             <li>
