@@ -5,7 +5,7 @@ module.exports = {
 
   findAll: (req, res) => {
     db.Post
-      .find(req.query)
+      .find()
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));    
   },
@@ -17,9 +17,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  findById: (req, res) => {
+  findOne: (req, res) => {
     db.Post
-      .findById(req.params.id)
+      .findOne(req.params.id)
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));
     
