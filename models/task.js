@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//Create an new schema for Mongoo
+//Create an new schema for MongoDB
 const taskSchema = new Schema({
   
   body: String,
