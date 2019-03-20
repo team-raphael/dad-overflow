@@ -13,4 +13,4 @@ const commentSchema = new Schema({
 //Models defined on the mongoose instance are available to all connection created
 const Comment = mongoose.model("Comment", commentSchema);
 //export the Comment schema  
-module.exports = Comment;g
+module.exports = Comment;
