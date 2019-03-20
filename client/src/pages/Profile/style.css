@@ -5,3 +5,7 @@
 #profileImageCarousel {
     height: 285px;
 }
+
+.carousel-item {
+    cursor: pointer;
+}
