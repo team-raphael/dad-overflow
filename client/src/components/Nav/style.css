@@ -92,11 +92,20 @@
   }   
 
   .logo {
-    background-image: url(./logo.png);
+    background-image: url(./iconfinder_Child-play_225732.png);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 40px;
-    margin-top: 12px;
+    height: 45vh;
+    width: 10vh;
+    margin: 8px 5px 0px 0px ;
+  }
+
+  #title-dad {
+    font-family: 'Amatic SC', cursive;
+  }
+
+  #title-overflow {
+    font-family: 'Titan One', cursive;
   }
 
   @media only screen and (max-width: 600px) {
