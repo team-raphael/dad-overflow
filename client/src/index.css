@@ -17,12 +17,16 @@ body {
   flex: 1 0 auto;
 }
 
+.remove-float {
+  float: unset !important;
+}
+
 .page-footer {
   font-family: 'Work Sans';
   font-weight: 400;
-  background-color: #232F34 !important; 
+  background-color: #344955 !important; 
   color: #fff !important;
-  text-align: center;
+  float: unset;
 }
 
 .btn {
