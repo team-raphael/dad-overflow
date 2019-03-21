@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import Jumbotron from '../../components/Jumbotron';
 import LockScreen from '../../components/LockScreen';
+import Card from '../../components/Card'
 
 class Forum extends React.Component {
 
@@ -10,12 +11,13 @@ class Forum extends React.Component {
             <div className="white-text">
                 <Jumbotron
                     mainText="Daddy Issues"
-                    detailText="Q&amp;A for dads!"
+                    detailText="For dads to ask and answer questions"
                 />
 
                 <div className="pageContainer">
                     <div className="container">
-                        <h1>This is the Forum Page</h1>
+                        <h1>This is a test</h1>
+                        <Card />
                     </div>
                 </div>
 
