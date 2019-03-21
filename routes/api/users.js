@@ -14,7 +14,9 @@ router.route("/")
 // Matches with "/api/users/:id"
 router.route("/:userId")
     // find one user by unique user id 
-    .get(usersController.findOne);
+    .get(usersController.findOne)
+    // update one user by unique user id
+    .put(usersController.update);
 
 
 // TASKS ROUTES 
