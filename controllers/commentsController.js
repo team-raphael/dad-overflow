@@ -5,7 +5,7 @@ module.exports = {
 
   getCommentsByPostId: (req, res) => {
     db.Comment
-      .find()
+      .find(req.params.postId)
       .then(comments => res.json(comments))
       .catch(err => res.json(err));
       
