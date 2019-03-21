@@ -98,9 +98,8 @@
     background-image: url(./iconfinder_Child-play_225732.png);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 45vh;
-    width: 10vh;
-    margin: 8px 5px 0px 0px ;
+    width: 50px;
+    margin-top: 4px;
   }
 
   #title-dad {
