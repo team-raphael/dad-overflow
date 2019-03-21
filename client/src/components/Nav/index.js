@@ -43,7 +43,7 @@ class Nav extends React.Component {
                         return (
                             <div className="reactNav">
                                 <div className="navbar-fixed">
-                                    <nav>
+                                    <nav className="blue-grey darken-3">
                                         <div className="container nav-wrapper">
                                             <Link to={"/"} className="brand-logo"><i className="logo"></i> Dad Overflow</Link>
                                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>

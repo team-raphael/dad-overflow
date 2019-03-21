@@ -39,8 +39,12 @@
 
   nav ul > li > a:not(.btn):not(.profileLink) {
     position: relative;
-    color: white;
+    color: #fff;
     text-decoration: none;
+  }
+
+  nav ul > li.active > a:not(.btn):not(.profileLink) {
+    color: #F9AA33;
   }
 
   nav ul > li.active {
@@ -51,12 +55,11 @@
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    color: white;
+    color: #F9AA33;
   }
 
-
   nav ul > li > a:not(.btn):not(.profileLink):hover {
-    color: white;
+    color: #F9AA33;
   }
 
   nav ul > li > a:not(.btn):not(.profileLink):before {
@@ -66,7 +69,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: #F9AA33;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -81,10 +84,10 @@
   }
 
   .reactNav nav {
-    /* background-color: lightgrey !important; */
+    background-color: #344955 !important;
     /* background-color: rgba(104, 102, 102, 0) !important; */
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0,0));
-    box-shadow: unset;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0,0));
+    box-shadow: unset; */
   }
   
   .reactNav a{
@@ -95,9 +98,8 @@
     background-image: url(./iconfinder_Child-play_225732.png);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 45vh;
-    width: 10vh;
-    margin: 8px 5px 0px 0px ;
+    width: 50px;
+    margin-top: 4px;
   }
 
   #title-dad {
