@@ -1,5 +1,4 @@
-// Exporting model Schemas
-
+// Exporting model Schemas of the catgory bellow
 module.exports = {
     
    Comment: require("./comment"),

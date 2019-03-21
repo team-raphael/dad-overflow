@@ -1,0 +1,11 @@
+.profilePage .pageContainer {
+    min-height: calc(100vh - 128px);
+}
+
+#profileImageCarousel {
+    height: 285px;
+}
+
+.carousel-item {
+    cursor: pointer;
+}
