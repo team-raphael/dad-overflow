@@ -21,7 +21,7 @@ body {
   float: unset !important;
 }
 
-.page-footer {
+#page-footer {
   font-family: 'Work Sans';
   font-weight: 400;
   background-color: #344955 !important; 
@@ -30,15 +30,15 @@ body {
 }
 
 .btn {
-  background-color: #4da3b4;  
+  background-color: #F9AA33;  
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-  background-color: #63c7db;
+  background-color: rgb(255, 199, 116) !important;
 }
 
 .btn:focus, .btn:focus, .btn-large:focus, .btn-small:focus {
-  background-color: #326069;
+  background-color: rgb(248, 152, 9);
 }
 
 .unsetOverflow {
