@@ -9,10 +9,10 @@ class ToDo extends React.Component {
     render() {
         return (
             <div className="white-text">
-                {/* <Jumbotron
+                <Jumbotron
                     mainText="Daddy Doodies"
                     detailText="Getting Ready for Baby!"
-                /> */}
+                />
                 <div className="pageContainer">
                     <div className="container">
                         <p>Your partner may be getting most of the attention right now, but when your new baby arrives,

@@ -4,6 +4,8 @@ import API from '../../services/APIService'
 import { Collection } from '../Collection'
 // import { listOfTodos } from './ListOfTodos'
 import { TextArea } from '../TextArea'
+import FirebaseContext from '../Firebase/context';
+
 
 
 
@@ -19,7 +21,7 @@ export class CollectionWrapper extends Component {
 
     componentDidMount() {
         API.getTasks('5c9056038e7212a0ffa7db21')
-        .then(res => this.setState({listOfTodos: res.data}))
+            .then(res => this.setState({ listOfTodos: res.data }))
     };
 
 
@@ -38,40 +40,51 @@ export class CollectionWrapper extends Component {
             isComplete: false,
             body: this.state.value,
         };
-        API.createATask({ userId: '5c9072b1c7d8d1b9fee257b4' })
+        API.createATask(this.firebase.dbUserInfo._id, newTask)
             .then(res => console.log(res.data))
-        this.setState({body: newTask, isComplete: false})
         this.setState(prevState => ({
-                listOfTodos: prevState.listOfTodos.concat(newTask)
+            listOfTodos: prevState.listOfTodos.concat(newTask)
         }));
 
     }
 
     render() {
-
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col l7 collection-col">
-                        {this.state.listOfTodos.map(item => (
-                            <Collection isComplete={item.isComplete} body={item.body} />
+            <FirebaseContext.Consumer>
+                {
+                    firebase => {
+                        this.firebase = firebase;
+
+                        return (
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col l7 collection-col">
+                                        {this.state.listOfTodos.map(item => (
+                                            <Collection isComplete={item.isComplete} body={item.body} />
 
 
-                        ))}
+                                        ))}
 
-                    </div>
-                    <TextArea
-                        value={this.state.value}
-                        name='task'
-                        handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit}
+                                    </div>
+                                    <TextArea
+                                        value={this.state.value}
+                                        name='task'
+                                        handleInputChange={this.handleInputChange}
+                                        handleFormSubmit={this.handleFormSubmit}
 
-                    />
-                </div>
-            </div>
-        )
+                                    />
+                                </div>
+                            </div>
+                        )
 
+        
+                }
+            }
+
+            </FirebaseContext.Consumer>
+        );
     }
+
 
 
 };
