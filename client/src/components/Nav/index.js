@@ -48,7 +48,7 @@ class Nav extends React.Component {
                 <div className="navbar-fixed">
                     <nav>
                         <div className="container nav-wrapper">
-                            <Link to={"/"} className="brand-logo"><i className="logo"></i> Dad Overflow</Link>
+                            <Link to={"/"} className="brand-logo"><i className="logo"></i> <span id="title-dad">Dad</span><span id="title-overflow">Overflow</span></Link>
                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down">
                                 <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>

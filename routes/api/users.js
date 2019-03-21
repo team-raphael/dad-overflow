@@ -30,7 +30,7 @@ router.route("/:userId/tasks")
 // Matches "api/users/:id/tasks/:id
 router.route("/:userId/tasks/:taskId")
 
-    // change this route to a put/update
+    // update one task
     .put(tasksController.updateOneTask)
 
     // delete task

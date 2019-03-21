@@ -1,20 +1,29 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  // Get all task for user with user id 
+  getTasks: function(userId) {
+    return axios.get(`/api/users/${userId}/tasks`);
   },
-  // Gets the book with the given bookId
-  getBook: function(bookId) {
-    return axios.get(`/api/books/${bookId}`);
+
+  // Create a new task
+  createATask: function(userId, newTaskBody) {
+    return axios.post(`/api/users/${userId}/tasks`, newTaskBody);
   },
+
+  // update one task according to task id 
+  updateOneTask: function(userId, taskId){
+    return axios.put(`/api/users/${userId}/tasks/${taskId}`);
+  },
+  
   // Deletes the book with the given bookId
-  deleteBook: function(bookId) {
-    return axios.delete(`/api/books/${bookId}`);
+  deleteOneTask: function(userId, taskId) {
+    return axios.delete(`/api/users/${userId}/tasks/${taskId}`);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
-  }
+  getOneTask: function(userId, taskId) {
+    return axios.get(`/api/users/${userId}/tasks/${taskId}`);
+  },
+
+  
 };
