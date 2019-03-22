@@ -43,7 +43,7 @@ class Nav extends React.Component {
                         return (
                             <div className="reactNav">
                                 <div className="navbar-fixed">
-                                    <nav className="blue-grey darken-3">
+                                    <nav id="navbar-nav" className="blue-grey darken-3">
                                         <div className="container nav-wrapper">
                                             <Link to={"/"} className="brand-logo"><i className="logo"></i> Dad Overflow</Link>
                                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
@@ -63,7 +63,7 @@ class Nav extends React.Component {
                                                     <li>
                                                         <img className="dropdown-trigger profileImage" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile"></img>
 
-                                                        <ul id='profileDropdown' className='dropdown-content'>
+                                                        <ul id='profileDropdown' className='blue-grey darken-1 dropdown-content'>
                                                             <li>
                                                                 <Link className="profileLink" to={"/profile"}>Profile</Link>
                                                             </li>
@@ -80,13 +80,13 @@ class Nav extends React.Component {
 
                                 </div>
 
-                                <ul className="sidenav" id="mobile-demo">
+                                <ul className="sidenav blue-grey darken-3 white-text" id="mobile-demo">
                                     <li>
                                         <div className="user-view">
-                                            <div className="background">
-                                                <img src={profileBackground} alt="background" />
+                                            <div className="background blue-grey lighten-1">
+                                                {/* <img src={profileBackground} alt="background" /> */}
                                             </div>
-                                            <div><img className="circle" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
+                                            <div><img className="circle white" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
                                             <div><span className="white-text name">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.displayName) ? firebase.firebaseUserInfo.displayName : ""}</span></div>
                                             <div><span className="white-text email">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.email) ? firebase.firebaseUserInfo.email : ""}</span></div>
                                         </div>

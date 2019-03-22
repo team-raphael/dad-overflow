@@ -9,3 +9,7 @@
 .carousel-item {
     cursor: pointer;
 }
+
+#user-profile-h1 {
+    margin-top: 0px;
+}
