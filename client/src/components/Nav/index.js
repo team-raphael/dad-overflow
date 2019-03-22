@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './style.css';
 import * as FirebaseApp from 'firebase/app';
-import profileBackground from '../../backgroundImage1.jpg';
 import FirebaseContext from '../Firebase/context';
 
 class Nav extends React.Component {
@@ -83,9 +82,7 @@ class Nav extends React.Component {
                                 <ul className="sidenav blue-grey darken-3 white-text" id="mobile-demo">
                                     <li>
                                         <div className="user-view">
-                                            <div className="background blue-grey lighten-1">
-                                                {/* <img src={profileBackground} alt="background" /> */}
-                                            </div>
+                                            <div className="background blue-grey lighten-1"/>                                            
                                             <div><img className="circle white" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
                                             <div><span className="white-text name">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.displayName) ? firebase.firebaseUserInfo.displayName : ""}</span></div>
                                             <div><span className="white-text email">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.email) ? firebase.firebaseUserInfo.email : ""}</span></div>
