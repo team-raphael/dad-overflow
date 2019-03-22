@@ -4,8 +4,20 @@ const db = require("../models");
 module.exports = {
 
   findAll: (req, res) => {
+
+    const conditions = {};
+    const limit = req.query.limit ? parseInt(req.query.limit) : 0;
+
+    if (req.query.postContains) {
+      const pattern = req.query.postContains;
+
+      conditions.$or = [ {'body': { $regex:pattern, $options: "i" }}, {'title': { $regex:pattern, $options: "i" }} ];
+    }
+
     db.Post
-      .find()
+      .find(conditions)
+      .limit(limit)
+      .sort({ date: -1 })
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));    
   },
