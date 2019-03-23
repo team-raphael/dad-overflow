@@ -5,10 +5,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: 'Work Sans', sans-serif;
-  background-image: url(./backgroundImage.jpg);
-  background-repeat: no-repeat;
+  /* background-image: url(./backgroundImage.jpg); */
+  /* background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
   /* background-size: 100% 100%; */
   font-family: 'Work Sans', sans-serif;
 }
@@ -60,7 +60,7 @@ body {
 .pageContainer {
   padding: 20px 0px 20px 0px;
   background-color: white;
-  color: black;
+  color: #232F34;
 }
 
 .hide {
