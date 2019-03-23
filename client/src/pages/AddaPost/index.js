@@ -1,32 +1,61 @@
-
 import './style.css';
 import React, { Component } from 'react';
-
-//class FormComponent extends Component {}
-
+import FirebaseContext from '../../components/Firebase/context';
 
 class AddaPost extends Component {
-  handleChange = e => {
-    this.form.validateFields(e.target);
-  }
 
-  contactSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
 
-    this.form.validateFields();
+    const addPostForm = document.querySelector("#addPostForm");
 
-    if (!this.form.isValid()) {
-      console.log('form is invalid: do not submit');
+    if (addPostForm.checkValidity()) {
+      
+      window.location.href = "/";
     } else {
-      console.log('form is valid: submit');
+      window.M.toast({ html: 'Please enter required fields' });
     }
+
   }
 
   render() {
     return (
-      <form>
-        
-      </form>
+      <FirebaseContext.Consumer>
+        {
+          firebase => {
+            this.firebase = firebase;
+
+            return (
+              <div className="white-text">
+                <div className="container">
+                  <form id="addPostForm">
+                    <div className="row">
+                      <div className="input-field col s12">
+                        <input id="last_name" type="text" className="validate" required pattern="^[a-zA-Z1-9].*" />
+                        <label for="last_name">Title</label>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="input-field col s12">
+                        <textarea id="postBody" className="materialize-textarea validate" required pattern="^[a-zA-Z1-9].*"></textarea>
+                        <label for="postBody">Body</label>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col s12">
+                        <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
+                          Submit<i className="material-icons right">send</i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )
+          }
+        }
+
+      </FirebaseContext.Consumer>
     )
   }
 }
