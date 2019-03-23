@@ -1,0 +1,12 @@
+.item-box {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    border: 1px solid black;
+    text-align: center; 
+}
+
+.item-box-inner-grid {
+    align-content: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
