@@ -1,11 +1,8 @@
+
 .jumbotron {
     padding: 0px 12px 60px 12px;
-    /* background-image: url(./background2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%; */
-    /* background-color: #8bb7f0;  */
-    background-color: rgba(104, 102, 102, 0);
-    height: 100vh;
+    background-color: #D2DBDF;
+    height: 50vh;
 }
 
 .jumbotron > div {
@@ -18,19 +15,14 @@
 
 .jumbotron h1 {
     font-family: 'Work Sans', sans-serif;
-    font-size: 12vw;
+    font-size: 8.2vw;
     font-weight: 700;
+    color: #232F34;
 }
 
 .jumbotron h3 {
     font-family: 'Work Sans', sans-serif;
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: 400;
+    color: #232F34;
 }
-
-/* 
-@media only screen and (max-width: 600px) {
-    .jumbotron h1 {
-        font-size: 100px;
-    }
-  } */
