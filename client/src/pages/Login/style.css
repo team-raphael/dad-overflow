@@ -1,14 +1,14 @@
 #firebaseAuthContainer {
-    color: white;
+    color: #232F34;
     margin-bottom: 25px;
 }
 
 .firebaseui-input {
-    color: white !important;
+    color: #232F34 !important;
 }
 
 .firebaseui-label {
-    color: white !important;
+    color: #232F34 !important;
 }
 
 .firebaseui-link {

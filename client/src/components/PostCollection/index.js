@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Button } from "react-materialize";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
+import './style.css';
+import Post from '../Post';
 
 export class PostCollection extends React.Component {
   state = {
@@ -51,13 +53,13 @@ export class PostCollection extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div>
+            <div id='modal-btn'>
               <a
                 onClick={this.handleModalClick}
                 class="waves-effect waves-light btn modal-trigger"
                 href="#modal1"
               >
-                Modal
+                New Post
               </a>
               <Modal id="modal1">
                 {" "}
@@ -95,8 +97,8 @@ export class PostCollection extends React.Component {
                   Submit
                 </Button>
               </Modal>
+          {this.state.posts.map(post => <Post title={post.title} body={post.body} author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''}/>)}
 {/* create a element and map over this.state.posts and display */}
-          {this.state.posts.map(post => <div><h1>{post.title}</h1><h2>{post.body}</h2></div>)}
 
 
             </div>
