@@ -3,6 +3,7 @@ import { Modal, Button } from "react-materialize";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
 import './style.css';
+
 import Post from '../Post/Post';
 
 export class PostCollection extends React.Component {
@@ -54,13 +55,14 @@ export class PostCollection extends React.Component {
 
           return (
             <div id='modal-btn'>
-              <a
+              <Link to={"/addapost"} className="waves-effect waves-light btn modal-trigger">New Post</Link>
+              {/* <a
                 onClick={this.handleModalClick}
                 class="waves-effect waves-light btn modal-trigger"
-                href="#modal1"
+                href="/addapost"
               >
                 New Post
-              </a>
+              </a> */}
               <Modal id="modal1">
                 {" "}
                 <div class="row">
