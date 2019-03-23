@@ -28,7 +28,7 @@ class AddaPost extends Component {
         body: this.state.postBody,
         userId: this.firebase.dbUserInfo._id
       };
-      
+
       API.createPost(newPost)
         .then(() => window.location.href = "/")
         .catch(err => {
@@ -49,7 +49,7 @@ class AddaPost extends Component {
             this.firebase = firebase;
 
             return (
-              <div className="white-text">
+              <div id="addAPostPage" className="white-text">
                 <div className="container">
                   {firebase.dbUserInfo &&
                     <form id="addPostForm">
