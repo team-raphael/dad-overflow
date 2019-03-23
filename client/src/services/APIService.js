@@ -12,8 +12,8 @@ export default {
   },
 
   // update one task according to task id 
-  updateOneTask: function(userId, taskId){
-    return axios.put(`/api/users/${userId}/tasks/${taskId}`);
+  updateOneTask: function(userId, taskId, body){
+    return axios.put(`/api/users/${userId}/tasks/${taskId}`, body);
   },
   
   // Deletes the book with the given bookId
