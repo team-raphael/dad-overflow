@@ -13,7 +13,7 @@ const {
     FieldFeedback
   } = ReactFormWithConstraints;
   
-  class Form extends React.Component {
+  class AddaPost extends React.Component {
     handleChange = e => {
       this.form.validateFields(e.target);
     }
@@ -44,6 +44,7 @@ const {
             <FieldFeedbacks for="name">
               <FieldFeedback when="*" />
             </FieldFeedbacks>
+        </div>
   
           <div className="col-md-6">
             <textarea name="comments" cols="40" rows="20" placeholder="Message"
@@ -60,6 +61,4 @@ const {
           </div>
     </FormWithConstraints>
       );
-    }
-  }
 export default AddaPost;
