@@ -2,8 +2,11 @@
     font-family: 'Work Sans';
 }
 
-h1 {
+h3 {
     text-align: center;
+    max-height: 15vh;
+    font-size: 1em;
+    margin: 25px;
 }
 
 .show-on-small {
@@ -19,6 +22,6 @@ h1 {
     text-align: center;
 }
 
-h3 {
-    
+.btn {
+    color: #344955; 
 }
