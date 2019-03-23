@@ -5,3 +5,20 @@
 h1 {
     text-align: center;
 }
+
+.show-on-small {
+    font-size: 5vw;
+    margin: 1rem;
+    background-color: red;
+}
+
+.show-on-medium-and-up {
+    margin: 30px;
+    background-color: blue;
+    font-size: 4vw;
+    text-align: center;
+}
+
+h3 {
+    
+}
