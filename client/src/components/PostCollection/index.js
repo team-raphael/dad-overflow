@@ -3,8 +3,8 @@ import { Modal, Button } from "react-materialize";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
 import './style.css';
-import Post from '../Post';
-import { Link } from "react-router-dom";
+
+import Post from '../Post/Post';
 
 export class PostCollection extends React.Component {
   state = {
