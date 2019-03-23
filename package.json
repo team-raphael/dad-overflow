@@ -25,6 +25,7 @@
     "if-env": "^1.0.4",
     "install": "^0.12.2",
     "mongoose": "^5.4.18",
+    "react-form-with-constraints": "^0.12.0",
     "socket.io": "^2.2.0"
   }
 }

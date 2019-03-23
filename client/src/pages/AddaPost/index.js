@@ -1,7 +1,5 @@
-import React from 'react';
+
 import './style.css';
-import Jumbotron from '../../components/Jumbotron';
-import LockScreen from '../../components/LockScreen';
 import React, { Component } from 'react';
 
 //class FormComponent extends Component {}
@@ -13,7 +11,7 @@ const {
     FieldFeedback
   } = ReactFormWithConstraints;
   
-  class AddaPost extends React.Component {
+  class AddaPost extends Component {
     handleChange = e => {
       this.form.validateFields(e.target);
     }
@@ -60,5 +58,8 @@ const {
             <button className="btn btn-lg btn-primary">Send Message</button>
           </div>
     </FormWithConstraints>
-      );
+      )
+    }
+}
+        
 export default AddaPost;
