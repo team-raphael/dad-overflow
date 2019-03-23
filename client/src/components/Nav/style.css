@@ -12,7 +12,7 @@
   }
 
   #profileDropdown li a {
-    color: white;
+    color: #344955 ;
   }
 
   #profileDropdown li a:hover {
@@ -39,7 +39,7 @@
 
   nav ul > li > a:not(.btn):not(.profileLink) {
     position: relative;
-    color: #fff;
+    color: #344955 ;
     text-decoration: none;
   }
 
