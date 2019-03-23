@@ -11,16 +11,19 @@ mongoose.connect(
 const userSeed = [
   {
     email: "test1@test.com",
+    displayName: "Test One",
     image: "",
     date: new Date(Date.now())
   },
   {
     email: "test2@test.com",
+    displayName: "Test One",
     image: "",
     date: new Date(Date.now())
   },
   {
     email: "test3@test.com",
+    displayName: "Test One",
     image: "",
     date: new Date(Date.now())
   }

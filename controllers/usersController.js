@@ -10,6 +10,7 @@ module.exports = {
         const newUser = {
             // need to match these properties with model schema
             email: userBody.email,
+            displayName: userBody.displayName,
             image: userBody.image,
         };
 
@@ -26,6 +27,10 @@ module.exports = {
 
         if (req.body.image) {
             valuesToUpdate.image = req.body.image;
+        }
+
+        if (req.body.displayName) {
+            valuesToUpdate.displayName = req.body.displayName;
         }
 
         db.User
