@@ -39,5 +39,14 @@ export default {
   },
   updateUser: (userId, user) => {
     return axios.put(`/api/users/${userId}`, user);
+  },
+
+  // Create Post by User
+  createPost: (newPost) => {
+    return axios.post("/api/posts", newPost)
+  },
+
+  getPosts: () => {
+    return axios.get("/api/posts")
   }
 };

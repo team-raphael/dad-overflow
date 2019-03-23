@@ -56,7 +56,8 @@ class Profile extends React.Component {
 
             //Update the database then redirect the user back to the home screen
             API.updateUser(this.firebase.dbUserInfo._id, updateUser)
-                .then(() => {
+                .then((dbUser) => {
+                    this.firebase.dbUserInfo = dbUser.data;
                     //this.props.history.push('/');
                     window.location.href = "/";
                 });
@@ -78,29 +79,34 @@ class Profile extends React.Component {
                                 <div className="pageContainer">
                                     <div className="container">
                                         <div className="row">
-                                            <h1>User Profile</h1>
+                                            <h1 id="user-profile-h1">User Profile</h1>
                                         </div>
                                         <div className="row">
-                                            <form id="profileForm" className={`col s12 ${!firebase.dbUserInfo ? "hide" : ""}`} >
-                                                <div className="row">
+                                            <div className="col l2 m1 s0" />
+                                            <div className="row">
+                                                <form id="profileForm" className={`col l8 m10 s12 ${!firebase.dbUserInfo ? "hide" : ""}`} >
+                                                    <div className="row">
 
-                                                    <div className="input-field col l4 m6 s12">
-                                                        <div id="profileImageCarousel" className="carousel">
-                                                            {this.images.map((image, index) =>
-                                                                <div key={index} className="carousel-item"><img src={image} alt="Misc Baby" /></div>
-                                                            )}
+                                                        <div className="input-field col s12">
+                                                            <div id="profileImageCarousel" className="carousel">
+                                                                {this.images.map((image, index) =>
+                                                                    <div key={index} className="carousel-item"><img src={image} alt="Misc Baby" /></div>
+                                                                )}
+                                                            </div>
+                                                            <label htmlFor="profileImageCarousel">Select your profile image:</label>
                                                         </div>
-                                                        <label htmlFor="profileImageCarousel">Select your profile image:</label>
-                                                    </div>
 
-                                                </div>
-                                                <div className="row">
-                                                    <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>Save
-                                                <i className="material-icons right">save</i>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                            <h3 id="noDBUser" className={`col s12 ${firebase.dbUserInfo ? "hide" : ""}`}>User must exist in the database in order to use this page! Please log off and log back in.</h3>
+                                                    </div>
+                                                    <div className="row">
+                                                        <div className="col s12">
+                                                            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
+                                                                Save<i className="material-icons right">save</i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <h3 id="noDBUser" className={`row ${firebase.dbUserInfo ? "hide" : ""}`}>User must exist in the database in order to use this page! Please log off and log back in.</h3>
                                         </div>
                                     </div>
                                     <LockScreen id="profilePageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
