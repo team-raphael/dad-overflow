@@ -14,7 +14,6 @@ class Forum extends React.Component {
             <div className="show-on-small show-on-medium-and-up white-text">
                 <Jumbotron
                     mainText="Daddy Issues"
-                    detailText="Q&amp;A for dads!"
                 />
 
                 <div className="pageContainer">
