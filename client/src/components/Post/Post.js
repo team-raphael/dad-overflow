@@ -13,9 +13,9 @@ const Post = props => {
                             <h3 className='body'>{props.body}</h3>
                             <h5 className='author'>{props.author}</h5>
                          </div>
-                        <div className="col l3">
-                         <img className='hide-on-small' src="" ></img>
-                         </div>
+                        {/* <div className="col l3">
+                         <img className='hide-on-small' src='./favicon2.png' ></img>
+                         </div> */}
 
                 </div>            
             </div>
