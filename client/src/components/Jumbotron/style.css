@@ -1,8 +1,8 @@
 
 .jumbotron {
-    padding: 0px 12px 60px 12px;
+    padding: 10px 12px 10px 12px;
     background-color: #D2DBDF;
-    height: 50vh;
+    max-height: 50vh;
 }
 
 .jumbotron > div {
@@ -15,14 +15,15 @@
 
 .jumbotron h1 {
     font-family: 'Work Sans', sans-serif;
-    font-size: 8.2vw;
-    font-weight: 700;
+    font-size: 2.3em;
+    font-weight: 800;
     color: #232F34;
+    margin-bottom: 39px;
 }
 
 .jumbotron h3 {
     font-family: 'Work Sans', sans-serif;
-    font-size: 4vw;
+    font-size: 1em;
     font-weight: 400;
     color: #232F34;
 }
