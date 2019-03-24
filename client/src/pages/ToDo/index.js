@@ -8,7 +8,7 @@ class ToDo extends React.Component {
 
     render() {
         return (
-            <div className="white-text">
+            <div className="wrapper white-text">
                 <Jumbotron
                     mainText="Daddy Doodies"
                     detailText="Getting Ready for Baby!"

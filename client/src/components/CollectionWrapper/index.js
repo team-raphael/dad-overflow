@@ -8,6 +8,8 @@ import GridWrapper from "../GridWrapper";
 import GridItem from "../GridItem";
 import FirebaseContext from "../Firebase/context";
 
+
+
 export class CollectionWrapper extends Component {
   state = {
     listOfTodos: [],
@@ -100,7 +102,7 @@ export class CollectionWrapper extends Component {
                 <div className="col l6">
                   {/* render if isComplete is true */}
 
-                  <GridWrapper className="grid-right-border">
+                  <GridWrapper border={'grid-border'}>
                     {this.state.listOfTodos.map(
                       item =>
                         !item.isComplete && (
@@ -124,7 +126,7 @@ export class CollectionWrapper extends Component {
 
                 <div className="col l6">
                   {/* render if isComplete is true */}
-                  <GridWrapper className="grid-right-border">
+                  <GridWrapper>
                     {this.state.listOfTodos.map(
                       item =>
                         item.isComplete && (

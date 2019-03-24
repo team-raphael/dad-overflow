@@ -1,11 +1,12 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
     grid-auto-rows: minmax(50px, auto);
 
 }
 
-.grid-right-border {
+.grid-border {
+    padding-right: 30px;
     border-right: 4px solid black;
 }
