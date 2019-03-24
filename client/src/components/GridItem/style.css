@@ -7,16 +7,51 @@
     --orange: #f9aa33;
 }
 .item-box {
-    background: var(--light);
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     border: 1px solid black;
     text-align: center; 
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
+    text-transform: capitalize;
+}
+
+.item-box:hover {
+    transform: scale(1.1);
+
 }
 
 .item-box-inner-grid {
     align-content: center;
     display:grid;
     grid-template-columns: 1fr 1fr;
+    border-top: 1px groove white;
 }
+
+.complete-color {
+    background: var(--primary);
+    opacity: 0.6;
+}
+
+.complete-color h6{
+    color: var(--light);
+    text-decoration: line-through;
+
+}
+
+.incomplete-color {
+    background: var(--primary);
+}
+
+.incomplete-color h6{
+    color: var(--light);
+}
+
+.fas {
+    transition: all .2s linear;
+    color: var(--orange)
+}
+
+.fas:hover{
+    transform: scale(1.8);
+}
+

@@ -50,7 +50,8 @@ class Firebase {
                 if (!user.data || user.data.length === 0) {
 
                     const newUser = {
-                        email: authResult.user.email
+                        email: authResult.user.email,
+                        displayName: authResult.user.displayName
                     }
                     API.createUser(newUser)
                         .catch((err) => console.log("Error saving user to database: ", err))

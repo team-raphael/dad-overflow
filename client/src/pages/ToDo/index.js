@@ -16,7 +16,7 @@ class ToDo extends React.Component {
                 <div className="pageContainer">
                     <div className="container">
                         <p>Your partner may be getting most of the attention right now, but when your new baby arrives,
-                        both of you will have your hands full. Here is an overflow of to do items to make sure you're prepared. </p>
+                        both of you will have your hands full. Here is an overflow of to-do items to start with, feel free to add more to make sure you're prepared.</p>
                     </div>
                     <CollectionWrapper />
                 </div>
