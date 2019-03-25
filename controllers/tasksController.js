@@ -8,7 +8,7 @@ ref to Users
 
 module.exports = {
   getUserTasks: function(req, res) {
-    db.Task.find()
+    db.Task.find({ userId: req.params.userId })
       .then(tasks => res.json(tasks))
       .catch(err => res.json(err));
   },
