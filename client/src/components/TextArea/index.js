@@ -4,13 +4,14 @@ import './style.css';
 
 export const TextArea = props => {
     return (
-        <div>
+        <div className="text-div">
             <div className="row">
                 <form className="col l12">
                     <div className="row">
                         <div className="input-field col l9">
-                            <textarea id="textarea1" className="materialize-textarea" onChange={props.handleInputChange} />
+                            <textarea id="textarea1" value={props.value} name={props.name} className="materialize-textarea" onChange={props.handleInputChange} />
                             <label htmlFor="textarea1">Add a task</label>
+                            <h6 className="red-error">{props.error}</h6>
                             <a href="#!" className="waves-effect waves-light btn" onClick={props.handleFormSubmit}>Add</a>
 
                         </div>

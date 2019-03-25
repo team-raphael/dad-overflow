@@ -1,11 +1,30 @@
+:root {
+    --shadow: 0 1px 5px rgb(35, 47, 52, 0.8);
+    --light: #EEF0F2;
+    --primary: #344955;
+    --secondary: #232F34;
+    --third: #4A6572;
+    --orange: #f9aa33;
+    --body: #EEF0F2;
+    --fourth: #D2DBDF;
+}
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
     grid-auto-rows: minmax(50px, auto);
 
 }
 
-.grid-right-border {
-    border-right: 4px solid black;
+
+
+.wrapper-box {
+    min-height: 200px;
+    background: var(--fourth);
+    padding: 0px 20px 15px 20px;
+    box-shadow: var(--shadow)
+}
+
+.wrapper-box h1 {
+    color: var(--primary);
 }
