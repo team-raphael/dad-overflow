@@ -2,7 +2,6 @@ import React from "react";
 import { Modal, Button } from "react-materialize";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './style.css';
 import { Link } from "react-router-dom";
 
@@ -15,6 +14,7 @@ export class PostCollection extends React.Component {
     value: "",
     posts: [],
     newDummyPost: [],
+    currentPost: [],
   };
 
   componentDidMount = () => {
@@ -48,6 +48,12 @@ export class PostCollection extends React.Component {
     console.log(this.state.title);
     console.log(this.state.body);
   };
+
+  handleCommentClick = id => {
+     API.findOnePost(id).then(dbPost => this.setState({ currentPost: dbPost.data }) )
+
+
+  }
 
   render() {
     return (
@@ -101,7 +107,7 @@ export class PostCollection extends React.Component {
                   Submit
                 </Button>
               </Modal>
-          {this.state.posts.map(post => <Post title={post.title} body={post.body} author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''}/>)}
+          {this.state.posts.map(post => <Post id={post._id} handleCommentClick={() => this.handleCommentClick(post._id)} title={post.title} body={post.body} author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''}/>)}
 {/* create a element and map over this.state.posts and display */}
 
 

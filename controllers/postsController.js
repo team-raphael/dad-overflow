@@ -31,7 +31,7 @@ module.exports = {
 
   findOne: (req, res) => {
     db.Post
-      .findOne(req.params.id)
+      .findOne({_id: req.params.id})
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));
     

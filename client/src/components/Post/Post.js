@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import { Link } from "react-router-dom";
+
 
 const Post = props => {
     return(
@@ -12,6 +14,10 @@ const Post = props => {
                             <h1 className='title'>{props.title}</h1>
                             <h3 className='body'>{props.body}</h3>
                             <h5 className='author'>{props.author}</h5>
+
+                            <button><Link to={'/postdetail'} onClick={props.handleCommentClick}
+                                id={props.id} >Comments</Link></button>
+                           
                          </div>
                         {/* <div className="col l3">
                          <img className='hide-on-small' src='./favicon2.png' ></img>

@@ -48,5 +48,9 @@ export default {
 
   getPosts: () => {
     return axios.get("/api/posts")
+  },
+
+  findOnePost: (id) => {
+    return axios.get(`/api/posts/${id}`, id)
   }
 };
