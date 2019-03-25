@@ -2,9 +2,8 @@ import React from "react";
 import { Modal, Button } from "react-materialize";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import './style.css';
 import { Link } from "react-router-dom";
+import './style.css';
 
 import Post from '../Post/Post';
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
 import API from "../../services/APIService";
-import { Collection } from "../Collection";
 // import { listOfTodos } from './ListOfTodos'
 import { TextArea } from "../TextArea";
 import GridWrapper from "../GridWrapper";
@@ -31,11 +30,8 @@ export class CollectionWrapper extends Component {
 
   handleInputChange = e => {
     const { name, value } = e.target;
-    console.log('value',value);
-    console.log('name',name);
-    console.log(e.target)
     this.setState({
-     [name]: value
+      [name]: value
     });
   };
 
@@ -49,10 +45,12 @@ export class CollectionWrapper extends Component {
       if (res.data.errors) {
         this.setState({ error: res.data.errors.body.message });
       } else {
-        this.setState({
-          listOfTodos: this.state.listOfTodos.concat(newTask),
-          error: "",
-          task: "",
+        this.setState((state) => {
+          return {
+            listOfTodos: state.listOfTodos.concat(newTask),
+            error: "",
+            task: ""
+          };
         });
       }
       // this.setState({error: err.errors.body.message})
@@ -69,9 +67,13 @@ export class CollectionWrapper extends Component {
     const task = {
       isComplete: !taskComplete
     };
+
     API.updateOneTask(userId, taskId, task)
       .then(() => {
-        API.getTasks().then(res => this.setState({ listOfTodos: res.data }));
+        API.getTasks().then(res => {
+          console.log(task, res);
+          this.setState({ listOfTodos: res.data });
+        });
       })
       .catch(err => console.log(err));
   };
