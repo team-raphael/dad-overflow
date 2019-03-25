@@ -19,7 +19,7 @@ class ToDo extends React.Component {
                                 mainText="Daddy Doodies"
                                 detailText="Getting Ready for Baby!"
                             />
-                            {firebase.firebaseUserInfo &&
+                            {firebase.dbUserInfo &&
                                 <div className="pageContainer">
                                     <div className="container">
                                         <p>Your partner may be getting most of the attention right now, but when your new baby arrives,
