@@ -19,7 +19,6 @@ class AddaPost extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
     const addPostForm = document.querySelector("#addPostForm");
 
     if (addPostForm.checkValidity()) {

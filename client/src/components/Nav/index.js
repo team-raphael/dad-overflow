@@ -50,9 +50,11 @@ class Nav extends React.Component {
                                                 <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
                                                     <Link to={"/"}>Forum</Link>
                                                 </li>
-                                                <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
-                                                    <Link to={"/todo"}>To Do</Link>
-                                                </li>
+                                                {firebase.firebaseUserInfo &&
+                                                    <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                                        <Link to={"/todo"}>To Do</Link>
+                                                    </li>
+                                                }
                                                 {!firebase.firebaseUserInfo &&
                                                     <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
                                                         <Link className="waves-effect waves-light btn" to={"/login"}>Login</Link>
@@ -82,7 +84,7 @@ class Nav extends React.Component {
                                 <ul className="sidenav blue-grey darken-3 white-text" id="mobile-demo">
                                     <li>
                                         <div className="user-view">
-                                            <div className="background blue-grey lighten-1"/>                                            
+                                            <div className="background blue-grey lighten-1" />
                                             <div><img className="circle white" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
                                             <div><span className="white-text name">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.displayName) ? firebase.firebaseUserInfo.displayName : ""}</span></div>
                                             <div><span className="white-text email">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.email) ? firebase.firebaseUserInfo.email : ""}</span></div>
@@ -92,9 +94,11 @@ class Nav extends React.Component {
                                     <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
                                         <Link to={"/"} onClick={this.closeSideNav}>Forum</Link>
                                     </li>
-                                    <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
-                                        <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
-                                    </li>
+                                    {firebase.firebaseUserInfo &&
+                                        <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                            <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
+                                        </li>
+                                    }
                                     {!firebase.firebaseUserInfo &&
                                         <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
                                             <Link className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login</Link>
