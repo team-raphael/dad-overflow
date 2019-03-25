@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
-import './style.css';
+import React from "react";
+import "./style.css";
 
 export const GridWrapper = props => {
-  
-    return (
-      <div class="grid ">{props.children}</div>
-    )
-  
-}
+  return (
+    <div className="wrapper-box">
+      <h1>{props.statusTitle}</h1>
+      <div className='grid'>{props.children}</div>
+    </div>
+  );
+};
 
-export default GridWrapper
+export default GridWrapper;
