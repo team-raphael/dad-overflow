@@ -19,7 +19,7 @@ class Forum extends React.Component {
 
                 <div className="pageContainer">
                     <div className="container">
-                        <h3 className='center'>Posts from dads just like you</h3>
+                        <h3 id='forumTop' className='center'>Posts from dads just like you</h3>
                     </div>
                     <PostCollection />
                 </div>
