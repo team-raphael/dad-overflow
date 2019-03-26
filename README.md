@@ -1,12 +1,35 @@
 # Dad Overflow
-## Team
-  * Chris
-  * Noel
-  * Anton
-  * Min
-  * Cody
+## About
+The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to *Dad Overflow*. Developed by Dads for dads.
+### Link to site
+ * www.dad-overflow.com
+## Development Team
+  * Chris McLaughlin
+  * Noel Nevarez
+  * Anton Kogan
+  * Min Joseph
+  * Cody Jarrett
 
 # Steps to Run Application
+Must be logged in to use.
+# Powered By
+
+  | Tech                  |  New Tech               |
+  | ----------------------|:-----------------------:|
+  | React.js              | FireBase Authentication | 
+  | Node.js               | Google Domain           |
+  | Materialize           | Flaticon                |
+  | JavaScript            |                         |  
+  | Cascading Style Sheets|                         |
+  | Html 5                |                         |
+  |                       |                         |
+
+# FEATURES
+ * Read posts from other dads
+ * Create posts to ask or answer questions
+ * Comment on existing posts
+ * Make To-do lists to complete tasks
+ * Pick a unique user icon
 
 # Create React Express App
 

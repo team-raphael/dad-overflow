@@ -29,8 +29,9 @@ body {
   float: unset;
 }
 
-.btn {
-  background-color: #F9AA33;  
+.btn, .btn-floating i {
+  background-color: #F9AA33; 
+  color:  #344955; 
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
@@ -65,4 +66,12 @@ body {
 
 .hide {
   display: none;
+}
+
+#footer a {
+  color: #F9AA33;
+}
+
+#page-footer {
+  padding-top: 20px;
 }

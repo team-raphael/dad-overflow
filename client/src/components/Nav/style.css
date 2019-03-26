@@ -94,6 +94,10 @@
     color: white !important;
   }   
 
+  #loginButton, #signOffButton, #loginButtonMobile {
+    color: #344955 !important;
+  }
+
   .logo {
     background-image: url(./iconfinder_Child-play_225732.png);
     background-size: contain;
@@ -108,6 +112,10 @@
 
   #title-overflow {
     font-family: 'Titan One', cursive;
+  }
+
+  nav ul a:hover {
+    background-color: #4A6572;
   }
 
   @media only screen and (max-width: 600px) {
@@ -125,3 +133,4 @@
       display: none;
     }
   }
+

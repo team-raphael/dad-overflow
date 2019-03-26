@@ -1,7 +1,6 @@
 import React from "react";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
-import { Link } from "react-router-dom";
 import './style.css';
 
 import Post from '../Post/Post';
@@ -51,8 +50,7 @@ export class PostCollection extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div>
-              <Link to={"/addapost"} className="waves-effect waves-light btn modal-trigger">New Post</Link>
+            <div className='center' id='modal-btn'>
               {this.state.posts.map((post, index) =>
                 <Post
                   postId={post._id}

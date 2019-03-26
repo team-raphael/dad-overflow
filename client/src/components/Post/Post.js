@@ -9,19 +9,11 @@ const Post = props => {
         <div>
             <div className='card container'>
                 <div className='row card-image'>
-
-                        <div className="col l9">
+                        <div className="col s12">
                             <h1 className='title'>{props.title}</h1>
-                            <h3 className='body'>{props.body}</h3>
-                            <h5 className='author'>{props.author}</h5>
-
-                            <Link to={`/postDetail/${props.postId}`} />
-                           
+                            <h5 className='body hide-on-small-only'>{props.body}</h5>
+                            <h6 className='author'>{props.author}</h6>
                          </div>
-                        {/* <div className="col l3">
-                         <img className='hide-on-small' src='./favicon2.png' ></img>
-                         </div> */}
-
                 </div>            
             </div>
         </div>
