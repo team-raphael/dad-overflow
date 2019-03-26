@@ -16,7 +16,7 @@ class ToDo extends React.Component {
                     return (
                         <div className="wrapper white-text">
                             <Jumbotron
-                                mainText="Daddy Duties"
+                                mainText="Dad Duties"
                                 detailText="Getting Ready for Baby!"
                             />
                             {firebase.dbUserInfo &&
