@@ -27,6 +27,10 @@ export default {
 
   
   //Get user data
+  getUserById: (id) => {
+    return axios.get(`/api/users/${id}`)
+  },
+  
   getUserByEmail: (email) => {
     return axios.get("/api/users", {
       params: {
@@ -51,6 +55,6 @@ export default {
   },
 
   findOnePost: (id) => {
-    return axios.get(`/api/posts/${id}`, id)
+    return axios.get(`/api/posts/${id}`)
   }
 };

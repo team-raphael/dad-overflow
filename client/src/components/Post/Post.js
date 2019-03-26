@@ -15,8 +15,7 @@ const Post = props => {
                             <h3 className='body'>{props.body}</h3>
                             <h5 className='author'>{props.author}</h5>
 
-                            <button><Link to={'/postdetail'} onClick={props.handleCommentClick}
-                                id={props.id} >Comments</Link></button>
+                            <Link to={`/postDetail/${props.postId}`} />
                            
                          </div>
                         {/* <div className="col l3">

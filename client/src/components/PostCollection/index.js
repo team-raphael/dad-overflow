@@ -1,10 +1,6 @@
 import React from "react";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
-<<<<<<< HEAD
-import './style.css';
-=======
->>>>>>> 9a1802ab864ffdf1a4f24619da0c929b73d78c08
 import { Link } from "react-router-dom";
 import './style.css';
 
@@ -17,7 +13,6 @@ export class PostCollection extends React.Component {
     value: "",
     posts: [],
     newDummyPost: [],
-    currentPost: [],
   };
 
   componentDidMount = () => {
@@ -26,15 +21,9 @@ export class PostCollection extends React.Component {
         this.setState({ posts: dbPosts.data });
         console.log(this.state.posts);
       })
-
-
-
   }
 
-  handleModalClick = () => {
-    window.$("#modal1").modal("open");
-    console.log("click");
-  };
+ 
 
   handleFormSubmit = e => {
     e.preventDefault();
@@ -52,11 +41,8 @@ export class PostCollection extends React.Component {
     console.log(this.state.body);
   };
 
-  handleCommentClick = id => {
-     API.findOnePost(id).then(dbPost => this.setState({ currentPost: dbPost.data }) )
-
-
-  }
+  
+  
 
   render() {
     return (
@@ -65,16 +51,16 @@ export class PostCollection extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div id='modal-btn'>
+            <div>
               <Link to={"/addapost"} className="waves-effect waves-light btn modal-trigger">New Post</Link>
               {this.state.posts.map((post, index) =>
                 <Post
+                  postId={post._id}
                   key={index}
                   title={post.title}
                   body={post.body}
                   author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''} />
               )}
-              {/* create a element and map over this.state.posts and display */}
             </div>
           );
         }}
@@ -82,3 +68,4 @@ export class PostCollection extends React.Component {
     );
   }
 }
+

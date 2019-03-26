@@ -74,7 +74,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/addapost" component={AddaPost} />
-              <Route exact path="/postdetail" component={PostDetail} />
+              <Route exact path="/postdetail/:postId" component={PostDetail} />
               <Route component={NoMatch} />
             </Switch>
 
