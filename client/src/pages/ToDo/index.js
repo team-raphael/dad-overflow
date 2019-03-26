@@ -25,8 +25,9 @@ class ToDo extends React.Component {
                                     <div className="container">
                                         <p>Your partner may be getting most of the attention right now, but when your new baby arrives,
                                             both of you will have your hands full. Here is an overflow of to-do items to start with, feel free to add more to make sure you're prepared.</p>
+                                        <CollectionWrapper />
                                     </div>
-                                    <CollectionWrapper />
+
 
                                     <div className='fixed-action-btn'>
                                         <Link id='newPost' to={"/addtodo"} className="btn-floating btn-large waves-effect waves-light btn modal-trigger"><i className="large material-icons">add</i></Link>
