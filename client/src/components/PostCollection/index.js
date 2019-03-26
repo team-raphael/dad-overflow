@@ -57,7 +57,7 @@ export class PostCollection extends React.Component {
                   key={index}
                   title={post.title}
                   body={post.body}
-                  author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''} />
+                  author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
             </div>
           );

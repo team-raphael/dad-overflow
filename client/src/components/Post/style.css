@@ -28,3 +28,10 @@
     text-align: left;
     font-weight: 300;
 }
+
+.title > a {
+    color: #344955;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #F9AA33;
+    text-transform: uppercase;
+}
