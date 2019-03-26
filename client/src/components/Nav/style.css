@@ -118,18 +118,13 @@
     background-color: #4A6572;
   }
 
-  @media only screen and (max-width: 600px) {
-    .reactNav .brand-logo {
-      font-size: 1.7rem;
-    }
-
+  @media only screen and (max-width: 640px) {
     .reactNav .nav-wrapper {
       padding-right: unset;
       padding-left: unset;
     }
   
-
-    .reactNav .logo {
+    .reactNav span {
       display: none;
     }
   }
