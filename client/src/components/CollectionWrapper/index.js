@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
 import API from "../../services/APIService";
-// import { listOfTodos } from './ListOfTodos'
-import { TextArea } from "../TextArea";
 import GridWrapper from "../GridWrapper";
 import GridItem from "../GridItem";
 import FirebaseContext from "../Firebase/context";
@@ -145,16 +143,6 @@ export class CollectionWrapper extends Component {
                           )
                       )}
                     </GridWrapper>
-                  </div>
-
-                  <div className="col l12">
-                    <TextArea
-                      error={this.state.error}
-                      value={this.state.task}
-                      name="task"
-                      handleInputChange={this.handleInputChange}
-                      handleFormSubmit={this.handleFormSubmit}
-                    />
                   </div>
                 </div>
               }
