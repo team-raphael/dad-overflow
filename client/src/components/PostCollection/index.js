@@ -54,7 +54,7 @@ export class PostCollection extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div id='modal-btn'>
+            <div className='center' id='modal-btn'>
               <Link id='newPost' to={"/addapost"} className="waves-effect waves-light btn modal-trigger">New Post</Link>
               {this.state.posts.map((post, index) =>
                 <Post

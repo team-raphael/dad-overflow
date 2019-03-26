@@ -8,6 +8,17 @@
 
 # Steps to Run Application
 
+# Powered By
+
+  | Tech                  |  New Tech               |
+  | ----------------------|:-----------------------:|
+  | React.js              | FireBase Authentication | 
+  | Node.js               |                         |
+  | Materialize           |                         |
+  | JavaScript            |                         |  
+  | Cascading Style Sheets|                         |
+  | Html 5                |                         |
+  |                       |                         |
 # Create React Express App
 
 ## About This Boilerplate
