@@ -114,6 +114,10 @@
     font-family: 'Titan One', cursive;
   }
 
+  nav ul a:hover {
+    background-color: #4A6572;
+  }
+
   @media only screen and (max-width: 600px) {
     .reactNav .brand-logo {
       font-size: 1.7rem;
@@ -129,3 +133,4 @@
       display: none;
     }
   }
+
