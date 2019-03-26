@@ -1,6 +1,6 @@
 # Dad Overflow
 ## About
-For many, the parent life can be an overflowing mess. Need help to sort it out, head to *Dad Overflow*. Majorily developed by Dads for upcoming famlies.
+For many, the parent life can be an overflowing mess. Need help to sort it out? Head to *Dad Overflow*. This app is majorily developed by Dads for upcoming famlies.
 ### Link to site
  * https://dad-overflow.herokuapp.com/
 ## Development Team
@@ -26,7 +26,7 @@ For many, the parent life can be an overflowing mess. Need help to sort it out, 
 
 # FEATURES
  * Create posts
- * Make To-do lists to complete tasks
+ * Make To-do lists to help complete tasks
 
 # Create React Express App
 
