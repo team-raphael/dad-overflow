@@ -11,14 +11,14 @@ class Forum extends React.Component {
 
     render() {
         return (
-            <div className="show-on-small show-on-medium-and-up white-text">
+            <div className="white-text">
                 <Jumbotron
                     mainText="Daddy Issues"
                 />
 
                 <div className="pageContainer">
                     <div className="container">
-                        <h3>Posts from dads just like you</h3>
+                        <h3 className='center'>Posts from dads just like you</h3>
                     </div>
                     <PostCollection />
                 </div>

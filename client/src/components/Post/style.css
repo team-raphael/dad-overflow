@@ -1,40 +1,30 @@
 
 .card {
-    /* display: flex;
-    flex-direction: column; */
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
     align-items: center;
-    max-height: 25vh;
-}
+} 
 
 .card-image {
     width: 95%;
 }
 
 .title {
-    font-size: 1em;
+    font-size: 25px;
     text-align: left;
     font-weight: 700;
-    margin-top: 15px;
 }
 
 .body {
-    font-size: .55em;
+
     text-align: left;
     margin: 0 auto;
 }
 
 .author {
     padding-bottom: 20px;
-    font-size: .6em;
     text-align: left;
     font-weight: 300;
 }
-
-/* .hide-on-small {
-    display: none;
-
-} */

@@ -66,3 +66,11 @@ body {
 .hide {
   display: none;
 }
+
+#footer a {
+  color: #F9AA33;
+}
+
+#page-footer {
+  padding-top: 20px;
+}
