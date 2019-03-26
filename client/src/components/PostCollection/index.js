@@ -20,9 +20,15 @@ export class PostCollection extends React.Component {
         this.setState({ posts: dbPosts.data });
         console.log(this.state.posts);
       })
+
+
+
   }
 
- 
+  handleModalClick = () => {
+    window.$("#modal1").modal("open");
+    console.log("click");
+  };
 
   handleFormSubmit = e => {
     e.preventDefault();
@@ -40,9 +46,6 @@ export class PostCollection extends React.Component {
     console.log(this.state.body);
   };
 
-  
-  
-
   render() {
     return (
       <FirebaseContext.Consumer>
@@ -59,6 +62,7 @@ export class PostCollection extends React.Component {
                   body={post.body}
                   author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
+              {/* create a element and map over this.state.posts and display */}
             </div>
           );
         }}
@@ -66,4 +70,3 @@ export class PostCollection extends React.Component {
     );
   }
 }
-

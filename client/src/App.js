@@ -12,7 +12,6 @@ import * as FirebaseApp from 'firebase/app';
 import API from './services/APIService';
 import FirebaseContext from './components/Firebase/context';
 import Firebase from './components/Firebase/Firebase';
-import PostDetail from './pages/PostDetail';
 
 class App extends Component {
 
@@ -74,7 +73,6 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/addapost" component={AddaPost} />
-              <Route exact path="/postdetail/:postId" component={PostDetail} />
               <Route component={NoMatch} />
             </Switch>
 
