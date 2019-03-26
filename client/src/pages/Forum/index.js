@@ -3,6 +3,7 @@ import './style.css';
 import Jumbotron from '../../components/Jumbotron';
 import LockScreen from '../../components/LockScreen';
 import {PostCollection} from '../../components/PostCollection';
+import { Link } from 'react-router-dom';
 
 class Forum extends React.Component {
     state = {
@@ -13,7 +14,7 @@ class Forum extends React.Component {
         return (
             <div className="white-text">
                 <Jumbotron
-                    mainText="Daddy Issues"
+                    mainText="Dad Overflow"
                 />
 
                 <div className="pageContainer">
@@ -22,7 +23,9 @@ class Forum extends React.Component {
                     </div>
                     <PostCollection />
                 </div>
-                
+                <div className='fixed-action-btn'>
+                <Link id='newPost' to={"/addapost"} className="btn-floating btn-large waves-effect waves-light btn modal-trigger"><i class="large material-icons">add</i></Link>                
+                </div>
                 <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
         )

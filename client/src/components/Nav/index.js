@@ -57,7 +57,7 @@ class Nav extends React.Component {
                                                 }
                                                 {!firebase.firebaseUserInfo &&
                                                     <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
-                                                        <Link className="waves-effect waves-light btn" to={"/login"}>Login</Link>
+                                                        <Link id='loginButton' className="waves-effect waves-light btn" to={"/login"}>Login</Link>
                                                     </li>
                                                 }
                                                 {firebase.firebaseUserInfo &&
@@ -101,7 +101,7 @@ class Nav extends React.Component {
                                     }
                                     {!firebase.firebaseUserInfo &&
                                         <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
-                                            <Link className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login</Link>
+                                            <Link id='loginButtonMobile' className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login</Link>
                                         </li>
                                     }
                                     {firebase.firebaseUserInfo &&
@@ -111,7 +111,7 @@ class Nav extends React.Component {
                                     }
                                     {firebase.firebaseUserInfo &&
                                         <li>
-                                            <a onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn" href="#!">Sign Off</a>
+                                            <a id='signOffButton' onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn" href="#!">Sign Off</a>
                                         </li>
                                     }
                                 </ul>
