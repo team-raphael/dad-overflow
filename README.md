@@ -1,17 +1,17 @@
 # Dad Overflow
 ## About
-For many, the parent life can be an overflowing mess. Need help to sort it out, head to *Dad Overflow*. Majorily developed by Dads for upcoming famlies.
+For many, the life of a parent can be an overflow-ing mess. Need help to sort it out, head to *Dad Overflow*. Developed by Dads for dads.
 ### Link to site
- * https://dad-overflow.herokuapp.com/
+ * www.dad-overflow.com
 ## Development Team
-  * Chris
-  * Noel
-  * Anton
-  * Min
-  * Cody
+  * Chris McLaughlin
+  * Noel Nevarez
+  * Anton Kogan
+  * Min Joseph
+  * Cody Jarrett
 
 # Steps to Run Application
-
+Must be logged in to use.
 # Powered By
 
   | Tech                  |  New Tech               |
@@ -25,8 +25,11 @@ For many, the parent life can be an overflowing mess. Need help to sort it out, 
   |                       |                         |
 
 # FEATURES
- * Create posts
+ * Read posts from other dads
+ * Create posts to ask or answer questions
+ * Comment on existing posts
  * Make To-do lists to complete tasks
+ * Pick a unique user icon
 
 # Create React Express App
 
