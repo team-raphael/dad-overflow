@@ -1,5 +1,7 @@
 # Dad Overflow
-## Team
+## About
+For many, Life can be an overflowing mess. Need help to sort it out, head to *Dad Overflow*. Majorily developed by Dads for upcoming famlies.
+## Development Team
   * Chris
   * Noel
   * Anton
