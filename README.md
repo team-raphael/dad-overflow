@@ -1,6 +1,6 @@
 # Dad Overflow
 ## About
-For many, the parent life can be an overflowing mess. Need help to sort it out? Head to *Dad Overflow*. This app is majorily developed by Dads for upcoming famlies.
+For many, the parent life can be an overflowing mess. Need help to sort it out? Head to *Dad Overflow*. This app is majorily developed by Dads for upcoming and current famlies.
 ### Link to site
  * https://dad-overflow.herokuapp.com/
 ## Development Team
@@ -11,7 +11,7 @@ For many, the parent life can be an overflowing mess. Need help to sort it out? 
   * Cody
 
 # Steps to Run Application
-
+Must be logged in to use.
 # Powered By
 
   | Tech                  |  New Tech               |
