@@ -7,6 +7,11 @@
     color: #232F34 !important;
 }
 
+.firebaseui-input:focus {
+    border-bottom: 1px solid #F9AA33 !important;
+    box-shadow: 0 1px 0 0 #F9AA33 !important;
+}
+
 .firebaseui-label {
     color: #232F34 !important;
 }
@@ -25,14 +30,13 @@
 
 .firebaseui-button {
     text-decoration: none;
-    color: #fff;
-    background-color: #26a69a;
+    color:  #344955;
     text-align: center;
     letter-spacing: .5px;
     -webkit-transition: background-color .2s ease-out;
     transition: background-color .2s ease-out;
     cursor: pointer;
-    background-color: #4da3b4;
+    background-color: #F9AA33;
     font-size: 14px;
     outline: 0;
     border: none;
