@@ -1,6 +1,8 @@
 # Dad Overflow
 ## About
-For many, Life can be an overflowing mess. Need help to sort it out, head to *Dad Overflow*. Majorily developed by Dads for upcoming famlies.
+For many, the parent life can be an overflowing mess. Need help to sort it out, head to *Dad Overflow*. Majorily developed by Dads for upcoming famlies.
+### Link to site
+ * https://dad-overflow.herokuapp.com/
 ## Development Team
   * Chris
   * Noel
@@ -15,12 +17,17 @@ For many, Life can be an overflowing mess. Need help to sort it out, head to *Da
   | Tech                  |  New Tech               |
   | ----------------------|:-----------------------:|
   | React.js              | FireBase Authentication | 
-  | Node.js               |                         |
-  | Materialize           |                         |
+  | Node.js               | Google Domain           |
+  | Materialize           | Flaticon                |
   | JavaScript            |                         |  
   | Cascading Style Sheets|                         |
   | Html 5                |                         |
   |                       |                         |
+
+# FEATURES
+ * Create posts
+ * Make To-do lists to complete tasks
+
 # Create React Express App
 
 ## About This Boilerplate
