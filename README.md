@@ -11,7 +11,7 @@ For many, the life of a parent can be an overflow-ing mess. Need help to sort it
   * Cody Jarrett
 
 # Steps to Run Application
-
+Must be logged in to use.
 # Powered By
 
   | Tech                  |  New Tech               |
