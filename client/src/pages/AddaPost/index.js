@@ -2,6 +2,7 @@ import './style.css';
 import React, { Component } from 'react';
 import FirebaseContext from '../../components/Firebase/context';
 import API from '../../services/APIService';
+import { Link } from 'react-router-dom';
 
 class AddaPost extends Component {
 
@@ -48,10 +49,11 @@ class AddaPost extends Component {
             this.firebase = firebase;
 
             return (
-              <div id="addAPostPage" className="white-text">
+              <div id="addAPostPage">
                 <div className="container">
                   {firebase.dbUserInfo &&
                     <form id="addPostForm">
+                      <Link id="backArrow" to={"/"}><i className="small material-icons">arrow_back</i></Link>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="postTitle" type="text" className="validate" required pattern="^[a-zA-Z1-9].*" name="postTitle" value={this.state.postTitle} onChange={this.handleInputChange} />
