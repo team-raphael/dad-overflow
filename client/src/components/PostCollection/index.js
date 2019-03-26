@@ -10,40 +10,14 @@ export class PostCollection extends React.Component {
     title: "",
     body: "",
     value: "",
-    posts: [],
-    newDummyPost: [],
+    posts: []
   };
 
   componentDidMount = () => {
-    API.getPosts()
+    API.getPostsWithLimit()
       .then(dbPosts => {
         this.setState({ posts: dbPosts.data });
-        console.log(this.state.posts);
-      })
-
-
-
-  }
-
-  handleModalClick = () => {
-    window.$("#modal1").modal("open");
-    console.log("click");
-  };
-
-  handleFormSubmit = e => {
-    e.preventDefault();
-    const newPost = { title: this.state.title, body: this.state.body, userId: this.firebase.dbUserInfo._id };
-    API.createPost(newPost).then(post => console.log(post.data));
-    this.setState({ newDummyPost: newPost });
-  };
-
-  handleInputChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-    console.log(this.state.title);
-    console.log(this.state.body);
+      });
   };
 
   render() {
