@@ -56,10 +56,11 @@ export class PostCollection extends React.Component {
             <div className='center' id='modal-btn'>
               {this.state.posts.map((post, index) =>
                 <Post
+                  postId={post._id}
                   key={index}
                   title={post.title}
                   body={post.body}
-                  author={firebase.firebaseUserInfo ? firebase.firebaseUserInfo.displayName : ''} />
+                  author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
               {/* create a element and map over this.state.posts and display */}
             </div>
