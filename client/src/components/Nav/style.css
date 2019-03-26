@@ -94,6 +94,10 @@
     color: white !important;
   }   
 
+  #loginButton, #signOffButton, #loginButtonMobile {
+    color: #344955 !important;
+  }
+
   .logo {
     background-image: url(./iconfinder_Child-play_225732.png);
     background-size: contain;
