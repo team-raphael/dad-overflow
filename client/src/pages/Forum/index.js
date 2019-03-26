@@ -24,7 +24,7 @@ class Forum extends React.Component {
                     <PostCollection />
                 </div>
                 <div className='fixed-action-btn'>
-                <Link id='newPost' to={"/addapost"} className="btn-floating btn-large waves-effect waves-light btn modal-trigger"><i class="large material-icons">add</i></Link>                
+                <Link id='newPost' to={"/addapost"} className="btn-floating btn-large waves-effect waves-light btn modal-trigger"><i className="large material-icons">add</i></Link>                
                 </div>
                 <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
