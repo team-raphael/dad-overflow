@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import FirebaseContext from '../../components/Firebase/context';
 import API from '../../services/APIService';
 import { Link } from 'react-router-dom';
+import LockScreen from '../../components/LockScreen';
 
 class AddaPost extends Component {
 
@@ -29,12 +30,15 @@ class AddaPost extends Component {
         userId: this.firebase.dbUserInfo._id
       };
 
+      this.lockScreen.lock();
+
       API.createPost(newPost)
         .then(() => window.location.href = "/")
         .catch(err => {
           console.log(err);
           window.M.toast({ html: 'Error sending post request' });
-        });
+        })
+        .finally(() => this.lockScreen.unlock());
     } else {
       window.M.toast({ html: 'Please enter required fields' });
     }
@@ -77,6 +81,7 @@ class AddaPost extends Component {
                   }
 
                 </div>
+                <LockScreen id="addPostLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
               </div>
             )
           }
