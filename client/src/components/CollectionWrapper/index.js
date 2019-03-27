@@ -40,29 +40,42 @@ export class CollectionWrapper extends Component {
     if (this.firebase.dbUserInfo) {
       this.lockScreen.lock();
       API.getTasks(this.firebase.dbUserInfo._id)
-      .then(res =>
-        this.setState({ listOfTodos: res.data })
-      )
-      .finally(() => this.lockScreen.unlock());
+        .then(res => this.setState({ listOfTodos: res.data }))
+        .catch((err) => {
+          console.log(err);
+          window.M.toast({ html: "Error getting tasks!" });
+        })
+        .finally(() => this.lockScreen.unlock());
     }
   };
+
+  transitionOutTask = taskId => {
+    document.querySelectorAll('.gridItemContainer')
+      .forEach((gridItem) => {
+        gridItem.classList.remove("scale-out");
+        gridItem.classList.remove("scale-in");
+      });
+
+    const gridItem = document.getElementById(taskId);
+    gridItem.classList.add("scale-out");
+  }
 
   handleTaskDelete = id => {
     const taskId = id;
     const userId = this.firebase.dbUserInfo._id;
 
-    const gridItem = document.getElementById(taskId);
-    gridItem.classList.remove("scale-in");
-    gridItem.classList.add("scale-out");
+    this.transitionOutTask(taskId);
 
     API.deleteOneTask(userId, taskId)
-      .then(() => this.getTasks());
+      .then(() => this.getTasks())
+      .catch((err) => {
+        console.log(err);
+        window.M.toast({ html: "Error deleting task!" });
+      });
   };
 
   handleTaskCompleteChange = (taskId, isComplete) => {
-    const gridItem = document.getElementById(taskId);
-    gridItem.classList.remove("scale-in");
-    gridItem.classList.add("scale-out");
+    this.transitionOutTask(taskId);
 
     const userId = this.firebase.dbUserInfo._id;
 
@@ -72,8 +85,28 @@ export class CollectionWrapper extends Component {
 
 
     API.updateOneTask(userId, taskId, task)
-      .then(() => this.getTasks());
+      .then(() => this.getTasks())
+      .catch((err) => {
+        console.log(err);
+        window.M.toast({ html: "Error updating task!" });
+      });
   }
+
+  handleEditSave = (taskId, todoBody) => {
+    const userId = this.firebase.dbUserInfo._id;
+
+    const task = {
+      body: todoBody
+    };
+
+    API.updateOneTask(userId, taskId, task)
+      .then(() => this.getTasks())
+      .catch((err) => {
+        console.log(err);
+        window.M.toast({ html: "Error updating task!" });
+      });
+  }
+
 
   render() {
     return (
@@ -98,18 +131,11 @@ export class CollectionWrapper extends Component {
                               key={index}
                               id={item._id}
                               taskId={item._id}
-
-                              handleCheckboxChange={() =>
-                                this.handleTaskCompleteChange(item._id, item.isComplete)
-                              }
-
-                              handleTaskDelete={() =>
-                                this.handleTaskDelete(item._id)
-                              }
                               body={item.body}
                               isComplete={item.isComplete}
-                              leftIcon={'fas fa-check fa-2x'}
-                              rightIcon={'fas fa-trash-alt fa-2x'}
+                              handleCheckboxChange={ this.handleTaskCompleteChange }
+                              handleTaskDelete={ this.handleTaskDelete }
+                              handleEditSave={this.handleEditSave}
                             />
                           )
                       )}
@@ -127,15 +153,11 @@ export class CollectionWrapper extends Component {
                               key={index}
                               id={item._id}
                               body={item.body}
+                              taskId={item._id}
                               isComplete={item.isComplete}
-                              handleCheckboxChange={() =>
-                                this.handleTaskCompleteChange(item._id, item.isComplete)
-                              }
-                              handleTaskDelete={() =>
-                                this.handleTaskDelete(item._id)
-                              }
-                              leftIcon={'fas fa-history fa-2x'}
-                              rightIcon={'fas fa-trash-alt fa-2x'}
+                              handleCheckboxChange={ this.handleTaskCompleteChange }
+                              handleTaskDelete={ this.handleTaskDelete }
+                              handleEditSave={this.handleEditSave}
                             />
                           )
                       )}
