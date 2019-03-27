@@ -2,14 +2,25 @@ import './style.css';
 import React, { Component } from 'react';
 import FirebaseContext from '../../components/Firebase/context';
 import API from '../../services/APIService';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LockScreen from '../../components/LockScreen';
 
 class AddaPost extends Component {
 
   state = {
     postTitle: '',
-    postBody: ''
+    postBody: '',
+    goBack: false
+  }
+
+  firebase = null;
+
+  componentDidMount = () => {
+    const postTitle = document.getElementById("postTitle");
+    if (postTitle) {
+      postTitle.focus();
+    }
+    window.scrollTo(0, 0);
   }
 
   handleInputChange = event => {
@@ -33,12 +44,12 @@ class AddaPost extends Component {
       this.lockScreen.lock();
 
       API.createPost(newPost)
-        .then(() => window.location.href = "/")
+        .then(() => this.setState({ goBack: true }))
         .catch(err => {
           console.log(err);
           window.M.toast({ html: 'Error sending post request' });
-        })
-        .finally(() => this.lockScreen.unlock());
+          this.lockScreen.unlock();
+        });
     } else {
       window.M.toast({ html: 'Please enter required fields' });
     }
@@ -52,38 +63,42 @@ class AddaPost extends Component {
           firebase => {
             this.firebase = firebase;
 
-            return (
-              <div id="addAPostPage">
-                <div className="container">
-                  {firebase.dbUserInfo &&
-                    <form id="addPostForm">
-                      <Link id="backArrow" to={"/"}><i className="small material-icons">arrow_back</i></Link>
-                      <div className="row">
-                        <div className="input-field col s12">
-                          <input id="postTitle" type="text" className="validate" required pattern="^[a-zA-Z1-9].*" name="postTitle" value={this.state.postTitle} onChange={this.handleInputChange} />
-                          <label htmlFor="postTitle">Title</label>
+            if (this.state.goBack) {
+              return <Redirect to="/" push={true} />
+            } else {
+              return (
+                <div id="addAPostPage">
+                  <div className="container">
+                    {firebase.dbUserInfo &&
+                      <form id="addPostForm">
+                        <Link id="backArrow" to={"/"}><i className="small material-icons">arrow_back</i></Link>
+                        <div className="row">
+                          <div className="input-field col s12">
+                            <input id="postTitle" type="text" className="validate" required pattern="^[a-zA-Z1-9].*" name="postTitle" value={this.state.postTitle} onChange={this.handleInputChange} />
+                            <label htmlFor="postTitle">Title</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="row">
-                        <div className="input-field col s12">
-                          <textarea id="postBody" name="postBody" className="materialize-textarea validate" required pattern="^[a-zA-Z1-9].*" value={this.state.postBody} onChange={this.handleInputChange}></textarea>
-                          <label htmlFor="postBody">Body</label>
+                        <div className="row">
+                          <div className="input-field col s12">
+                            <textarea id="postBody" name="postBody" className="materialize-textarea validate" required pattern="^[a-zA-Z1-9].*" value={this.state.postBody} onChange={this.handleInputChange}></textarea>
+                            <label htmlFor="postBody">Body</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="row">
-                        <div className="col s12">
-                          <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
-                            Submit<i className="material-icons right">send</i>
-                          </button>
+                        <div className="row">
+                          <div className="col s12">
+                            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
+                              Submit<i className="material-icons right">send</i>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </form>
-                  }
+                      </form>
+                    }
 
+                  </div>
+                  <LockScreen id="addPostLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                 </div>
-                <LockScreen id="addPostLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
-              </div>
-            )
+              )
+            }
           }
         }
 

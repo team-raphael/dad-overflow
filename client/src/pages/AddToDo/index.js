@@ -2,13 +2,22 @@ import './style.css';
 import React, { Component } from 'react';
 import FirebaseContext from '../../components/Firebase/context';
 import API from '../../services/APIService';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LockScreen from '../../components/LockScreen';
 
 class AddaPost extends Component {
 
   state = {
-    taskBody: ''
+    taskBody: '',
+    goBack: false
+  }
+
+  componentDidMount = () => {
+    const taskBody = document.getElementById("taskBody");
+    if (taskBody) {
+      taskBody.focus();
+    }
+    window.scrollTo(0, 0);
   }
 
   handleInputChange = event => {
@@ -30,12 +39,12 @@ class AddaPost extends Component {
       this.lockScreen.lock();
 
       API.createATask(this.firebase.dbUserInfo._id, newTask)
-        .then(() => window.location.href = "/todo")
+        .then(() => this.setState({ goBack: true }))
         .catch(err => {
+          this.lockScreen.unlock();
           console.log(err);
           window.M.toast({ html: 'Error sending post request' });
-        })
-        .finally(() => this.lockScreen.unlock());
+        });
     } else {
       window.M.toast({ html: 'Please enter required fields' });
     }
@@ -49,32 +58,36 @@ class AddaPost extends Component {
           firebase => {
             this.firebase = firebase;
 
-            return (
-              <div id="addTaskPage">
-                <div className="container">
-                  {firebase.dbUserInfo &&
-                    <form id="addTaskForm">
-                      <Link id="backArrow" to={"/todo"}><i className="small material-icons">arrow_back</i></Link>
-                      <div className="row">
-                        <div className="input-field col s12">
-                          <input type="text" id="taskBody" name="taskBody" className="validate" required pattern="^[a-zA-Z1-9].*" value={this.state.taskBody} onChange={this.handleInputChange}></input>
-                          <label htmlFor="taskBody">Add a task</label>
+            if (this.state.goBack) {
+              return <Redirect to="/todo" push={true} />
+            } else {
+              return (
+                <div id="addTaskPage">
+                  <div className="container">
+                    {firebase.dbUserInfo &&
+                      <form id="addTaskForm">
+                        <Link id="backArrow" to={"/todo"}><i className="small material-icons">arrow_back</i></Link>
+                        <div className="row">
+                          <div className="input-field col s12">
+                            <input type="text" id="taskBody" name="taskBody" className="validate" required pattern="^[a-zA-Z1-9].*" value={this.state.taskBody} onChange={this.handleInputChange}></input>
+                            <label htmlFor="taskBody">Add a task</label>
+                          </div>
                         </div>
-                      </div>
-                      <div className="row">
-                        <div className="col s12">
-                          <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
-                            Submit<i className="material-icons right">send</i>
-                          </button>
+                        <div className="row">
+                          <div className="col s12">
+                            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.onSubmit}>
+                              Submit<i className="material-icons right">send</i>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </form>
-                  }
+                      </form>
+                    }
 
+                  </div>
+                  <LockScreen id="addToDoPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                 </div>
-                <LockScreen id="addToDoPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
-              </div>
-            )
+              )
+            }
           }
         }
 
