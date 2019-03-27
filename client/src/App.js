@@ -22,11 +22,6 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    window.ioSocket.on('message', function (msg) {
-      window.M.toast({ html: msg });
-    });
-
-
     //Setup a listener for when the user's login state changes and record the changes in the component state
     FirebaseApp.auth().onAuthStateChanged((user) => {
 
