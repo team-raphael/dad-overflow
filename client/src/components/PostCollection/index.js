@@ -2,6 +2,7 @@ import React from "react";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
 import './style.css';
+import LockScreen from '../LockScreen';
 
 import Post from '../Post/Post';
 
@@ -14,10 +15,13 @@ export class PostCollection extends React.Component {
   };
 
   componentDidMount = () => {
+
+    this.lockScreen.lock();
     API.getPostsWithLimit()
       .then(dbPosts => {
         this.setState({ posts: dbPosts.data });
-      });
+      })
+      .finally(() => this.lockScreen.unlock());
   };
 
   render() {
@@ -36,7 +40,7 @@ export class PostCollection extends React.Component {
                   body={post.body}
                   author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
-              {/* create a element and map over this.state.posts and display */}
+              <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
           );
         }}
