@@ -10,9 +10,10 @@ class Forum extends React.Component {
     state = {
         posts: [],
     }
-
+    
     render() {
         return (
+            
             <FirebaseContext.Consumer>
                 {firebase => {
                     this.firebase = firebase;
@@ -24,7 +25,7 @@ class Forum extends React.Component {
                             />
 
                             <div className="pageContainer">
-                                <div className="container">
+                                <div className="container left-align">
                                     <h3 id='forumTop' className='center'>Posts from dads just like you</h3>
                                 </div>
                                 <PostCollection />
