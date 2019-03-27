@@ -40,9 +40,7 @@ export class CollectionWrapper extends Component {
     if (this.firebase.dbUserInfo) {
       this.lockScreen.lock();
       API.getTasks(this.firebase.dbUserInfo._id)
-        .then(res =>
-          this.setState({ listOfTodos: res.data })
-        )
+        .then(res => this.setState({ listOfTodos: res.data }))
         .catch((err) => {
           console.log(err);
           window.M.toast({ html: "Error getting tasks!" });
@@ -51,13 +49,22 @@ export class CollectionWrapper extends Component {
     }
   };
 
+  transitionOutTask = taskId => {
+    document.querySelectorAll('.gridItemContainer')
+      .forEach((gridItem) => {
+        gridItem.classList.remove("scale-out");
+        gridItem.classList.remove("scale-in");
+      });
+
+    const gridItem = document.getElementById(taskId);
+    gridItem.classList.add("scale-out");
+  }
+
   handleTaskDelete = id => {
     const taskId = id;
     const userId = this.firebase.dbUserInfo._id;
 
-    const gridItem = document.getElementById(taskId);
-    gridItem.classList.remove("scale-in");
-    gridItem.classList.add("scale-out");
+    this.transitionOutTask(taskId);
 
     API.deleteOneTask(userId, taskId)
       .then(() => this.getTasks())
@@ -68,9 +75,7 @@ export class CollectionWrapper extends Component {
   };
 
   handleTaskCompleteChange = (taskId, isComplete) => {
-    const gridItem = document.getElementById(taskId);
-    gridItem.classList.remove("scale-in");
-    gridItem.classList.add("scale-out");
+    this.transitionOutTask(taskId);
 
     const userId = this.firebase.dbUserInfo._id;
 
