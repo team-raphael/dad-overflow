@@ -44,7 +44,7 @@ module.exports = {
 
     if (body.body != undefined &&
         body.body != null) {
-            valuesToUpdate.body = boby.body
+            valuesToUpdate.body = body.body
         }
 
     if (body.isComplete != undefined && 
