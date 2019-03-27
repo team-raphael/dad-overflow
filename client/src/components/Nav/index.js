@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import './style.css';
 import * as FirebaseApp from 'firebase/app';
 import FirebaseContext from '../Firebase/context';
 
 class Nav extends React.Component {
+
+    state = {
+        goHome: false
+    }
 
     sideNavInstance = null;
 
@@ -29,7 +33,9 @@ class Nav extends React.Component {
     signOutOnClick = () => {
         FirebaseApp.auth().signOut();
         this.closeSideNav();
-        window.location.href = "/";
+        if (window.location.pathname !== "/") {
+            this.setState({ goHome: true });
+        }
     };
 
     render() {
@@ -38,6 +44,7 @@ class Nav extends React.Component {
             <FirebaseContext.Consumer>
                 {
                     firebase => {
+
 
                         return (
                             <div className="reactNav">
@@ -116,8 +123,12 @@ class Nav extends React.Component {
                                     }
                                 </ul>
 
+                                {this.state.goHome &&
+                                    <Redirect to="/" push={true} />
+                                }
                             </div>
                         );
+
                     }
                 }
 
