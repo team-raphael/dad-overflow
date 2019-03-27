@@ -21,7 +21,7 @@ class ToDo extends React.Component {
                                 detailText="Getting Ready for Baby!"
                             />
                             {firebase.dbUserInfo &&
-                                <div className="pageContainer">
+                                <div className="pageContainer toDoPageContainer">
                                     <div className="container">
                                         <p className="toDoDetailText center">To Do items to stay prepared</p>
                                         <CollectionWrapper />
