@@ -44,7 +44,10 @@ class AddaPost extends Component {
       this.lockScreen.lock();
 
       API.createPost(newPost)
-        .then(() => this.setState({ goBack: true }))
+        .then(() => {
+          window.ioSocket.emit('message', `${this.firebase.dbUserInfo.displayName} just added a post titled '${newPost.title}'!`);
+          this.setState({ goBack: true });
+        })
         .catch(err => {
           console.log(err);
           window.M.toast({ html: 'Error sending post request' });
