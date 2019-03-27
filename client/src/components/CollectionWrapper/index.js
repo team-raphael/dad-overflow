@@ -141,7 +141,7 @@ export class CollectionWrapper extends Component {
                       )}
                     </GridWrapper>
                   </div>
-                  <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
+                  <LockScreen id="collectionWrapperPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                 </div>
               }
             </div>

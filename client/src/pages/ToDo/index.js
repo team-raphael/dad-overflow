@@ -34,7 +34,7 @@ class ToDo extends React.Component {
                                 </div>
                             }
 
-                            <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
+                            <LockScreen id="toDoPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                         </div>
                     );
                 }}

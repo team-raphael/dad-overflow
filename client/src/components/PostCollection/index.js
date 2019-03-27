@@ -43,7 +43,7 @@ export class PostCollection extends React.Component {
                   body={post.body}
                   author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
-              <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
+              <LockScreen id="postCollectionPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
           );
         }}
