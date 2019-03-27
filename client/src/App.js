@@ -25,32 +25,43 @@ class App extends Component {
     //Setup a listener for when the user's login state changes and record the changes in the component state
     FirebaseApp.auth().onAuthStateChanged((user) => {
 
-      this.setState({
-        firebase: {
-          ...this.state.firebase,
-          firebaseUserInfo: user,
-          dbUserInfo: null
-        }
-      });
+      if (user && user.email) {
 
-      //Check the database for this user and set the state to that user
-      if (user) {
+        this.setState({
+          firebase: {
+            ...this.state.firebase,
+            firebaseUserInfo: user,
+            dbUserInfo: null
+          }
+        });
 
-        API.getUserByEmail(user.email)
-          .then(dbUsers => {
-            if (dbUsers.data && dbUsers.data.length > 0) {
-              this.setState({
-                firebase: {
-                  ...this.state.firebase,
-                  dbUserInfo: dbUsers.data[0]
-                }
-              });
+        //Check the database for this user and set the state to that user
+
+
+        if (user.email) {
+          API.getUserByEmail(user.email)
+            .then(dbUsers => {
+              if (dbUsers.data && dbUsers.data.length > 0) {
+                this.setState({
+                  firebase: {
+                    ...this.state.firebase,
+                    dbUserInfo: dbUsers.data[0]
+                  }
+                });
+              }
+            })
+            .catch(err => {
+              console.log(err);
+              window.M.toast({ html: 'Error obtaining user from the database!' });
+            });
+        } else {
+          this.setState({
+            firebase: {
+              firebaseUserInfo: null,
+              dbUserInfo: null
             }
-          })
-          .catch(err => {
-            console.log(err);
-            window.M.toast({ html: 'Error obtaining user from the database!' });
           });
+        }
       }
     });
   };
