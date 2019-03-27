@@ -19,9 +19,9 @@ class Login extends React.Component {
                         return (
                             <div className="white-text">
                                 <div className="container">
-                                    <div id="firebaseAuthContainer" className="white-text" />
+                                    <div id="firebaseAuthContainer" className="black-text" />
                                 </div>
-                                <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
+                                <LockScreen id="loginPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                             </div>
                         )
                     }

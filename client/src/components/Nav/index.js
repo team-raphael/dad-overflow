@@ -57,7 +57,7 @@ class Nav extends React.Component {
                                                 }
                                                 {!firebase.firebaseUserInfo &&
                                                     <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
-                                                        <Link id='loginButton' className="waves-effect waves-light btn" to={"/login"}>Login</Link>
+                                                        <Link id='loginButton' className="waves-effect waves-light btn" to={"/login"}>Login/Signup</Link>
                                                     </li>
                                                 }
                                                 {firebase.firebaseUserInfo &&
@@ -101,7 +101,7 @@ class Nav extends React.Component {
                                     }
                                     {!firebase.firebaseUserInfo &&
                                         <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
-                                            <Link id='loginButtonMobile' className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login</Link>
+                                            <Link id='loginButtonMobile' className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login/Signup</Link>
                                         </li>
                                     }
                                     {firebase.firebaseUserInfo &&

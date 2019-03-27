@@ -2,6 +2,7 @@ import React from "react";
 import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
 import './style.css';
+import LockScreen from '../LockScreen';
 
 import Post from '../Post/Post';
 
@@ -10,34 +11,17 @@ export class PostCollection extends React.Component {
     title: "",
     body: "",
     value: "",
-    posts: [],
-    newDummyPost: [],
+    posts: []
   };
 
   componentDidMount = () => {
-    API.getPosts()
+
+    this.lockScreen.lock();
+    API.getPostsWithLimit()
       .then(dbPosts => {
         this.setState({ posts: dbPosts.data });
-        console.log(this.state.posts);
       })
-  }
-
- 
-
-  handleFormSubmit = e => {
-    e.preventDefault();
-    const newPost = { title: this.state.title, body: this.state.body, userId: this.firebase.dbUserInfo._id };
-    API.createPost(newPost).then(post => console.log(post.data));
-    this.setState({ newDummyPost: newPost });
-  };
-
-  handleInputChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-    console.log(this.state.title);
-    console.log(this.state.body);
+      .finally(() => this.lockScreen.unlock());
   };
 
   
@@ -59,6 +43,7 @@ export class PostCollection extends React.Component {
                   body={post.body}
                   author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
               )}
+              <LockScreen id="postCollectionPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
           );
         }}

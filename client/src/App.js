@@ -7,6 +7,7 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import AddaPost from './pages/AddaPost';
+import AddToDo from './pages/AddToDo';
 import './App.css';
 import * as FirebaseApp from 'firebase/app';
 import API from './services/APIService';
@@ -74,6 +75,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/addapost" component={AddaPost} />
+              <Route exact path="/addtodo" component={AddToDo} />
               <Route exact path="/postdetail/:postId" component={PostDetail} />
               <Route component={NoMatch} />
             </Switch>

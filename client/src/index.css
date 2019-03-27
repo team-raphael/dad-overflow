@@ -11,6 +11,7 @@ body {
   background-size: cover; */
   /* background-size: 100% 100%; */
   font-family: 'Work Sans', sans-serif;
+  background-color: #EEF0F2;
 }
 
 #root {
@@ -74,4 +75,22 @@ body {
 
 #page-footer {
   padding-top: 20px;
+}
+
+input, textarea {
+  color: #232F34 !important;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 1px solid #F9AA33 !important;
+  box-shadow: 0 1px 0 0 #F9AA33 !important;
+}
+
+label {
+  color: #232F34 !important;
+}
+
+input[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border: 2px solid #F9AA33;
+  background-color: #F9AA33;
 }

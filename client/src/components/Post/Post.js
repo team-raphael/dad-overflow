@@ -6,10 +6,10 @@ const Post = props => {
     return(
 
         <div>
-            <div className='card container'>
-                <div className='row card-image'>
+            <div className='postcard card container'>
+                <div className='row card-image left-align'>
                         <div className="col s12">
-                            <h1 className='title'><Link className="postTitleLink" to={`/postdetail/${props.postId}`}>{props.title}</Link></h1>
+                            <h1 className='post-title title'><Link className="postTitleLink" to={`/postdetail/${props.postId}`}>{props.title}</Link></h1>
                             <h5 className='body hide-on-small-only'>{props.body}</h5>
                             <h6 className='author'>{props.author}</h6>
                          </div>

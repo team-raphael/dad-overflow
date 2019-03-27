@@ -12,11 +12,20 @@
 }
 
 .lockScreen div {
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-align: center;
 }
 
 .lockScreen i {
     font-size: 100px;
     margin-left: 2rem;
+}
+
+.lockScreen .preloader-wrapper {
+    font-size: 100px;
+    margin-left: 2rem;
+}
+
+.lockScreen .spinner-layer {
+    border-color: #F9AA33;
 }

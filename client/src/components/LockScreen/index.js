@@ -29,8 +29,19 @@ class LockScreen extends React.Component {
         return (
             <div id={this.props.id} className="lockScreen">
                 <div>
-                    { this.state.message }
-                    <i className="fas fa-spinner fa-pulse"></i>
+                    {this.state.message}
+                    {/* <i className="fas fa-spinner fa-pulse"></i> */}
+                    <div className="preloader-wrapper big active">
+                        <div className="spinner-layer">
+                            <div className="circle-clipper left">
+                                <div className="circle"></div>
+                            </div><div className="gap-patch">
+                                <div className="circle"></div>
+                            </div><div className="circle-clipper right">
+                                <div className="circle"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

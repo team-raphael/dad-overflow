@@ -1,57 +1,23 @@
-:root {
-    --shadow: 0 1px 5px rgb(35, 47, 52, 0.8);
-    --light: #EEF0F2;
-    --primary: #344955;
-    --secondary: #232F34;
-    --third: #4A6572;
-    --orange: #f9aa33;
-}
-.item-box {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    border: 1px solid black;
-    text-align: center; 
-    box-shadow: var(--shadow);
-    text-transform: capitalize;
-}
-
-.item-box:hover {
-    transform: scale(1.1);
-
-}
-
-.item-box-inner-grid {
-    align-content: center;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px groove white;
-}
-
-.complete-color {
-    background: var(--primary);
-    opacity: 0.6;
-}
-
-.complete-color h6{
-    color: var(--light);
+.gridItemContainer span.isComplete {
     text-decoration: line-through;
-
+    text-decoration-color: #344955;
 }
 
-.incomplete-color {
-    background: var(--primary);
+.gridItemContainer .card {
+    margin: 0;
+    width: 100%;
 }
 
-.incomplete-color h6{
-    color: var(--light);
+.gridItemContainer {
+    margin-bottom: 10px;
+    color: #344955;
 }
 
-.fas {
-    transition: all .2s linear;
-    color: var(--orange)
+.gridItemContainer .actionButtonContainer {
+    padding-top: 5px;
 }
 
-.fas:hover{
-    transform: scale(1.8);
+.gridItemContainer input[type="checkbox"]+span {
+    font-size: 20px;
 }
 
