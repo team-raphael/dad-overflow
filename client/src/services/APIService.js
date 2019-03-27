@@ -70,5 +70,13 @@ export default {
 
   findOnePost: (id) => {
     return axios.get(`/api/posts/${id}`)
+  },
+
+  getCommentsByPostId: (postId) => {
+    return axios.get(`/api/posts/${postId}/comments`)
+  },
+
+  createAComment: (postId, commentBody) => {
+    return axios.post(`/api/posts/${postId}/comments`, commentBody)
   }
 };

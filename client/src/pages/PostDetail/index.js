@@ -3,7 +3,12 @@ import Comment from "../../components/Comment";
 import CommentWrapper from "../../components/CommentWrapper";
 import API from "../../services/APIService";
 import { TextArea } from "../../components/TextArea";
+import { Link, Redirect } from 'react-router-dom';
+
 import FirebaseContext from "../../components/Firebase/context";
+import LockScreen from '../../components/LockScreen';
+
+
 
 class PostDetail extends React.Component {
   state = {
@@ -12,10 +17,13 @@ class PostDetail extends React.Component {
     body: "",
     author: "",
     comments: [],
-    inputValue: ""
+    inputValue: "",
+    goBack: false
+
   };
 
   componentDidMount = () => {
+    // getCommentsByPostId
     const id = this.props.match.params.postId;
     // api call here using this prop, set it to state
     API.findOnePost(id).then(post =>
@@ -23,14 +31,12 @@ class PostDetail extends React.Component {
         userId: post.data.userId,
         title: post.data.title,
         body: post.data.body
-      })
+      }));
+      API.getCommentsByPostId(id).then(res => this.setState({comments:res.data}))
 
      
-    );
-    // API.getUserById(post.data.userId).then(res => console.log(res.data)))
-    // API.findOnePost(id).then(post => console.log(post));
 
-    console.log('comments:', this.state.comments)
+
   };
  
 
@@ -44,29 +50,46 @@ class PostDetail extends React.Component {
   handleCommentSubmit = e => {
     e.preventDefault();
     const postId = this.props.match.params.postId;
-    console.log('postid:', postId)
+
+    if (postId) {
     const newComment = {
       body: this.state.inputValue,
-      postId: postId,
-      userId: this.firebase.dbUserInfo.displayName._id,
+      userId: this.firebase.dbUserInfo._id,
       
     };
-    console.log('user id:', this.firebase.dbUserInfo._id)
 
-    // API.createAComment(postId, newComment).then(comment => this.setState(state => ({comments: state.comments.concat(comment)})))
-    // API.createAComment(postId, newComment).then(comment => console.log(comment.data))
-    API.createAComment(postId, {body: newComment.body, userId: newComment.userId, postId: newComment.postId}).then((comment) => console.log(comment)).catch(err => console.log(err))
-  
-  
-}
+    this.lockScreen.lock();
+
+
+    API.createAComment(postId, newComment)
+    .then(() => {
+      window.ioSocket.emit('message', `${this.firebase.dbUserInfo.displayName} just added a comment!`);
+          this.setState({ goBack: true });
+        })
+        .catch(err => {
+          console.log(err);
+          window.M.toast({ html: 'Error sending comment request' });
+          this.lockScreen.unlock();
+        });
+    } else {
+      window.M.toast({ html: 'Please enter required fields' });
+    }
+    
+  }
+
+    
+
 
   render() {
     return (
       <FirebaseContext.Consumer>
         {firebase => {
           this.firebase = firebase;
-
+          if(this.state.goBack){
+            return <Link to={`/postdetail/${this.props.match.params.postId}`} push={true} />
+          } else {
           return (
+            <div className='addACommentPage'>
             <div className="container">
               <div className="row">
                 <div className="col l12 text-center">
@@ -81,22 +104,25 @@ class PostDetail extends React.Component {
                 name="inputValue"
                 handleInputChange={this.handleInputChange}
                 buttonName={"Reply"}
-                placeholder={"Post a reply"}
+                label={"Post a reply"}
                 handleFormSubmit={this.handleCommentSubmit}
               />
 
-              {/* <CommentWrapper>
-                {this.state.comments.map(comment => {
-                  // eslint-disable-next-line no-unused-expressions
+              <CommentWrapper>
+                {this.state.comments.map(comment => 
                   <Comment
-                    body={this.state.comment.body}
-                    author={this.state.comment.author}
-                    date={this.state.comment.date}
-                  />;
-                })}
-              </CommentWrapper> */}
+                    body={comment.body}
+                    date={comment.date}
+                    user={comment.userId.displayName}
+                    userImage={comment.userId.image}
+                  />
+                )}
+              </CommentWrapper>  
             </div>
+            <LockScreen id="addPostLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
+</div>
           );
+          }
         }}
       </FirebaseContext.Consumer>
     );
