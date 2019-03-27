@@ -16,7 +16,7 @@ router.route("/:id")
 // Comments routes
 // api/posts/id/comments
 router
-  .route("/:id/comments")
+  .route("/:postId/comments")
   .get(commentsController.getCommentsByPostId)
   .post(commentsController.createComment);
 

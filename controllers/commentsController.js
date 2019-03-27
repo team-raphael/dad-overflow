@@ -5,7 +5,8 @@ module.exports = {
 
   getCommentsByPostId: (req, res) => {
     db.Comment
-      .find(req.params.postId)
+      .find({ postId: req.params.postId })
+      .populate('userId')
       .then(comments => res.json(comments))
       .catch(err => res.json(err));
       

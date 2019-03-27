@@ -50,17 +50,14 @@ const postSeed = [
 const commentSeed = [
   {
     body: "This is a comment 1",
-    author: "First Person",
     date: new Date(Date.now())
   },
   {
     body: "This is a comment 2",
-    author: "Second Person",
     date: new Date(Date.now())
   },
   {
     body: "This is a comment 3",
-    author: "Third Person",
     date: new Date(Date.now())
   }
 ];
@@ -147,7 +144,10 @@ db.User
     commentSeed.forEach(comment => {
       const randomPostIndex = Math.floor(Math.random() * postData.ops.length);
       const randomPost = postData.ops[randomPostIndex];
+      const randomUser = postData.ops[randomPostIndex].userId;
+
       comment.postId = randomPost._id;
+      comment.userId = randomUser._id;
     });
     
     return db.Comment.collection.insertMany(commentSeed);
