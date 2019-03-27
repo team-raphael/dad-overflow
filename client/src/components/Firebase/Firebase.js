@@ -39,7 +39,9 @@ class Firebase {
                           // is available.
                           prompt: 'select_account'
                         }
-                      }
+                      },
+                      FirebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
+                      FirebaseApp.auth.TwitterAuthProvider.PROVIDER_ID
                 ],
                 credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
                 callbacks: {
