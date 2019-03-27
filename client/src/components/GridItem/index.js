@@ -83,17 +83,20 @@ class GridItem extends React.Component {
                 }
               </div>
               <div className="actionButtonContainer right-align">
-                {!this.props.isComplete && !this.state.isEditing ?
-                  (
-                    <div>
-                      <button id={this.props.id} onClick={this.handleEditOnClick} className="marginRight waves-effect waves-light btn">Edit <i className="material-icons right">edit</i></button>
-                      <button id={this.props.id} onClick={ () => this.props.handleTaskDelete(this.props.id) } className="waves-effect waves-light btn">Delete <i className="material-icons right">delete</i></button>
-                    </div>
-                  ) :
+
+                {this.state.isEditing ?
                   (
                     <div>
                       <button id={this.props.id} onClick={this.handleEditSaveOnClick} className="marginRight waves-effect waves-light btn">Save <i className="material-icons right">check</i></button>
                       <button id={this.props.id} onClick={this.handleEditCancelOnClick} className="waves-effect waves-light btn">Cancel <i className="material-icons right">close</i></button>
+                    </div>
+                  ) :
+                  (
+                    <div>
+                      {!this.props.isComplete &&
+                        <button id={this.props.id} onClick={this.handleEditOnClick} className="marginRight waves-effect waves-light btn">Edit <i className="material-icons right">edit</i></button>
+                      }
+                      <button id={this.props.id} onClick={() => this.props.handleTaskDelete(this.props.id)} className="waves-effect waves-light btn">Delete <i className="material-icons right">delete</i></button>
                     </div>
                   )
                 }
