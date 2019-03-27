@@ -118,6 +118,10 @@
     background-color: #4A6572;
   }
 
+  .sidenav li.active {
+    background-color: #526c7a !important;
+  }
+
   @media only screen and (max-width: 640px) {
     .reactNav .nav-wrapper {
       padding-right: unset;
