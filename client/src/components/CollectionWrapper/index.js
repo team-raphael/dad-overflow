@@ -4,6 +4,7 @@ import API from "../../services/APIService";
 import GridWrapper from "../GridWrapper";
 import GridItem from "../GridItem";
 import FirebaseContext from "../Firebase/context";
+import LockScreen from '../LockScreen';
 
 export class CollectionWrapper extends Component {
   state = {
@@ -37,33 +38,43 @@ export class CollectionWrapper extends Component {
 
   getTasks = () => {
     if (this.firebase.dbUserInfo) {
-      API.getTasks(this.firebase.dbUserInfo._id).then(res =>
+      this.lockScreen.lock();
+      API.getTasks(this.firebase.dbUserInfo._id)
+      .then(res =>
         this.setState({ listOfTodos: res.data })
-      );
+      )
+      .finally(() => this.lockScreen.unlock());
     }
-  };
-
-  handleTaskComplete = (isComplete, id) => {
-    const taskId = id;
-    const userId = this.firebase.dbUserInfo._id;
-    // isComplete is a boolean, whichever is current at that time send it
-    const taskComplete = isComplete;
-    // send object with either true or false
-    const task = {
-      isComplete: !taskComplete
-    };
-
-    API.updateOneTask(userId, taskId, task)
-      .then(() => this.getTasks());
   };
 
   handleTaskDelete = id => {
     const taskId = id;
     const userId = this.firebase.dbUserInfo._id;
 
+    const gridItem = document.getElementById(taskId);
+    gridItem.classList.remove("scale-in");
+    gridItem.classList.add("scale-out");
+
     API.deleteOneTask(userId, taskId)
       .then(() => this.getTasks());
   };
+
+  handleTaskCompleteChange = (taskId, isComplete) => {
+    const gridItem = document.getElementById(taskId);
+    gridItem.classList.remove("scale-in");
+    gridItem.classList.add("scale-out");
+
+    console.log("grid item: ", gridItem);
+    const userId = this.firebase.dbUserInfo._id;
+
+    const task = {
+      isComplete: !isComplete
+    };
+
+
+    API.updateOneTask(userId, taskId, task)
+      .then(() => this.getTasks());
+  }
 
   render() {
     return (
@@ -76,7 +87,7 @@ export class CollectionWrapper extends Component {
               {firebase.dbUserInfo &&
 
                 <div className="row">
-                  <div className="col s12">
+                  <div>
                     {/* render if isComplete is true */}
 
                     <GridWrapper id="incompleteGridWrapper" statusTitle={"Incomplete"}>
@@ -88,10 +99,11 @@ export class CollectionWrapper extends Component {
                               key={index}
                               id={item._id}
                               taskId={item._id}
-                              // pass a reference to the function and pass in the arguments - much better than using the target object
-                              handleTaskComplete={() =>
-                                this.handleTaskComplete(item.isComplete, item._id)
+
+                              handleCheckboxChange={() =>
+                                this.handleTaskCompleteChange(item._id, item.isComplete)
                               }
+
                               handleTaskDelete={() =>
                                 this.handleTaskDelete(item._id)
                               }
@@ -105,7 +117,7 @@ export class CollectionWrapper extends Component {
                     </GridWrapper>
                   </div>
 
-                  <div className="col s12">
+                  <div>
                     {/* render if isComplete is true */}
                     <GridWrapper id="completeGridWrapper" statusTitle={"Complete"}>
                       {this.state.listOfTodos.map(
@@ -117,8 +129,8 @@ export class CollectionWrapper extends Component {
                               id={item._id}
                               body={item.body}
                               isComplete={item.isComplete}
-                              handleTaskComplete={() =>
-                                this.handleTaskComplete(item.isComplete, item._id)
+                              handleCheckboxChange={() =>
+                                this.handleTaskCompleteChange(item._id, item.isComplete)
                               }
                               handleTaskDelete={() =>
                                 this.handleTaskDelete(item._id)
@@ -130,6 +142,7 @@ export class CollectionWrapper extends Component {
                       )}
                     </GridWrapper>
                   </div>
+                  <LockScreen id="forumPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                 </div>
               }
             </div>
