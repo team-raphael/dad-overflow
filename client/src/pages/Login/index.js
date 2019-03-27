@@ -2,11 +2,22 @@ import React from 'react';
 import './style.css';
 import LockScreen from '../../components/LockScreen';
 import FirebaseContext from '../../components/Firebase/context';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
 
+    state = {
+        goBack: false
+    }
+
     componentDidMount = () => {
-        this.firebase.startAuthUI("#firebaseAuthContainer");
+        this.firebase.startAuthUI("#firebaseAuthContainer", this.redirectOnSuccessfulLogin);
+    }
+
+    redirectOnSuccessfulLogin = () => {
+        this.setState({
+            goBack: true
+        });
     }
 
     render() {
@@ -16,14 +27,18 @@ class Login extends React.Component {
                     firebase => {
                         this.firebase = firebase;
 
-                        return (
-                            <div className="white-text">
-                                <div className="container">
-                                    <div id="firebaseAuthContainer" className="black-text" />
+                        if (this.state.goBack) {
+                            return <Redirect to="/" push={true} />
+                        } else {
+                            return (
+                                <div className="white-text">
+                                    <div className="container">
+                                        <div id="firebaseAuthContainer" className="black-text" />
+                                    </div>
+                                    <LockScreen id="loginPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
                                 </div>
-                                <LockScreen id="loginPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
-                            </div>
-                        )
+                            )
+                        }
                     }
                 }
 
