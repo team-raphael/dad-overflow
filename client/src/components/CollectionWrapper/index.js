@@ -64,7 +64,6 @@ export class CollectionWrapper extends Component {
     gridItem.classList.remove("scale-in");
     gridItem.classList.add("scale-out");
 
-    console.log("grid item: ", gridItem);
     const userId = this.firebase.dbUserInfo._id;
 
     const task = {
