@@ -24,6 +24,9 @@ export class PostCollection extends React.Component {
       .finally(() => this.lockScreen.unlock());
   };
 
+  
+  
+
   render() {
     return (
       <FirebaseContext.Consumer>
@@ -48,3 +51,4 @@ export class PostCollection extends React.Component {
     );
   }
 }
+
