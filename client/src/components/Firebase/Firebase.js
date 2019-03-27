@@ -42,6 +42,7 @@ class Firebase {
                 FirebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
                 FirebaseApp.auth.TwitterAuthProvider.PROVIDER_ID
             ],
+            signInFlow: 'popup',
             credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
             callbacks: {
                 signInSuccessWithAuthResult: (authResult, redirectUrl) => this.signInSuccessful(authResult, redirectUrl, onRedirectCallBack)
