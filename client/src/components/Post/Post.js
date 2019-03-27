@@ -6,7 +6,7 @@ const Post = props => {
     return(
 
         <div>
-            <div className='postcard card container'>
+            <div className='postcard card container hoverable'>
                 <div className='row card-image left-align'>
                         <div className="col s12">
                             <h1 className='post-title title'><Link className="postTitleLink" to={`/postdetail/${props.postId}`}>{props.title}</Link></h1>
