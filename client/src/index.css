@@ -89,3 +89,8 @@ input:focus, textarea:focus {
 label {
   color: #232F34 !important;
 }
+
+input[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border: 2px solid #F9AA33;
+  background-color: #F9AA33;
+}
