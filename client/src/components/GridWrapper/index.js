@@ -19,7 +19,7 @@ class GridWrapper extends React.Component {
 
   render() {
     return (
-      <ul className="collapsible" id={this.props.id} >
+      <ul className="gridWrapperContainer collapsible" id={this.props.id} >
         <li>
           <div className="collapsible-header"><i className="material-icons">{ this.props.statusTitle.toLowerCase() === "complete" ? "check_box" : "check_box_outline_blank"  }</i> {this.props.statusTitle}</div>
           <div className="collapsible-body">{this.props.children}</div>

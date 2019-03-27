@@ -1,0 +1,24 @@
+.gridWrapperContainer .collapsible-body {
+    padding: 5px;
+}
+
+.gridWrapperContainer  .collapsible-header, .gridWrapperContainer .collapsible-body {
+    /* background-color: #344955 !important;
+    color: #D2DBDF; */
+    /* background-color: #D2DBDF !important; */
+    background-color: white !important;
+    color: #232F34;
+}
+
+.gridWrapperContainer  .collapsible-header {
+    border-bottom: none;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #F9AA33;
+    text-transform: uppercase;
+}
+
+.gridWrapperContainer  .collapsible-header>i {
+    font-size: 35px;
+}
