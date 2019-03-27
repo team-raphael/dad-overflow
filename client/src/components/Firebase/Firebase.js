@@ -31,7 +31,15 @@ class Firebase {
             uiConfig = {
                 signInSuccessUrl: '/',
                 signInOptions: [
-                    FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID
+                    FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID,
+                    {
+                        provider: FirebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,
+                        customParameters: {
+                          // Forces account selection even when one account
+                          // is available.
+                          prompt: 'select_account'
+                        }
+                      }
                 ],
                 credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
                 callbacks: {
