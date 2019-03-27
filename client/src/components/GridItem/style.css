@@ -14,10 +14,17 @@
 }
 
 .gridItemContainer .actionButtonContainer {
-    padding-top: 5px;
+    margin-top: 10px;
 }
 
 .gridItemContainer input[type="checkbox"]+span {
     font-size: 20px;
 }
 
+.editTodoInput {
+    font-size: 20px !important;
+}
+
+.editTodoForm .input-field {
+    margin: 0px;
+}
