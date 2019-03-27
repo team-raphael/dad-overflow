@@ -5,3 +5,8 @@
 .show-on-medium-and-up {
     margin: 30px;
 }
+
+.toDoDetailText {
+    font-size: 1.8em;
+    padding-bottom: 20px;
+}
