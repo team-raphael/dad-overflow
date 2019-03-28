@@ -11,8 +11,15 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
   * Cody Jarrett
 
 # Steps to Run Application
-Must be logged in to use.
-# Powered By
+## For Online Usage
+Must be a member logged in to use and view website.
+## For Local Usage
+1. 'git Clone or download files'.
+2. "git pull"  
+  ```
+ npm install
+  ```
+# Powered By The Folowing
 
   | Tech                  |  New Tech               |
   | ----------------------|:-----------------------:|
