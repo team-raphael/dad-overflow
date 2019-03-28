@@ -29,7 +29,6 @@ class PostDetail extends React.Component {
     const id = this.props.match.params.postId;
     // api call here using this prop, set it to state
     API.findOnePost(id).then(post => {
-      console.log(post);
       this.setState({
         userId: post.data.userId._id,
         author: post.data.userId.displayName,
