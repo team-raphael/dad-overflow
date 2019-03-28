@@ -10,9 +10,9 @@ export const TextArea = props => {
                     <div className="row">
                         <div className="input-field col l9">
                             <textarea id="textarea1" value={props.value} name={props.name} className="materialize-textarea" onChange={props.handleInputChange} />
-                            <label htmlFor="textarea1">Add a task</label>
+                            <label htmlFor="textarea1">{props.label}</label>
                             <h6 className="red-error">{props.error}</h6>
-                            <a href="#!" className="waves-effect waves-light btn" onClick={props.handleFormSubmit}>Add</a>
+                            <a href="#!" className="waves-effect waves-light btn" onClick={props.handleFormSubmit}>{props.buttonName}</a>
 
                         </div>
                     </div>

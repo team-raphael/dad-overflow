@@ -7,6 +7,7 @@ module.exports = {
     db.Comment
       .find({ postId: req.params.postId })
       .populate('userId')
+      .sort({date: -1})
       .then(comments => res.json(comments))
       .catch(err => res.json(err));
       

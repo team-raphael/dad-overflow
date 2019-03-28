@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const CommentWrapper = (props) => {
+const CommentWrapper = props => {
   return (
     <ul class="collection">
-      {props.children}
-    </ul>
-  )
-}
+    {props.children}
+  </ul>
+  );
+};
 
-export default CommentWrapper
+export default CommentWrapper;
