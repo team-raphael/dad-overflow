@@ -14,10 +14,11 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
 ## For Online Usage
 Must be a member logged in to use and view website.
 ## For Local Usage
-1. 'git Clone or download files'.
+1. 'git Clone or download files'
 2. "git pull"  
+3. Install node packages with command line:
   ```
- npm install
+npm install
   ```
 # Powered By The Folowing
 
