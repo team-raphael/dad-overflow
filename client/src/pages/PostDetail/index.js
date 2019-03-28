@@ -96,7 +96,7 @@ class PostDetail extends React.Component {
           return (
             <div className="addACommentPage">
               <div className="container">
-                <Link id="backArrow" to={"/"}><i className="small material-icons arrow">arrow_back</i></Link>
+                <Link id="postDetailBackArrow" to={"/"}><i className="small material-icons arrow">arrow_back</i></Link>
                 <div className="row">
                   <div className="col l12 text-center header">
                     <h1 className="comment-title">{this.state.title}</h1>
