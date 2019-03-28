@@ -16,8 +16,9 @@ Must be a member logged in to use and view website.
 ## For Local Usage
 1. 'git Clone or download files'.
 2. "git pull"  
+3. Install node packages
   ```
- npm install
+npm install
   ```
 # Powered By The Folowing
 
