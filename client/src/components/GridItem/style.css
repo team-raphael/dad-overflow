@@ -8,6 +8,10 @@
     width: 100%;
 }
 
+.gridItemContainer input[type="checkbox"]+span:not(.lever) {
+    height: 17px;
+}
+
 .gridItemContainer {
     margin-bottom: 10px;
     color: #344955;
@@ -17,8 +21,23 @@
     margin-top: 10px;
 }
 
-.gridItemContainer input[type="checkbox"]+span {
+.checkBoxContainer span {
     font-size: 20px;
+    cursor: pointer;
+}
+
+.checkBoxContainer {
+    width: calc(100% - 50px);
+    display: inline-block;
+}
+
+.deleteButtonContainer i {
+    cursor: pointer;
+}
+
+.deleteButtonContainer {
+    width: 50px;
+    display: inline-block;
 }
 
 .editTodoInput {
