@@ -53,7 +53,9 @@ export class CollectionWrapper extends Component {
     document.querySelectorAll('.gridItemContainer')
       .forEach((gridItem) => {
         gridItem.classList.remove("scale-out");
-        gridItem.classList.remove("scale-in");
+        if (gridItem.id !== taskId) {
+          gridItem.classList.remove("scale-in");
+        }
       });
 
     const gridItem = document.getElementById(taskId);
@@ -64,7 +66,7 @@ export class CollectionWrapper extends Component {
     const taskId = id;
     const userId = this.firebase.dbUserInfo._id;
 
-    this.transitionOutTask(taskId);
+    //this.transitionOutTask(taskId);
 
     API.deleteOneTask(userId, taskId)
       .then(() => this.getTasks())
@@ -75,7 +77,7 @@ export class CollectionWrapper extends Component {
   };
 
   handleTaskCompleteChange = (taskId, isComplete) => {
-    this.transitionOutTask(taskId);
+    //this.transitionOutTask(taskId);
 
     const userId = this.firebase.dbUserInfo._id;
 
@@ -133,8 +135,8 @@ export class CollectionWrapper extends Component {
                               taskId={item._id}
                               body={item.body}
                               isComplete={item.isComplete}
-                              handleCheckboxChange={ this.handleTaskCompleteChange }
-                              handleTaskDelete={ this.handleTaskDelete }
+                              handleCheckboxChange={this.handleTaskCompleteChange}
+                              handleTaskDelete={this.handleTaskDelete}
                               handleEditSave={this.handleEditSave}
                             />
                           )
@@ -155,8 +157,8 @@ export class CollectionWrapper extends Component {
                               body={item.body}
                               taskId={item._id}
                               isComplete={item.isComplete}
-                              handleCheckboxChange={ this.handleTaskCompleteChange }
-                              handleTaskDelete={ this.handleTaskDelete }
+                              handleCheckboxChange={this.handleTaskCompleteChange}
+                              handleTaskDelete={this.handleTaskDelete}
                               handleEditSave={this.handleEditSave}
                             />
                           )
