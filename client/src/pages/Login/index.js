@@ -31,8 +31,9 @@ class Login extends React.Component {
                             return <Redirect to="/" push={true} />
                         } else {
                             return (
-                                <div className="white-text">
+                                <div className="loginPageConatiner">
                                     <div className="container">
+                                        <h6 className="marginBottomMedium marginTopMedium">Sign in with your Email, Google, Facebook, or Twitter account. If you use an email that has not been used to log in to this site before then we will walk you through the process of creating a login.</h6>
                                         <div id="firebaseAuthContainer" className="black-text" />
                                     </div>
                                     <LockScreen id="loginPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
