@@ -25,50 +25,67 @@ class Firebase {
     }
 
     //Method to start the rendering of the authentication UI in the provided css selector
-    startAuthUI = (cssSelector, uiConfig) => {
+    startAuthUI = (cssSelector, onRedirectCallBack) => {
 
-        if (!uiConfig) {
-            uiConfig = {
-                signInSuccessUrl: '/',
-                signInOptions: [
-                    FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID
-                ],
-                credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
-                callbacks: {
-                    signInSuccessWithAuthResult: this.signInSuccessful
-                }
-            };
-        }
+        const uiConfig = {
+            signInSuccessUrl: '/',
+            signInOptions: [
+                FirebaseApp.auth.EmailAuthProvider.PROVIDER_ID,
+                {
+                    provider: FirebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,
+                    customParameters: {
+                        // Forces account selection even when one account
+                        // is available.
+                        prompt: 'select_account'
+                    }
+                },
+                FirebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
+                FirebaseApp.auth.TwitterAuthProvider.PROVIDER_ID
+            ],
+            signInFlow: 'popup',
+            credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
+            callbacks: {
+                signInSuccessWithAuthResult: (authResult, redirectUrl) => this.signInSuccessful(authResult, redirectUrl, onRedirectCallBack)
+            }
+        };
 
         this.authUI.start(cssSelector, uiConfig);
     }
 
-    signInSuccessful = (authResult, redirectUrl) => {
-        //Save the user to the database if they don't already exist there
-        API.getUserByEmail(authResult.user.email)
-            .then(user => {
-                if (!user.data || user.data.length === 0) {
+    signInSuccessful = (authResult, redirectUrl, onRedirectCallBack) => {
+        if (authResult.user.email) {
+            //Save the user to the database if they don't already exist there
+            API.getUserByEmail(authResult.user.email)
+                .then(user => {
+                    if (!user.data || user.data.length === 0) {
 
-                    const newUser = {
-                        email: authResult.user.email,
-                        displayName: authResult.user.displayName
+                        const newUser = {
+                            email: authResult.user.email,
+                            displayName: authResult.user.displayName
+                        }
+                        API.createUser(newUser)
+                            .catch((err) => console.log("Error saving user to database: ", err))
+                            .finally(() => {
+                                window.location.href = "/profile";
+                                return false;
+                            });
+                    } else {
+                        if (onRedirectCallBack) {
+                            onRedirectCallBack();
+                        } else {
+                            window.location.href = "/";
+                        }
                     }
-                    API.createUser(newUser)
-                        .catch((err) => console.log("Error saving user to database: ", err))
-                        .finally(() => {
-                            window.location.href = "/profile";
-                            return false;
-                        });
-                } else {
+                })
+                .catch(err => {
+                    console.log("Error getting user from database: ", err);
                     window.location.href = "/";
-                    return true;
-                }
-            })
-            .catch(err => {
-                console.log("Error getting user from database: ", err);
-                window.location.href = "/";
-                return true;
-            });
+                });
+        } else {
+            window.M.toast({ html: 'Email not obtained from firebase authentication!' });
+        }
+
+        return false;
     }
 
 }

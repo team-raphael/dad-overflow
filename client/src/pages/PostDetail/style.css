@@ -1,0 +1,10 @@
+#backArrow i{
+    margin-top: 30px; 
+}
+
+.comment-title {
+    border-bottom: 2px solid #F9AA33;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+}
+

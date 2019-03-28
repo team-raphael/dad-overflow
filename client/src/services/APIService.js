@@ -16,11 +16,11 @@ export default {
     return axios.put(`/api/users/${userId}/tasks/${taskId}`, body);
   },
 
-  // Deletes the book with the given bookId
+  // Deletes the task with the given userId and taskId
   deleteOneTask: function (userId, taskId) {
     return axios.delete(`/api/users/${userId}/tasks/${taskId}`);
   },
-  // Saves a book to the database
+  // Gets a task fromn the database given a userId and taskId
   getOneTask: function (userId, taskId) {
     return axios.get(`/api/users/${userId}/tasks/${taskId}`);
   },
@@ -70,5 +70,13 @@ export default {
 
   findOnePost: (id) => {
     return axios.get(`/api/posts/${id}`)
+  },
+
+  getCommentsByPostId: (postId) => {
+    return axios.get(`/api/posts/${postId}/comments`)
+  },
+
+  createAComment: (postId, commentBody) => {
+    return axios.post(`/api/posts/${postId}/comments`, commentBody)
   }
 };
