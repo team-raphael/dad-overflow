@@ -62,11 +62,11 @@ class AddaPost extends Component {
               return <Redirect to="/todo" push={true} />
             } else {
               return (
-                <div id="addTaskPage">
+                <div id="addTaskPage" className="marginTopMedium">
                   <div className="container">
                     {firebase.dbUserInfo &&
                       <form id="addTaskForm">
-                        <Link id="addToDoBackArrow" to={"/todo"}><i className="small material-icons marginBottom">arrow_back</i></Link>
+                        <Link to={"/todo"}><i className="small material-icons marginBottomMedium backArrow">arrow_back</i></Link>
                         <div className="row">
                           <div className="input-field col s12">
                             <input type="text" id="taskBody" name="taskBody" className="validate" required pattern="^[a-zA-Z1-9].*" value={this.state.taskBody} onChange={this.handleInputChange}></input>

@@ -1,19 +1,14 @@
-#firebaseAuthContainer {
-    color: #232F34;
-    margin-bottom: 25px;
+.loginPageConatiner, #firebaseAuthContainer, .firebaseui-input, .firebaseui-label {
+    color: #232F34 !important;
 }
 
-.firebaseui-input {
-    color: #232F34 !important;
+#firebaseAuthContainer {
+    margin-bottom: 25px;
 }
 
 .firebaseui-input:focus {
     border-bottom: 1px solid #F9AA33 !important;
     box-shadow: 0 1px 0 0 #F9AA33 !important;
-}
-
-.firebaseui-label {
-    color: #232F34 !important;
 }
 
 .firebaseui-link {

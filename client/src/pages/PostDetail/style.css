@@ -1,14 +1,22 @@
-#postDetailBackArrow i{
-    margin-top: 30px; 
-}
-
-#postDetailBackArrow {
-    color: #344955;
-}
-
 .comment-title {
     border-bottom: 2px solid #F9AA33;
     padding-bottom: 5px;
     text-transform: capitalize;
 }
 
+#postDetailPostImageContainer, #postDetailPostPersonContainer {
+    display: inline-block;
+}
+
+#postDetailPostImageContainer {
+    margin-right: 15px;
+}
+
+#postDetailPostImage {
+    width: 50px;
+    background-color: white;
+}
+
+#postDetailPostAuthor {
+    font-weight: bold;
+}

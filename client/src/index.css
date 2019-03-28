@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600');
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   min-height: 100vh;
@@ -109,4 +113,8 @@ label {
 input[type="checkbox"].filled-in:checked+span:not(.lever):after {
   border: 2px solid #F9AA33;
   background-color: #F9AA33;
+}
+
+.backArrow {
+  color: #344955;
 }
