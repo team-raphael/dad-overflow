@@ -1,4 +1,4 @@
-# Dad Overflow
+# Dad-Overflow
 ## About
 The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to *Dad Overflow*. Developed by Dads for dads.
 ### Link to site
@@ -12,7 +12,7 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
 
 # Steps to Run Application
 ## For Online Usage
-Must be a member logged in to use and view website.
+Must be a member thats is logged in to use and view website.
 ## For Local Usage
 1. 'git Clone or download files'
 2. "git pull"  
@@ -20,6 +20,39 @@ Must be a member logged in to use and view website.
   ```
 npm install
   ```
+# How to use Dad-Overflow(In-Progress)
+
+## Signing up 
+### Using Desktop 
+1. On the Top right click login/signup
+2. Four options is avalable for User to choose 
+* Sign in with email
+* Sign in with Google
+* Sign in with Facebook
+* Sign in with Twitter
+### Using Mobile
+1. On the Top left click hamburg icon to access login/signup button
+2. Four options is avalable for User to choose 
+* Sign in with E-mail
+* Sign in with Google
+* Sign in with Facebook
+* Sign in with Twitter
+### If signing in with E-mail
+1. Type your desired E-mail address and click next
+2. Type in name and last name
+3. Type desired password under 'choose password'
+4. Click save  
+5. Select Profile Image
+6. Press save to finally be a member
+
+
+## Logging In
+
+## Forums
+
+### Commenting
+
+## To-Dos  
 # Powered By The Folowing
 
   | Tech                  |  New Tech               |
