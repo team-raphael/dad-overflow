@@ -68,10 +68,18 @@ class GridItem extends React.Component {
               <div>
                 {!this.state.isEditing ?
                   (
-                    <label>
-                      <input type="checkbox" className="filled-in" checked={this.state.isChecked} onChange={this.toggleCheckboxChange} />
-                      <span className={this.props.isComplete ? "isComplete" : ""}>{this.props.body}</span>
-                    </label>
+                    <div className="valign-wrapper">
+                      <div className="checkBoxContainer">
+                        <label>
+                          <input type="checkbox" className="filled-in" checked={this.state.isChecked} onChange={this.toggleCheckboxChange} />
+                          <span></span>
+                        </label>
+                        <span onClick={this.handleEditOnClick} className={this.props.isComplete ? "isComplete" : ""}>{this.props.body}</span>
+                      </div>
+                      <div className="deleteButtonContainer">
+                        <i className="material-icons small right">delete</i>
+                      </div>
+                    </div>
                   ) :
                   (
                     <form className="editTodoForm" onSubmit={this.handleEditSaveOnClick}>
@@ -84,21 +92,11 @@ class GridItem extends React.Component {
               </div>
               <div className="actionButtonContainer right-align">
 
-                {this.state.isEditing ?
-                  (
-                    <div>
-                      <button id={this.props.id} onClick={this.handleEditSaveOnClick} className="marginRight waves-effect waves-light btn">Save <i className="material-icons right">check</i></button>
-                      <button id={this.props.id} onClick={this.handleEditCancelOnClick} className="waves-effect waves-light btn">Cancel <i className="material-icons right">close</i></button>
-                    </div>
-                  ) :
-                  (
-                    <div>
-                      {!this.props.isComplete &&
-                        <button id={this.props.id} onClick={this.handleEditOnClick} className="marginRight waves-effect waves-light btn">Edit <i className="material-icons right">edit</i></button>
-                      }
-                      <button id={this.props.id} onClick={() => this.props.handleTaskDelete(this.props.id)} className="waves-effect waves-light btn">Delete <i className="material-icons right">delete</i></button>
-                    </div>
-                  )
+                {this.state.isEditing &&
+                  <div>
+                    <button id={this.props.id} onClick={this.handleEditSaveOnClick} className="marginRight waves-effect waves-light btn">Save <i className="material-icons right">check</i></button>
+                    <button id={this.props.id} onClick={this.handleEditCancelOnClick} className="waves-effect waves-light btn">Cancel <i className="material-icons right">close</i></button>
+                  </div>
                 }
               </div>
             </div>
