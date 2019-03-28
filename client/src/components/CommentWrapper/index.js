@@ -1,8 +1,9 @@
 import React from "react";
+import './style.css';
 
 const CommentWrapper = props => {
   return (
-    <ul className="collection">
+    <ul className="commentCollectionContainer collection">
     {props.children}
   </ul>
   );

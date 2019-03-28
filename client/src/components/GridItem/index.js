@@ -77,7 +77,7 @@ class GridItem extends React.Component {
                         <span onClick={this.handleEditOnClick} className={this.props.isComplete ? "isComplete" : ""}>{this.props.body}</span>
                       </div>
                       <div className="deleteButtonContainer">
-                        <i className="material-icons small right">delete</i>
+                        <i onClick={ () => this.props.handleTaskDelete(this.props.id) } className="material-icons small right">delete</i>
                       </div>
                     </div>
                   ) :

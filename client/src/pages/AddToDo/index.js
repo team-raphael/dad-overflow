@@ -66,7 +66,7 @@ class AddaPost extends Component {
                   <div className="container">
                     {firebase.dbUserInfo &&
                       <form id="addTaskForm">
-                        <Link id="backArrow" to={"/todo"}><i className="small material-icons">arrow_back</i></Link>
+                        <Link id="addToDoBackArrow" to={"/todo"}><i className="small material-icons marginBottom">arrow_back</i></Link>
                         <div className="row">
                           <div className="input-field col s12">
                             <input type="text" id="taskBody" name="taskBody" className="validate" required pattern="^[a-zA-Z1-9].*" value={this.state.taskBody} onChange={this.handleInputChange}></input>

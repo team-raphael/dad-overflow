@@ -74,7 +74,7 @@ class AddaPost extends Component {
                   <div className="container">
                     {firebase.dbUserInfo &&
                       <form id="addPostForm">
-                        <Link id="backArrow" to={"/"}><i className="small material-icons">arrow_back</i></Link>
+                        <Link id="addPostBackArrow" to={"/"}><i className="small material-icons marginBottom">arrow_back</i></Link>
                         <div className="row">
                           <div className="input-field col s12">
                             <input id="postTitle" type="text" className="validate" required pattern="^[a-zA-Z1-9].*" name="postTitle" value={this.state.postTitle} onChange={this.handleInputChange} />

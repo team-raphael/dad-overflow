@@ -1,5 +1,9 @@
-#backArrow i{
+#postDetailBackArrow i{
     margin-top: 30px; 
+}
+
+#postDetailBackArrow {
+    color: #344955;
 }
 
 .comment-title {
