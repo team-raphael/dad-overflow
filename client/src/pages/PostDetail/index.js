@@ -3,7 +3,7 @@ import Comment from "../../components/Comment";
 import CommentWrapper from "../../components/CommentWrapper";
 import API from "../../services/APIService";
 import { TextArea } from "../../components/TextArea";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import FirebaseContext from "../../components/Firebase/context";
 import LockScreen from "../../components/LockScreen";
@@ -20,6 +20,7 @@ class PostDetail extends React.Component {
   };
 
   componentDidMount = () => {
+    window.scrollTo(0, 0);
     this.lockScreen.lock();
     // getCommentsByPostId
     const id = this.props.match.params.postId;
@@ -73,7 +74,7 @@ class PostDetail extends React.Component {
             `${this.firebase.dbUserInfo.displayName} just added a comment to "${this.state.title}!"`
 
           );
-          this.setState({inputValue: ""})
+          this.setState({ inputValue: "" })
           this.refreshComments();
         })
         .catch(err => {
@@ -91,45 +92,46 @@ class PostDetail extends React.Component {
       <FirebaseContext.Consumer>
         {firebase => {
           this.firebase = firebase;
-          
-            return (
-              <div className="addACommentPage">
-                <div className="container">
+
+          return (
+            <div className="addACommentPage">
+              <div className="container">
                 <Link id="backArrow" to={"/"}><i className="small material-icons arrow">arrow_back</i></Link>
-                  <div className="row">
-                    <div className="col l12 text-center header">
-                      <h1 className="comment-title">{this.state.title}</h1>
-                      <h5>{this.state.body}</h5>
-                    </div>
+                <div className="row">
+                  <div className="col l12 text-center header">
+                    <h1 className="comment-title">{this.state.title}</h1>
+                    <h5>{this.state.body}</h5>
                   </div>
-
-                  <TextArea
-                    value={this.state.inputValue}
-                    name="inputValue"
-                    handleInputChange={this.handleInputChange}
-                    buttonName={"Reply"}
-                    label={"Post a reply"}
-                    handleFormSubmit={this.handleCommentSubmit}
-                  />
-
-                  <CommentWrapper>
-                    {this.state.comments.map(comment => (
-                      <Comment
-                        body={comment.body}
-                        date={comment.date}
-                        user={comment.userId.displayName}
-                        userImage={comment.userId.image}
-                      />
-                    ))}
-                  </CommentWrapper>
                 </div>
-                <LockScreen
-                  id="addPostLockScreen"
-                  ref={lockScreen => (this.lockScreen = lockScreen)}
+
+                <TextArea
+                  value={this.state.inputValue}
+                  name="inputValue"
+                  handleInputChange={this.handleInputChange}
+                  buttonName={"Reply"}
+                  label={"Post a reply"}
+                  handleFormSubmit={this.handleCommentSubmit}
                 />
+
+                <CommentWrapper>
+                  {this.state.comments.map(comment => (
+                    <Comment
+                      key={comment._id}
+                      body={comment.body}
+                      date={comment.date}
+                      user={comment.userId.displayName}
+                      userImage={comment.userId.image}
+                    />
+                  ))}
+                </CommentWrapper>
               </div>
-            );
-          
+              <LockScreen
+                id="addPostLockScreen"
+                ref={lockScreen => (this.lockScreen = lockScreen)}
+              />
+            </div>
+          );
+
         }}
       </FirebaseContext.Consumer>
     );

@@ -5,14 +5,14 @@ import './style.css';
 const Comment = props => {
   return (
 
-      <li class="collection-item avatar">
-      <img src={props.userImage} alt="" class="circle"/>
-      <span class="userName">{props.user}</span>
-      <p><span className="body">{props.body}</span><br/>
-         <span class="time"><Moment fromNow>{props.date}</Moment></span>
+    <li className="collection-item avatar">
+      <img src={props.userImage} alt="" className="circle" />
+      <span className="userName">{props.user}</span>
+      <p><span className="body">{props.body}</span><br />
+        <span className="time"><Moment fromNow>{props.date}</Moment></span>
       </p>
     </li>
-    
+
   );
 };
 
