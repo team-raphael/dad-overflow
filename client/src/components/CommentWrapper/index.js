@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentWrapper = props => {
   return (
-    <ul class="collection">
+    <ul className="collection">
     {props.children}
   </ul>
   );
