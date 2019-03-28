@@ -16,7 +16,7 @@ Must be a member thats is logged in to use and view website.
 ## For Local Usage
 1. 'git Clone or download files'
 2. "git pull"  
-3. Install node packages with command line:
+3. Install node packages with command line using:
   ```
 npm install
   ```
