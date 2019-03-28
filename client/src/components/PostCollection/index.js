@@ -39,6 +39,7 @@ export class PostCollection extends React.Component {
                 <Post
                   postId={post._id}
                   key={index}
+                  isEven={index % 2 === 0 ? true : false}
                   title={post.title}
                   body={post.body}
                   author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />

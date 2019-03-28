@@ -2,7 +2,8 @@
 .jumbotron {
     padding: 10px 12px 10px 12px;
     background-color: #D2DBDF;
-    max-height: 50vh;
+    height: 30vh;
+    justify-content: center;
 }
 
 .jumbotron > div {
@@ -17,7 +18,7 @@
     font-family: 'Work Sans', sans-serif;
     font-weight: 800;
     color: #232F34;
-    margin-bottom: 39px;
+    font-size: 5em;
 }
 
 .jumbotron h3 {
