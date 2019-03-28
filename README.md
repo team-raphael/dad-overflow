@@ -60,7 +60,8 @@ npm install
   | React.js              | FireBase Authentication | 
   | Node.js               | Google Domain           |
   | Materialize           | Flaticon                |
-  | JavaScript            |                         |  
+  | JavaScript            | Moment.js               |  
+  | Cascading Style Sheets| AOS Scroll Library      |  
   | Cascading Style Sheets|                         |
   | Html 5                |                         |
   |                       |                         |
