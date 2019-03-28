@@ -52,11 +52,23 @@ body {
 }
 
 .marginTop {
-  margin-right: 15px;
+  margin-top: 15px;
 }
 
 .marginBottom {
   margin-bottom: 15px;
+}
+
+.marginBottomMedium {
+  margin-bottom: 25px;
+}
+
+.marginRightMedium {
+  margin-right: 25px;
+}
+
+.marginTopMedium {
+  margin-top: 25px;
 }
 
 .paddingRight {
