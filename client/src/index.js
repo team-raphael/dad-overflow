@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Animate from 'animate.css';
+import 'animate.css/animate.css'
+
+
+AOS.init();
 
 ReactDOM.render(
     <App />,

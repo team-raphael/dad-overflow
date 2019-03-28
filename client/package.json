@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "animate.css": "^3.7.0",
+    "aos": "^2.3.4",
     "axios": "^0.18.0",
     "firebase": "^5.8.6",
     "firebaseui": "^3.5.2",
