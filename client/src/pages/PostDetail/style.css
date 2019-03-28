@@ -4,3 +4,19 @@
     text-transform: capitalize;
 }
 
+#postDetailPostImageContainer, #postDetailPostPersonContainer {
+    display: inline-block;
+}
+
+#postDetailPostImageContainer {
+    margin-right: 15px;
+}
+
+#postDetailPostImage {
+    width: 50px;
+    background-color: white;
+}
+
+#postDetailPostAuthor {
+    font-weight: bold;
+}

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import FirebaseContext from "../../components/Firebase/context";
 import LockScreen from "../../components/LockScreen";
 import './style.css'
+import Moment from 'react-moment';
 
 class PostDetail extends React.Component {
   state = {
@@ -17,6 +18,8 @@ class PostDetail extends React.Component {
     author: "",
     comments: [],
     inputValue: "",
+    userImage: "",
+    postDate: ""
   };
 
   componentDidMount = () => {
@@ -26,10 +29,14 @@ class PostDetail extends React.Component {
     const id = this.props.match.params.postId;
     // api call here using this prop, set it to state
     API.findOnePost(id).then(post => {
+      console.log(post);
       this.setState({
-        userId: post.data.userId,
+        userId: post.data.userId._id,
+        author: post.data.userId.displayName,
         title: post.data.title,
-        body: post.data.body
+        body: post.data.body,
+        userImage: post.data.userId.image,
+        postDate: post.data.date
       });
       this.lockScreen.unlock();
     });
@@ -99,19 +106,34 @@ class PostDetail extends React.Component {
                 <Link to={"/"}><i className="small material-icons arrow marginBottomMedium backArrow">arrow_back</i></Link>
                 <div className="row">
                   <div className="col l12 text-center header">
+                    <div className="valign-wrapper">
+                      <div id="postDetailPostImageContainer">
+                        <img id="postDetailPostImage" src={this.state.userImage} alt="" className="circle" />
+                      </div>
+                      <div id="postDetailPostPersonContainer">
+                        <div id="postDetailPostAuthor">{this.state.author}</div>
+                        <div id="postDetailPostDate">
+                          {this.state.postDate &&
+                            <Moment calendar>{this.state.postDate}</Moment>
+                          }
+                        </div>
+                      </div>
+                    </div>
                     <h1 className="comment-title">{this.state.title}</h1>
                     <h5>{this.state.body}</h5>
                   </div>
                 </div>
 
-                <TextArea
-                  value={this.state.inputValue}
-                  name="inputValue"
-                  handleInputChange={this.handleInputChange}
-                  buttonName={"Reply"}
-                  label={"Post a reply"}
-                  handleFormSubmit={this.handleCommentSubmit}
-                />
+                {firebase.firebaseUserInfo &&
+                  <TextArea
+                    value={this.state.inputValue}
+                    name="inputValue"
+                    handleInputChange={this.handleInputChange}
+                    buttonName={"Reply"}
+                    label={"Post a reply"}
+                    handleFormSubmit={this.handleCommentSubmit}
+                  />
+                }
 
                 <CommentWrapper>
                   {this.state.comments.map(comment => (
