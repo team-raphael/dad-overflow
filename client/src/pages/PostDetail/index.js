@@ -94,9 +94,9 @@ class PostDetail extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div className="addACommentPage">
+            <div className="addACommentPage marginTopMedium">
               <div className="container">
-                <Link id="postDetailBackArrow" to={"/"}><i className="small material-icons arrow">arrow_back</i></Link>
+                <Link to={"/"}><i className="small material-icons arrow marginBottomMedium backArrow">arrow_back</i></Link>
                 <div className="row">
                   <div className="col l12 text-center header">
                     <h1 className="comment-title">{this.state.title}</h1>
