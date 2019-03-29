@@ -38,6 +38,10 @@ class Nav extends React.Component {
         }
     };
 
+    scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     render() {
 
         return (
@@ -51,7 +55,7 @@ class Nav extends React.Component {
                                 <div className="navbar-fixed">
                                     <nav id="navbar-nav" className="blue-grey darken-3">
                                         <div className="container nav-wrapper">
-                                            <Link to={"/"} className="brand-logo"><i className="logo"></i><span> Dad Overflow</span></Link>
+                                            <Link to={"/"} className="brand-logo" onClick={this.scrollToTop}><i className="logo"></i><span> Dad Overflow</span></Link>
                                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                                             <ul className="right hide-on-med-and-down">
                                                 <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
