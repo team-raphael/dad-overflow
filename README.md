@@ -49,7 +49,7 @@ npm install
 ### If signing in with E-mail for the first time
 1. Type your desired E-mail address and click next
 * If you never signed up, name and password questions will appear 
-2. Type in name and last name
+2. Type in your first and last name
 3. Type desired password under 'choose password'
 4. Click save  
 5. Select Profile Image
