@@ -1,5 +1,4 @@
 import React from "react";
-import API from "../../services/APIService";
 import FirebaseContext from "../Firebase/context";
 import './style.css';
 import LockScreen from '../LockScreen';
@@ -10,22 +9,8 @@ export class PostCollection extends React.Component {
   state = {
     title: "",
     body: "",
-    value: "",
-    posts: []
-  };
-
-  componentDidMount = () => {
-
-    this.lockScreen.lock();
-    API.getPostsWithLimit()
-      .then(dbPosts => {
-        this.setState({ posts: dbPosts.data });
-      })
-      .finally(() => this.lockScreen.unlock());
-  };
-
-  
-  
+    value: ""
+  };  
 
   render() {
     return (
@@ -35,7 +20,7 @@ export class PostCollection extends React.Component {
 
           return (
             <div className='center'>
-              {this.state.posts.map((post, index) =>
+              {this.props.posts.map((post, index) =>
                 <Post
                   postId={post._id}
                   key={index}

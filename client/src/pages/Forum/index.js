@@ -5,14 +5,39 @@ import LockScreen from '../../components/LockScreen';
 import { PostCollection } from '../../components/PostCollection';
 import { Link } from 'react-router-dom';
 import FirebaseContext from "../../components/Firebase/context";
+import Searchbar from '../../components/Searchbar';
+import API from '../../services/APIService';
 
 class Forum extends React.Component {
     state = {
-        posts: [],
+        posts: []
     }
 
     componentDidMount = () => {
         window.scrollTo(0, 0);
+        this.getAllPosts();
+    }
+
+    getAllPosts = () => {
+        this.lockScreen.lock();
+        API.getPostsWithLimit()
+            .then(dbPosts => {
+                this.setState({ posts: dbPosts.data });
+            })
+            .finally(() => this.lockScreen.unlock());
+    }
+
+    onSearchSubmit = (searchTerm) => {
+        this.lockScreen.lock();
+        API.getPostSearch(searchTerm)
+            .then(dbPosts => {
+                this.setState({ posts: dbPosts.data });
+            })
+            .finally(() => this.lockScreen.unlock());
+    }
+
+    onSearchClose = () => {
+        this.getAllPosts();
     }
 
     render() {
@@ -31,7 +56,14 @@ class Forum extends React.Component {
                             <div className="pageContainer">
                                 <div className="container">
                                     <h3 id='forumTop' className='center'>Posts from dads just like you</h3>
-                                    <PostCollection />
+                                    <div className="marginBottomMedium">
+                                        <Searchbar
+                                            id="formPageSearchbar"
+                                            onCloseClick={this.onSearchClose}
+                                            onSearchSubmit={this.onSearchSubmit} />
+                                    </div>
+                                    <PostCollection
+                                        posts={this.state.posts} />
                                 </div>
 
                             </div>
