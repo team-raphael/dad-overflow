@@ -80,6 +80,9 @@ body {
   padding: 20px 0px 20px 0px;
   background-color: white;
   color: #232F34;
+  background-color: #EEF0F2;
+  flex-direction: column;
+  align-content: center;
 }
 
 .hide {
