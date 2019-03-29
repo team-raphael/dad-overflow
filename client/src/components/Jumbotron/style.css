@@ -2,7 +2,7 @@
 .jumbotron {
     padding: 10px 12px 10px 12px;
     background-color: #D2DBDF;
-    height: 30vh;
+    /* height: 30vh; */
     justify-content: center;
 }
 
