@@ -3,7 +3,7 @@
 The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to *Dad Overflow*. Developed by Dads for dads.
 
 ## FEATURES
- * Read posts from other dads
+ * Read and search posts from other dads
  * Create posts to ask or answer questions
  * Comment on existing posts
  * Make To-do lists to complete tasks
