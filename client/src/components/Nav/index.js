@@ -80,7 +80,7 @@ class Nav extends React.Component {
                                                                 <Link className="profileLink" to={"/profile"}>Profile</Link>
                                                             </li>
                                                             <li className="divider" tabIndex="-1"></li>
-                                                            <li className="noHighlight">
+                                                            <li className="noHighlight buttonListItem">
                                                                 <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
                                                             </li>
                                                         </ul>
