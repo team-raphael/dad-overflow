@@ -97,8 +97,8 @@ class Nav extends React.Component {
                                         <div className="user-view">
                                             <div className="background blue-grey lighten-1" />
                                             <div><img className="circle white" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
-                                            <div><span className="white-text name">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.displayName) ? firebase.firebaseUserInfo.displayName : ""}</span></div>
-                                            <div><span className="white-text email">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.email) ? firebase.firebaseUserInfo.email : ""}</span></div>
+                                            <div><span className="white-text name">{(firebase.dbUserInfo && firebase.dbUserInfo.displayName) ? firebase.dbUserInfo.displayName : ""}</span></div>
+                                            <div><span className="white-text email">{(firebase.dbUserInfo && firebase.dbUserInfo.email) ? firebase.dbUserInfo.email : ""}</span></div>
                                         </div>
                                     </li>
 
