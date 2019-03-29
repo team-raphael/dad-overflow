@@ -58,16 +58,16 @@ class Nav extends React.Component {
                                             <Link to={"/"} className="brand-logo" onClick={this.scrollToTop}><i className="logo"></i><span> Dad Overflow</span></Link>
                                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                                             <ul className="right hide-on-med-and-down">
-                                                <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
+                                                <li className={window.location.pathname === "/" ? "active" : ""}>
                                                     <Link to={"/"}>Forum</Link>
                                                 </li>
                                                 {firebase.firebaseUserInfo &&
-                                                    <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                                    <li className={window.location.pathname === "/todo" ? "active" : ""}>
                                                         <Link to={"/todo"}>To Do</Link>
                                                     </li>
                                                 }
                                                 {!firebase.firebaseUserInfo &&
-                                                    <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
+                                                    <li className={`loginLink ${window.location.pathname === "/login" ? "active" : ""}`}>
                                                         <Link id='loginButton' className="waves-effect waves-light btn" to={"/login"}>Login/Signup</Link>
                                                     </li>
                                                 }
@@ -102,21 +102,21 @@ class Nav extends React.Component {
                                         </div>
                                     </li>
 
-                                    <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
+                                    <li className={window.location.pathname === "/" ? "active" : ""}>
                                         <Link to={"/"} onClick={this.closeSideNav}>Forum</Link>
                                     </li>
                                     {firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/todo" ? "active" : ""}>
                                             <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
                                         </li>
                                     }
                                     {!firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/login" ? "active" : ""}>
                                             <Link id='loginButtonMobile' className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login/Signup</Link>
                                         </li>
                                     }
                                     {firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/profile" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/profile" ? "active" : ""}>
                                             <Link to={"/profile"} onClick={this.closeSideNav}>Profile</Link>
                                         </li>
                                     }
