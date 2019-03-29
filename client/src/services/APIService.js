@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const postLimit = 100;
+
 export default {
   // Get all task for user with user id 
   getTasks: function (userId) {
@@ -56,13 +58,13 @@ export default {
 
   //Get all posts with a limit on the number returned
   getPostsWithLimit: () => {
-    return axios.get("/api/posts?limit=50");
+    return axios.get(`/api/posts?limit=${postLimit}`);
   },
 
   //Get all posts that that have a search parameter
   getPostSearch: (postContains) => {
     if (postContains && postContains.trim().length > 0) {
-      return axios.get(`/api/posts?limit=50&postContains=${postContains}`);
+      return axios.get(`/api/posts?limit=${postLimit}&postContains=${postContains}`);
     } else {
       return null;
     }
