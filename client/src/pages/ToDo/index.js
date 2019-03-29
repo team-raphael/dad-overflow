@@ -7,6 +7,9 @@ import FirebaseContext from "../../components/Firebase/context";
 import { Link } from 'react-router-dom';
 
 class ToDo extends React.Component {
+    componentDidMount = () => {
+        window.scrollTo(0, 0);
+    }
 
     render() {
         return (

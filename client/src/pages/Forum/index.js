@@ -10,6 +10,10 @@ class Forum extends React.Component {
     state = {
         posts: [],
     }
+
+    componentDidMount = () => {
+        window.scrollTo(0, 0);
+    }
     
     render() {
         return (

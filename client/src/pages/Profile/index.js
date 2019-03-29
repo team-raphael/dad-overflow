@@ -19,6 +19,7 @@ class Profile extends React.Component {
     images = this.requireAll(require.context('../../profileIcons', false, /\.(png|jpe?g|svg)$/));
 
     componentDidMount = () => {
+        window.scrollTo(0, 0);
         this.initializeCarousel();
         window.M.updateTextFields();
     }
