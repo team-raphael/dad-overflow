@@ -34,7 +34,7 @@ export class PostCollection extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div className='center' id='modal-btn'>
+            <div className='center'>
               {this.state.posts.map((post, index) =>
                 <Post
                   postId={post._id}
