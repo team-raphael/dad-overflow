@@ -14,10 +14,10 @@ class Forum extends React.Component {
     componentDidMount = () => {
         window.scrollTo(0, 0);
     }
-    
+
     render() {
         return (
-            
+
             <FirebaseContext.Consumer>
                 {firebase => {
                     this.firebase = firebase;
@@ -29,10 +29,11 @@ class Forum extends React.Component {
                             />
 
                             <div className="pageContainer">
-                                <div className="container left-align">
+                                <div className="container">
                                     <h3 id='forumTop' className='center'>Posts from dads just like you</h3>
+                                    <PostCollection />
                                 </div>
-                                <PostCollection />
+
                             </div>
                             {firebase.firebaseUserInfo &&
                                 <div className='fixed-action-btn'>

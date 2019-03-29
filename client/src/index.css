@@ -118,3 +118,7 @@ input[type="checkbox"].filled-in:checked+span:not(.lever):after {
 .backArrow {
   color: #344955;
 }
+
+/* .container {
+  width: 95%;
+} */
