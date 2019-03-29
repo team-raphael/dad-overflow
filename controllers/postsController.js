@@ -9,7 +9,7 @@ module.exports = {
     const limit = req.query.limit ? parseInt(req.query.limit) : 0;
 
     if (req.query.postContains) {
-      const pattern = req.query.postContains;
+      const pattern = req.query.postContains.replace(/(?:es|[sx])$/, '');
 
       conditions.$or = [ {'body': { $regex:pattern, $options: "i" }}, {'title': { $regex:pattern, $options: "i" }} ];
     }

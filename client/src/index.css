@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600');
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   display: flex;
   min-height: 100vh;
@@ -20,6 +16,7 @@ body {
 
 #root {
   flex: 1 0 auto;
+  overflow-x: hidden;
 }
 
 .remove-float {
@@ -83,6 +80,9 @@ body {
   padding: 20px 0px 20px 0px;
   background-color: white;
   color: #232F34;
+  background-color: #EEF0F2;
+  flex-direction: column;
+  align-content: center;
 }
 
 .hide {
@@ -118,3 +118,7 @@ input[type="checkbox"].filled-in:checked+span:not(.lever):after {
 .backArrow {
   color: #344955;
 }
+
+/* .container {
+  width: 95%;
+} */

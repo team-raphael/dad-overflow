@@ -6,8 +6,8 @@ const Post = props => {
     return(
 
         // <div className='aos-init aos-animate' data-aos={props.isEven ? "fade-right" : 'fade-left'}>
-        <div className='aos-init aos-animate' data-aos='flip-up' data-aos-offset="110">
-            <div className='postcard card container hoverable'>
+        <div data-aos='flip-up' data-aos-offset="110">
+            <div className='postcard card hoverable'>
                 <div className='row card-image left-align'>
                         <div className="col s12">
                             <h1 className='post-title title'><Link className="postTitleLink" to={`/postdetail/${props.postId}`}>{props.title}</Link></h1>
