@@ -9,7 +9,7 @@ const Comment = props => {
       <img src={props.userImage} alt="" className="circle" />
       <span className="userName">{props.user}</span>
       <p><span className="body">{props.body}</span><br />
-        <span className="time"><Moment fromNow>{props.date}</Moment></span>
+        <span className="time"><Moment calendar>{props.date}</Moment></span>
       </p>
     </li>
 
