@@ -108,9 +108,9 @@ Commenting on posts is simple. This feature is Available in the the forum page.
   | Node.js               | Google Domain           |
   | Materialize           | Flaticon                |
   | JavaScript            |                         |  
-  | Cascading Style Sheets|                         |
+  | Jquery                |                         |
+  | Cascading Style Sheet |                         |
   | Html 5                |                         |
-  |                       |                         |
 
 # Create React Express App
 
