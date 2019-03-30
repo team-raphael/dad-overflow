@@ -41,7 +41,6 @@ npm install
 | D. Commenting..       |                        
 | E. To Do's            |                         
 
-
 ## A. Signing up 
 ### Using Desktop 
 1. On the Top right click login/signup
@@ -108,11 +107,21 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 2. You will be directed to a more detailed pager of the post.
 3. Click *Post a reply*
 4. type in comment
-5. Click *Reply* button when you are ready.
+5. Click the *Reply* button when you are ready.
 ## E. To-Dos Page 
-A page where dads can keep track of  task that must be done. Be a dad on his "A" game with this feature.
-
-# Powered By The Following
+A page where dads can keep track of task that must be done. Be a dad on his "A" game with this feature.
+### Adding a task
+1. look for the yellow plus circle sign.
+2. click *Add a task*
+3. type task
+4. Task automatically gets placed under incomplete.
+### Putting a task under complete or incomplete
+You have the choice to either check  or uncheck a task by pressing on the box next to your task.
+a. In incomplete, pressing the box takes the task to complete.
+b. In complete,  pressing the box brings it back to incomplete. 
+### Deleting task
+You can delete task in Incomplete/Complete simply with trash can button.
+# Powered By The Following 
 
   | Tech                  |  New Tech               |
   | ----------------------|:-----------------------:|
