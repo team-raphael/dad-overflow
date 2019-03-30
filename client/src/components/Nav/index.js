@@ -38,6 +38,10 @@ class Nav extends React.Component {
         }
     };
 
+    scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     render() {
 
         return (
@@ -51,19 +55,19 @@ class Nav extends React.Component {
                                 <div className="navbar-fixed">
                                     <nav id="navbar-nav" className="blue-grey darken-3">
                                         <div className="container nav-wrapper">
-                                            <Link to={"/"} className="brand-logo"><i className="logo"></i><span> Dad Overflow</span></Link>
+                                            <Link to={"/"} className="brand-logo" onClick={this.scrollToTop}><i className="logo"></i><span> Dad Overflow</span></Link>
                                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                                             <ul className="right hide-on-med-and-down">
-                                                <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
+                                                <li className={window.location.pathname === "/" ? "active" : ""}>
                                                     <Link to={"/"}>Forum</Link>
                                                 </li>
                                                 {firebase.firebaseUserInfo &&
-                                                    <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                                    <li className={window.location.pathname === "/todo" ? "active" : ""}>
                                                         <Link to={"/todo"}>To Do</Link>
                                                     </li>
                                                 }
                                                 {!firebase.firebaseUserInfo &&
-                                                    <li className={`loginLink ${window.location.pathname.toLowerCase() === "/login" ? "active" : ""}`}>
+                                                    <li className={`loginLink ${window.location.pathname === "/login" ? "active" : ""}`}>
                                                         <Link id='loginButton' className="waves-effect waves-light btn" to={"/login"}>Login/Signup</Link>
                                                     </li>
                                                 }
@@ -76,7 +80,7 @@ class Nav extends React.Component {
                                                                 <Link className="profileLink" to={"/profile"}>Profile</Link>
                                                             </li>
                                                             <li className="divider" tabIndex="-1"></li>
-                                                            <li className="noHighlight">
+                                                            <li className="noHighlight buttonListItem">
                                                                 <button onClick={this.signOutOnClick} className="signOffButton waves-effect waves-light btn">Sign Off</button>
                                                             </li>
                                                         </ul>
@@ -93,26 +97,26 @@ class Nav extends React.Component {
                                         <div className="user-view">
                                             <div className="background blue-grey lighten-1" />
                                             <div><img className="circle white" data-target='profileDropdown' src={(firebase.dbUserInfo && firebase.dbUserInfo.image) ? firebase.dbUserInfo.image : "https://via.placeholder.com/225"} alt="profile" /></div>
-                                            <div><span className="white-text name">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.displayName) ? firebase.firebaseUserInfo.displayName : ""}</span></div>
-                                            <div><span className="white-text email">{(firebase.firebaseUserInfo && firebase.firebaseUserInfo.email) ? firebase.firebaseUserInfo.email : ""}</span></div>
+                                            <div><span className="white-text name">{(firebase.dbUserInfo && firebase.dbUserInfo.displayName) ? firebase.dbUserInfo.displayName : ""}</span></div>
+                                            <div><span className="white-text email">{(firebase.dbUserInfo && firebase.dbUserInfo.email) ? firebase.dbUserInfo.email : ""}</span></div>
                                         </div>
                                     </li>
 
-                                    <li className={window.location.pathname.toLowerCase() === "/" ? "active" : ""}>
+                                    <li className={window.location.pathname === "/" ? "active" : ""}>
                                         <Link to={"/"} onClick={this.closeSideNav}>Forum</Link>
                                     </li>
                                     {firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/todo" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/todo" ? "active" : ""}>
                                             <Link to={"/todo"} onClick={this.closeSideNav}>To Do</Link>
                                         </li>
                                     }
                                     {!firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/login" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/login" ? "active" : ""}>
                                             <Link id='loginButtonMobile' className="waves-effect waves-light btn" to={"/login"} onClick={this.closeSideNav}>Login/Signup</Link>
                                         </li>
                                     }
                                     {firebase.firebaseUserInfo &&
-                                        <li className={window.location.pathname.toLowerCase() === "/profile" ? "active" : ""}>
+                                        <li className={window.location.pathname === "/profile" ? "active" : ""}>
                                             <Link to={"/profile"} onClick={this.closeSideNav}>Profile</Link>
                                         </li>
                                     }
