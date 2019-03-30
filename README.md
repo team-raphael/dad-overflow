@@ -31,16 +31,16 @@ npm install
   ```
 # How to use Dad-Overflow(In-Progress)
 
-## Table of Contents(In- Progress)
+## Index
 
-    | How to use content    |                         |
-    | ----------------------|:-----------------------:|
-    | A. Sign up            | FireBase Authentication | 
-    | B. Logging in         | Google Domain           |
-    | C. Forum Page         | Flaticon                |
-    | D. Commenting..       |                         |  
-    | E. To Do's            |                         |
-    | Cascading Style Sheet |                         |
+| Table of Content      |                 
+| ----------------------|
+| A. Sign up            | 
+| B. Logging in         | 
+| C. Forum Page         |
+| D. Commenting..       |                        
+| E. To Do's            |                         
+
 
 ## A. Signing up 
 ### Using Desktop 
