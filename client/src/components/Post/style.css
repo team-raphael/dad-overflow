@@ -2,6 +2,7 @@
 
 .postcard .card-image {
     width: 95%;
+    padding-bottom: 20px;
 }
 
 .postcard .post-title {
@@ -10,16 +11,32 @@
     font-weight: 700;
 }
 
-.postcard .author {
-    padding-bottom: 20px;
-    text-align: left;
-    font-weight: 300;
-}
-
 .postcard .title > a {
     color: #344955;
     padding-bottom: 5px;
     border-bottom: 2px solid #F9AA33;
     text-transform: uppercase;
     line-height: 40px;
+}
+
+.postcard .postImageContainer, .postcard .postDetailPostPersonContainer {
+    display: inline-block;
+}
+
+.postcard .postImageContainer {
+    margin-right: 15px;
+}
+
+.postcard .postImage {
+    width: 30px !important;
+    background-color: white;
+}
+
+.postcard .postAuthor {
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.postcard .postDate {
+    font-size: .7rem;
 }
