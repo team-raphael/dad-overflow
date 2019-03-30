@@ -109,7 +109,8 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 3. Click *Post a reply*
 4. type in comment
 5. Click *Reply* button when you are ready.
-## E. To-Dos Page  
+## E. To-Dos Page 
+A page where dads can keep track of  task that must be done. Be a dad on his "A" game with this feature.
 
 # Powered By The Following
 
