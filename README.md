@@ -79,8 +79,23 @@ npm install
 * Press *Trouble signing in?*
 * Type Dad-Overflow associated E-mail to recieve directions to change password.
 4. Welcome back to Dad-Overflow!
+## Forum
+This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
+### On Desktop computer
+Link to "Forum" page is located on the top right of the nav bar.
+### On mobile 
+The link is located in hamburger icon when clicked.
+### Creating a post in Forum page
+In order ask dads a questions:
+1. Press the yellow circle containing a plus sign on bottom right of the page.
+2. Type title to create name the subject.
+3. Type in details bout the subject of your post.
+4. Press *Submit* when your done.
 ## Commenting
-
+Commenting on posts is simple. This feature is Available in the the forum page.
+1. Click on post you would like to comment in by pressing the header or subject title underlined with green.
+2. You will be directed to a more detailed pager of the post.
+3. Cli
 ## To-Dos  
 
 # Powered By The Folowing
