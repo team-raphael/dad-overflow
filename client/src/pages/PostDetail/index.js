@@ -28,7 +28,6 @@ class PostDetail extends React.Component {
   
 
   componentDidMount = () => {
-    console.log(this.state.youLiked)
     window.scrollTo(0, 0);
     this.lockScreen.lock();
     // getCommentsByPostId
@@ -57,14 +56,12 @@ class PostDetail extends React.Component {
     API.getCommentsByPostId(id).then(res => {
       this.setState({ comments: res.data });
       this.lockScreen.unlock();
-      console.log('comments:', res.data)
     });
   };
   
 
   handleThumbClick = id => {
     const commentId = id;
-    const postId = this.props.match.params.postId;
     const userId = this.firebase.dbUserInfo._id;
     this.setState({thumbsUpBool: !this.state.thumbsUpBool});
     

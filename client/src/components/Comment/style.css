@@ -1,30 +1,26 @@
-.userName {
+.collection-item .userName {
     font-size: 1.4rem;
+    font-weight: bold;
 }
 
-.body {
-
-    font-size: 1.6rem;
+.collection-item .time {
+    font-size: .7rem;
+    line-height: 25px;
 }
 
-.collection-item p {
-    padding-top: 1rem;
-} 
+.collection-item .comment-body {
+    white-space: pre-wrap;
+}
 
-.likes {
+.collection-item .likes {
     display: block;
 }
 
-.thumbsUp {
-    padding: 1rem;
-}
-
-.likes-text {
+.collection-item .likes-text {
     color: #283646;
 }
 
-i.fas,
-i.far {
+.collection-item .thumbsUp {
     color: #f9aa33;
     cursor: pointer;
 }
