@@ -27,7 +27,9 @@ export class PostCollection extends React.Component {
                   isEven={index % 2 === 0 ? true : false}
                   title={post.title}
                   body={post.body}
-                  author={post.userId && post.userId.displayName ? post.userId.displayName : ''} />
+                  date={post.date}
+                  author={post.userId && post.userId.displayName ? post.userId.displayName : ''}
+                  userImage={post.userId ? post.userId.image : ""} />
               )}
               <LockScreen id="postCollectionPageLockScreen" ref={(lockScreen) => this.lockScreen = lockScreen} />
             </div>
