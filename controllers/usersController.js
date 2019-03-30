@@ -58,5 +58,9 @@ module.exports = {
             .find(filter)
             .then(users => res.json(users))
             .catch(err => res.status(422).json(err));
-    }
+    },
+
+    
+
+
 };

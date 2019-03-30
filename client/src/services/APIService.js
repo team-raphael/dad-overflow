@@ -80,5 +80,12 @@ export default {
 
   createAComment: (postId, commentBody) => {
     return axios.post(`/api/posts/${postId}/comments`, commentBody)
+  },
+
+  // add usersId to the comment DB clicked
+  addUserIdToCommentDb: (userId, commentId) => {
+    return axios.put(`/api/users/${userId}/comments/${commentId}/adduseridtocommentdb`)
   }
+
+ 
 };

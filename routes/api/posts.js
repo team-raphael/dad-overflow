@@ -14,11 +14,11 @@ router.route("/:id")
   .get(postsController.findOne);
 
 // Comments routes
-// api/posts/id/comments
+// api/posts/postid/comments
 router
   .route("/:postId/comments")
   .get(commentsController.getCommentsByPostId)
-  .post(commentsController.createComment);
+  .post(commentsController.createComment)
 
 
 module.exports = router;

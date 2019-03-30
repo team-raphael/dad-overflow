@@ -7,6 +7,7 @@ const commentSchema = new Schema({
  
   body: { type: String, required: true },
   date: { type: Date, default: Date.now },
+  userIds_that_liked_comment: {type: [String]},
   postId: { type: Schema.Types.ObjectId, ref: "Post", required: true },
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true }
 });
