@@ -95,7 +95,9 @@ In order ask dads a questions:
 Commenting on posts is simple. This feature is Available in the the forum page.
 1. Click on post you would like to comment in by pressing the header or subject title underlined with green.
 2. You will be directed to a more detailed pager of the post.
-3. Cli
+3. Click *Post a reply*
+4. type in comment
+5. Click *Reply* button when you are ready.
 ## To-Dos  
 
 # Powered By The Folowing
