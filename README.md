@@ -31,7 +31,18 @@ npm install
   ```
 # How to use Dad-Overflow(In-Progress)
 
-## Signing up 
+## Table of Contents(In- Progress)
+
+  | How to use content    |                      |
+  | ----------------------|:-----------------------:|
+  | React.js              | FireBase Authentication | 
+  | Node.js               | Google Domain           |
+  | Materialize           | Flaticon                |
+  | JavaScript            |                         |  
+  | Jquery                |                         |
+  | Cascading Style Sheet |                         |
+  | Html 5                |                         |
+## A. Signing up 
 ### Using Desktop 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose 
@@ -55,7 +66,7 @@ npm install
 5. Select Profile Image
 6. Press save to finally be a member
 
-## Logging In 
+## B. Logging In 
 ### Using Desktop 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose log-in 
@@ -79,7 +90,7 @@ npm install
 * Press *Trouble signing in?*
 * Type Dad-Overflow associated E-mail to recieve directions to change password.
 4. Welcome back to Dad-Overflow!
-## Forum
+## C. Forum Page
 This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
 ### On Desktop computer
 Link to "Forum" page is located on the top right of the nav bar.
@@ -91,14 +102,14 @@ In order ask dads a questions:
 2. Type title to create name the subject.
 3. Type in details bout the subject of your post.
 4. Press *Submit* when your done.
-## Commenting
+## D. Commenting on a topic
 Commenting on posts is simple. This feature is Available in the the forum page.
 1. Click on post you would like to comment in by pressing the header or subject title underlined with green.
 2. You will be directed to a more detailed pager of the post.
 3. Click *Post a reply*
 4. type in comment
 5. Click *Reply* button when you are ready.
-## To-Dos  
+## E. To-Dos Page  
 
 # Powered By The Folowing
 
