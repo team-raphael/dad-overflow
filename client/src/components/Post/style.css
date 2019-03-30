@@ -40,3 +40,7 @@
 .postcard .postDate {
     font-size: .7rem;
 }
+
+.postcard .body {
+    white-space: pre-wrap;
+}
