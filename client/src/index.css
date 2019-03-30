@@ -122,3 +122,20 @@ input[type="checkbox"].filled-in:checked+span:not(.lever):after {
 /* .container {
   width: 95%;
 } */
+
+  /*Creating a custom scroll bar look in the chat window*/
+  .customScrollBar::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  /*Creating a custom scroll bar look in the chat window*/
+  .customScrollBar::-webkit-scrollbar-thumb {
+    background: #344955;
+    border-radius: 20px;
+  }
+  
+  /*Creating a custom scroll bar look in the chat window*/
+  .customScrollBar::-webkit-scrollbar-track {
+    background: #EEF0F2;
+    border-radius: 20px;
+  }
