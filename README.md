@@ -33,15 +33,15 @@ npm install
 
 ## Table of Contents(In- Progress)
 
-  | How to use content    |                      |
-  | ----------------------|:-----------------------:|
-  | React.js              | FireBase Authentication | 
-  | Node.js               | Google Domain           |
-  | Materialize           | Flaticon                |
-  | JavaScript            |                         |  
-  | Jquery                |                         |
-  | Cascading Style Sheet |                         |
-  | Html 5                |                         |
+    | How to use content    |                         |
+    | ----------------------|:-----------------------:|
+    | A. Sign up            | FireBase Authentication | 
+    | B. Logging in         | Google Domain           |
+    | C. Forum Page         | Flaticon                |
+    | D. Commenting..       |                         |  
+    | E. To Do's            |                         |
+    | Cascading Style Sheet |                         |
+
 ## A. Signing up 
 ### Using Desktop 
 1. On the Top right click login/signup
@@ -96,7 +96,7 @@ This is the homepage where you find all the posts posted by Dad-Overflow members
 Link to "Forum" page is located on the top right of the nav bar.
 ### On mobile 
 The link is located in hamburger icon when clicked.
-### Creating a post in Forum page
+### Creating a post in the Forum page
 In order ask dads a questions:
 1. Press the yellow circle containing a plus sign on bottom right of the page.
 2. Type title to create name the subject.
@@ -111,7 +111,7 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 5. Click *Reply* button when you are ready.
 ## E. To-Dos Page  
 
-# Powered By The Folowing
+# Powered By The Following
 
   | Tech                  |  New Tech               |
   | ----------------------|:-----------------------:|
