@@ -11,6 +11,20 @@
     padding-top: 1rem;
 } 
 
-/* .circle img{
-    width: 13rem !Important;
-} */
+.likes {
+    display: block;
+}
+
+.thumbsUp {
+    padding: 1rem;
+}
+
+.likes-text {
+    color: #283646;
+}
+
+i.fas,
+i.far {
+    color: #f9aa33;
+    cursor: pointer;
+}

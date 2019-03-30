@@ -7,22 +7,28 @@ import { Link } from "react-router-dom";
 
 import FirebaseContext from "../../components/Firebase/context";
 import LockScreen from "../../components/LockScreen";
-import './style.css'
-import Moment from 'react-moment';
+import "./style.css";
+import Moment from "react-moment";
 
 class PostDetail extends React.Component {
-  state = {
-    userId: "",
-    title: "",
-    body: "",
-    author: "",
-    comments: [],
-    inputValue: "",
-    userImage: "",
-    postDate: ""
-  };
+
+  constructor() {
+    super();
+    this.state = {
+      userId: "",
+      title: "",
+      body: "",
+      author: "",
+      comments: [],
+      inputValue: "",
+      userImage: "",
+      postDate: "",
+    };
+  }
+  
 
   componentDidMount = () => {
+    console.log(this.state.youLiked)
     window.scrollTo(0, 0);
     this.lockScreen.lock();
     // getCommentsByPostId
@@ -51,7 +57,28 @@ class PostDetail extends React.Component {
     API.getCommentsByPostId(id).then(res => {
       this.setState({ comments: res.data });
       this.lockScreen.unlock();
+      console.log('comments:', res.data)
     });
+  };
+  
+
+  handleThumbClick = id => {
+    const commentId = id;
+    const postId = this.props.match.params.postId;
+    const userId = this.firebase.dbUserInfo._id;
+    this.setState({thumbsUpBool: !this.state.thumbsUpBool});
+    
+
+    API.addUserIdToCommentDb(userId, commentId)
+.then(() => this.refreshComments())
+
+
+    
+        
+
+    
+
+
   };
 
   handleInputChange = e => {
@@ -77,10 +104,11 @@ class PostDetail extends React.Component {
         .then(() => {
           window.ioSocket.emit(
             "message",
-            `${this.firebase.dbUserInfo.displayName} just added a comment to "${this.state.title}!"`
-
+            `${this.firebase.dbUserInfo.displayName} just added a comment to "${
+              this.state.title
+            }!"`
           );
-          this.setState({ inputValue: "" })
+          this.setState({ inputValue: "" });
           this.refreshComments();
         })
         .catch(err => {
@@ -102,19 +130,28 @@ class PostDetail extends React.Component {
           return (
             <div className="addACommentPage marginTopMedium">
               <div className="container">
-                <Link to={"/"}><i className="small material-icons arrow marginBottomMedium backArrow">arrow_back</i></Link>
+                <Link to={"/"}>
+                  <i className="small material-icons arrow marginBottomMedium backArrow">
+                    arrow_back
+                  </i>
+                </Link>
                 <div className="row">
                   <div className="col l12 text-center header">
                     <div className="valign-wrapper">
                       <div id="postDetailPostImageContainer">
-                        <img id="postDetailPostImage" src={this.state.userImage} alt="" className="circle" />
+                        <img
+                          id="postDetailPostImage"
+                          src={this.state.userImage}
+                          alt=""
+                          className="circle"
+                        />
                       </div>
                       <div id="postDetailPostPersonContainer">
                         <div id="postDetailPostAuthor">{this.state.author}</div>
                         <div id="postDetailPostDate">
-                          {this.state.postDate &&
+                          {this.state.postDate && (
                             <Moment calendar>{this.state.postDate}</Moment>
-                          }
+                          )}
                         </div>
                       </div>
                     </div>
@@ -123,7 +160,7 @@ class PostDetail extends React.Component {
                   </div>
                 </div>
 
-                {firebase.firebaseUserInfo &&
+                {firebase.firebaseUserInfo && (
                   <TextArea
                     value={this.state.inputValue}
                     name="inputValue"
@@ -132,16 +169,23 @@ class PostDetail extends React.Component {
                     label={"Post a reply"}
                     handleFormSubmit={this.handleCommentSubmit}
                   />
-                }
+                )}
 
                 <CommentWrapper>
                   {this.state.comments.map(comment => (
                     <Comment
                       key={comment._id}
+                      id={comment._id}
                       body={comment.body}
                       date={comment.date}
+                      userId={firebase && firebase.dbUserInfo ? firebase.dbUserInfo._id : ""}
                       user={comment.userId.displayName}
                       userImage={comment.userId.image}
+                      likedUserIds={comment.userIds_that_liked_comment}
+                    
+                      handleThumbClick={() =>
+                        this.handleThumbClick(comment._id)
+                      }
                     />
                   ))}
                 </CommentWrapper>
@@ -152,7 +196,6 @@ class PostDetail extends React.Component {
               />
             </div>
           );
-
         }}
       </FirebaseContext.Consumer>
     );

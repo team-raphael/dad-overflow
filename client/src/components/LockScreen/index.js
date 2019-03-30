@@ -13,15 +13,15 @@ class LockScreen extends React.Component {
             message: message
         });
 
-        document.getElementsByTagName("body")[0].style["overflow"] = "hidden";
-        document.getElementById(this.props.id).style["display"] = "flex";
+        // document.getElementsByTagName("body")[0].style["overflow"] = "hidden";
+        // document.getElementById(this.props.id).style["display"] = "flex";
 
     }
 
     //Function to unlock the screen
     unlock = () => {
-        document.getElementsByTagName("body")[0].style["overflow"] = "unset";
-        document.getElementById(this.props.id).style["display"] = "none";
+        // document.getElementsByTagName("body")[0].style["overflow"] = "unset";
+        // document.getElementById(this.props.id).style["display"] = "none";
     }
 
     //Render the html
