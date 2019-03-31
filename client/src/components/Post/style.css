@@ -49,3 +49,8 @@
 .postcard .body {
     white-space: pre-wrap;
 }
+
+.small-comment {
+    font-size: .7rem;
+    margin-top: 1.4rem;
+}
