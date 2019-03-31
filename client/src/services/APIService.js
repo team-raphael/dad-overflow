@@ -1,55 +1,94 @@
 import axios from "axios";
-
 const postLimit = 100;
 
 export default {
   // Get all task for user with user id 
-  getTasks: function (userId) {
-    return axios.get(`/api/users/${userId}/tasks`);
+  getTasks: function (userId, firebaseUserToken) {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.get(`/api/users/${userId}/tasks`, config);
+    //return axios.get(`/api/users/${userId}/tasks`);
   },
 
   // Create a new task
-  createATask: function (userId, newTaskBody) {
-    return axios.post(`/api/users/${userId}/tasks`, newTaskBody);
+  createATask: function (userId, newTaskBody, firebaseUserToken) {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.post(`/api/users/${userId}/tasks`, newTaskBody, config);
   },
 
   // update one task according to task id 
-  updateOneTask: function (userId, taskId, body) {
-    return axios.put(`/api/users/${userId}/tasks/${taskId}`, body);
+  updateOneTask: function (userId, taskId, body, firebaseUserToken) {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.put(`/api/users/${userId}/tasks/${taskId}`, body, config);
   },
 
   // Deletes the task with the given userId and taskId
-  deleteOneTask: function (userId, taskId) {
-    return axios.delete(`/api/users/${userId}/tasks/${taskId}`);
+  deleteOneTask: function (userId, taskId, firebaseUserToken) {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.delete(`/api/users/${userId}/tasks/${taskId}`, config);
   },
   // Gets a task fromn the database given a userId and taskId
-  getOneTask: function (userId, taskId) {
-    return axios.get(`/api/users/${userId}/tasks/${taskId}`);
+  getOneTask: function (userId, taskId, firebaseUserToken) {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.get(`/api/users/${userId}/tasks/${taskId}`, config);
   },
 
 
   //Get user data
-  getUserById: (id) => {
-    return axios.get(`/api/users/${id}`)
+  getUserById: (id, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.get(`/api/users/${id}`, config)
   },
-  
-  getUserByEmail: (email) => {
-    return axios.get("/api/users", {
+
+  getUserByEmail: (email, firebaseUserToken) => {
+    const config = {
       params: {
         email
-      }
-    });
+      },
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.get("/api/users", config);
   },
-  createUser: (user) => {
-    return axios.post("/api/users", user);
+  createUser: (user, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.post("/api/users", user, config);
   },
-  updateUser: (userId, user) => {
-    return axios.put(`/api/users/${userId}`, user);
+  updateUser: (userId, user, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.put(`/api/users/${userId}`, user, config);
   },
 
   // Create Post by User
-  createPost: (newPost) => {
-    return axios.post("/api/posts", newPost)
+  createPost: (newPost, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.post("/api/posts", newPost, config);
   },
 
   getPosts: () => {
@@ -78,14 +117,22 @@ export default {
     return axios.get(`/api/posts/${postId}/comments`)
   },
 
-  createAComment: (postId, commentBody) => {
-    return axios.post(`/api/posts/${postId}/comments`, commentBody)
+  createAComment: (postId, commentBody, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.post(`/api/posts/${postId}/comments`, commentBody, config);
   },
 
   // add usersId to the comment DB clicked
-  addUserIdToCommentDb: (userId, commentId) => {
-    return axios.put(`/api/users/${userId}/comments/${commentId}/adduseridtocommentdb`)
+  addUserIdToCommentDb: (userId, commentId, firebaseUserToken) => {
+    const config = {
+      headers: { 'Authorization': "bearer " + (firebaseUserToken ? firebaseUserToken : "") }
+    };
+
+    return axios.put(`/api/users/${userId}/comments/${commentId}/adduseridtocommentdb`, null, config)
   }
 
- 
+
 };

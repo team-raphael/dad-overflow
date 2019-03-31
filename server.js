@@ -1,3 +1,5 @@
+// Add dependencies
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -6,6 +8,14 @@ const routes = require("./routes");
 const mongoose = require("mongoose");
 var http = require("http").Server(app);
 const io = require("socket.io")(http);
+const firebaseAdmin = require('firebase-admin');
+const firebaseServiceAccount = require('./dad-overflow-firebase-adminsdk-uiegk-47747a9fa1');
+
+//Initialize firebase admin
+firebaseAdmin.initializeApp({
+  credential: firebaseAdmin.credential.cert(firebaseServiceAccount),
+  databaseURL: "https://dad-overflow.firebaseio.com"
+});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

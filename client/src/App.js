@@ -32,33 +32,51 @@ class App extends Component {
           firebase: {
             ...this.state.firebase,
             firebaseUserInfo: user,
-            dbUserInfo: null
+            dbUserInfo: null,
+            firebaseUserToken: null
           }
         });
 
-        //Check the database for this user and set the state to that user
-        API.getUserByEmail(user.email)
-          .then(dbUsers => {
-            if (dbUsers.data && dbUsers.data.length > 0) {
-              this.setState({
-                firebase: {
-                  ...this.state.firebase,
-                  dbUserInfo: dbUsers.data[0]
+        //Get the firebase user token 
+        user.getIdToken(/* forceRefresh */ true)
+          .then(idToken => {
+            this.setState({
+              firebase: {
+                ...this.state.firebase,
+                firebaseUserToken: idToken
+              }
+            });
+          })
+          .then(() => {
+            //Check the database for this user and set the state to that user
+            API.getUserByEmail(user.email, this.state.firebase.firebaseUserToken)
+              .then(dbUsers => {
+                if (dbUsers.data && dbUsers.data.length > 0) {
+                  this.setState({
+                    firebase: {
+                      ...this.state.firebase,
+                      dbUserInfo: dbUsers.data[0]
+                    }
+                  });
                 }
+              })
+              .catch(err => {
+                console.log(err);
+                window.M.toast({ html: 'Error obtaining user from the database!' });
               });
-            }
           })
           .catch(err => {
             console.log(err);
-            window.M.toast({ html: 'Error obtaining user from the database!' });
-          });
+          })
+
 
       } else {
         this.setState({
           firebase: {
             ...this.state.firebase,
             firebaseUserInfo: null,
-            dbUserInfo: null
+            dbUserInfo: null,
+            firebaseUserToken: null
           }
         });
       }
