@@ -43,7 +43,7 @@ class AddaPost extends Component {
 
       this.lockScreen.lock();
 
-      API.createPost(newPost)
+      API.createPost(newPost, this.firebase.firebaseUserToken)
         .then(() => {
           window.ioSocket.emit('message', `${this.firebase.dbUserInfo.displayName} just added a post titled '${newPost.title}'!`);
           this.setState({ goBack: true });

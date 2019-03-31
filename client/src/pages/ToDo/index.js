@@ -27,7 +27,8 @@ class ToDo extends React.Component {
                                 <div className="pageContainer toDoPageContainer">
                                     <div className="container">
                                         <p className="toDoDetailText center">To Do items to stay prepared</p>
-                                        <CollectionWrapper />
+                                        <CollectionWrapper 
+                                            firebaseUserToken={firebase.firebaseUserToken}/>
                                     </div>
 
 

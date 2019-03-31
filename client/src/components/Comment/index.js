@@ -7,6 +7,16 @@ const Comment = props => {
   if (props.likedUserIds.includes(props.userId)) {
     userLiked = true;
   }
+
+  const likeIcon = () => {
+    //Only display like button if user is logged in
+    if (props.userId) {
+      return (
+        <i className={userLiked ? "thumbsUp fas fa-thumbs-up fa-lg" : " thumbsUp far fa-thumbs-up fa-lg"} onClick={props.handleThumbClick}></i>
+      )
+    }
+  }
+
   return (
 
     <li className="collection-item avatar">
@@ -16,7 +26,7 @@ const Comment = props => {
       <div className="comment-body marginBottom">{props.body}</div>
       <div>
         <span>
-          <i className={userLiked ? "thumbsUp fas fa-thumbs-up fa-lg" : " thumbsUp far fa-thumbs-up fa-lg"} onClick={props.handleThumbClick}></i> {props.likedUserIds ? props.likedUserIds.length : "0"} <span className="likes-text">likes</span>
+          {likeIcon()} {props.likedUserIds ? props.likedUserIds.length : "0"} <span className="likes-text">likes</span>
         </span>
         <span className="time right"><Moment calendar>{props.date}</Moment></span>
       </div>

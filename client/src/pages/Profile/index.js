@@ -72,7 +72,7 @@ class Profile extends React.Component {
                 }
 
                 //Update the database then redirect the user back to the home screen
-                API.updateUser(this.firebase.dbUserInfo._id, updateUser)
+                API.updateUser(this.firebase.dbUserInfo._id, updateUser, this.firebase.firebaseUserToken)
                     .then((dbUser) => {
                         this.firebase.dbUserInfo = dbUser.data;
                         //this.props.history.push('/');

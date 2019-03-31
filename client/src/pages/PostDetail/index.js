@@ -25,7 +25,7 @@ class PostDetail extends React.Component {
       postDate: "",
     };
   }
-  
+
 
   componentDidMount = () => {
     window.scrollTo(0, 0);
@@ -58,24 +58,16 @@ class PostDetail extends React.Component {
       this.lockScreen.unlock();
     });
   };
-  
+
 
   handleThumbClick = id => {
     const commentId = id;
     const userId = this.firebase.dbUserInfo._id;
-    this.setState({thumbsUpBool: !this.state.thumbsUpBool});
-    
-
-    API.addUserIdToCommentDb(userId, commentId)
-.then(() => this.refreshComments())
+    this.setState({ thumbsUpBool: !this.state.thumbsUpBool });
 
 
-    
-        
-
-    
-
-
+    API.addUserIdToCommentDb(userId, commentId, this.firebase.firebaseUserToken)
+      .then(() => this.refreshComments());
   };
 
   handleInputChange = e => {
@@ -97,12 +89,12 @@ class PostDetail extends React.Component {
 
       this.lockScreen.lock();
 
-      API.createAComment(postId, newComment)
+      API.createAComment(postId, newComment, this.firebase.firebaseUserToken)
         .then(() => {
           window.ioSocket.emit(
             "message",
             `${this.firebase.dbUserInfo.displayName} just added a comment to "${
-              this.state.title
+            this.state.title
             }!"`
           );
           this.setState({ inputValue: "" });
@@ -125,7 +117,7 @@ class PostDetail extends React.Component {
           this.firebase = firebase;
 
           return (
-            <div className="addACommentPage marginTopMedium">
+            <div className="postDetailPage marginTopMedium">
               <div className="container">
                 <Link to={"/"}>
                   <i className="small material-icons arrow marginBottomMedium backArrow">
@@ -153,7 +145,7 @@ class PostDetail extends React.Component {
                       </div>
                     </div>
                     <h1 className="comment-title">{this.state.title}</h1>
-                    <h5>{this.state.body}</h5>
+                    <h5 className="post-body">{this.state.body}</h5>
                   </div>
                 </div>
 
@@ -179,7 +171,7 @@ class PostDetail extends React.Component {
                       user={comment.userId.displayName}
                       userImage={comment.userId.image}
                       likedUserIds={comment.userIds_that_liked_comment}
-                    
+
                       handleThumbClick={() =>
                         this.handleThumbClick(comment._id)
                       }
