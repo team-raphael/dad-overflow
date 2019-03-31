@@ -39,7 +39,7 @@ class Searchbar extends React.Component {
     //Render the html
     render() {
         return (
-            <nav id={this.props.id} className="searchbarContainer">
+            <nav id={this.props.id} className="searchbarContainer white">
                 <div className="nav-wrapper">
                     <form onSubmit={this.onSearchSubmit}>
                         <div className="input-field">
