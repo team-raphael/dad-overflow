@@ -10,7 +10,7 @@ export class CollectionWrapper extends Component {
   state = {
     listOfTodos: [],
     task: "",
-    deletedTask: []
+    deletedTask: [],
   };
 
   componentDidMount() {

@@ -63,7 +63,6 @@ class PostDetail extends React.Component {
   handleThumbClick = id => {
     const commentId = id;
     const userId = this.firebase.dbUserInfo._id;
-    this.setState({ thumbsUpBool: !this.state.thumbsUpBool });
 
 
     API.addUserIdToCommentDb(userId, commentId, this.firebase.firebaseUserToken)
