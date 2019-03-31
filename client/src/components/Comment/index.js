@@ -4,19 +4,32 @@ import './style.css';
 
 const Comment = props => {
   let userLiked = false;
-  if(props.likedUserIds.includes(props.userId)) {
+  if (props.likedUserIds.includes(props.userId)) {
     userLiked = true;
   }
+
+  const likeIcon = () => {
+    //Only display like button if user is logged in
+    if (props.userId) {
+      return (
+        <i className={userLiked ? "thumbsUp fas fa-thumbs-up fa-lg" : " thumbsUp far fa-thumbs-up fa-lg"} onClick={props.handleThumbClick}></i>
+      )
+    }
+  }
+
   return (
 
     <li className="collection-item avatar">
-    
+
       <img src={props.userImage} alt="" className="circle" />
-      <span className="userName">{props.user}</span>
-      <p><span className="body">{props.body}</span><br />
-        <span className="time"><Moment calendar>{props.date}</Moment></span>
-      </p>
-      <h6 className="secondary-content likes-text">{props.likedUserIds ? props.likedUserIds.length : "0"} <span className="likes-text">likes</span><i className={userLiked ? "thumbsUp fas fa-thumbs-up fa-lg" : " thumbsUp far fa-thumbs-up fa-lg"} onClick={props.handleThumbClick}></i></h6>
+      <div className="userName marginBottom">{props.user}</div>
+      <div className="comment-body marginBottom">{props.body}</div>
+      <div>
+        <span>
+          {likeIcon()} {props.likedUserIds ? props.likedUserIds.length : "0"} <span className="likes-text">likes</span>
+        </span>
+        <span className="time right"><Moment calendar>{props.date}</Moment></span>
+      </div>
     </li>
 
   );

@@ -45,3 +45,7 @@
     margin-top: 1.4rem;
     font-size: 1.1rem;
 }
+
+.postcard .body {
+    white-space: pre-wrap;
+}

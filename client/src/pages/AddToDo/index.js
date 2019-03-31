@@ -38,7 +38,7 @@ class AddaPost extends Component {
 
       this.lockScreen.lock();
 
-      API.createATask(this.firebase.dbUserInfo._id, newTask)
+      API.createATask(this.firebase.dbUserInfo._id, newTask, this.firebase.firebaseUserToken)
         .then(() => this.setState({ goBack: true }))
         .catch(err => {
           this.lockScreen.unlock();

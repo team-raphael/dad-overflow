@@ -39,7 +39,7 @@ export class CollectionWrapper extends Component {
   getTasks = () => {
     if (this.firebase.dbUserInfo) {
       this.lockScreen.lock();
-      API.getTasks(this.firebase.dbUserInfo._id)
+      API.getTasks(this.firebase.dbUserInfo._id, this.props.firebaseUserToken)
         .then(res => this.setState({ listOfTodos: res.data }))
         .catch((err) => {
           console.log(err);
@@ -68,7 +68,7 @@ export class CollectionWrapper extends Component {
 
     //this.transitionOutTask(taskId);
 
-    API.deleteOneTask(userId, taskId)
+    API.deleteOneTask(userId, taskId, this.firebase.firebaseUserToken)
       .then(() => this.getTasks())
       .catch((err) => {
         console.log(err);
@@ -86,7 +86,7 @@ export class CollectionWrapper extends Component {
     };
 
 
-    API.updateOneTask(userId, taskId, task)
+    API.updateOneTask(userId, taskId, task, this.firebase.firebaseUserToken)
       .then(() => this.getTasks())
       .catch((err) => {
         console.log(err);
@@ -101,7 +101,7 @@ export class CollectionWrapper extends Component {
       body: todoBody
     };
 
-    API.updateOneTask(userId, taskId, task)
+    API.updateOneTask(userId, taskId, task, this.firebase.firebaseUserToken)
       .then(() => this.getTasks())
       .catch((err) => {
         console.log(err);

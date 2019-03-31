@@ -21,6 +21,7 @@ class Firebase {
         this.authUI = new Firebaseui.auth.AuthUI(FirebaseApp.auth());
 
         this.firebaseUserInfo = null;
+        this.firebaseUserToken = null;
         this.dbUserInfo = null;
     }
 
@@ -45,7 +46,8 @@ class Firebase {
             signInFlow: 'popup',
             credentialHelper: Firebaseui.auth.CredentialHelper.NONE,
             callbacks: {
-                signInSuccessWithAuthResult: (authResult, redirectUrl) => this.signInSuccessful(authResult, redirectUrl, onRedirectCallBack)
+                signInSuccessWithAuthResult: (authResult, redirectUrl) =>
+                    this.signInSuccessful(authResult, redirectUrl, onRedirectCallBack)
             }
         };
 
@@ -54,33 +56,42 @@ class Firebase {
 
     signInSuccessful = (authResult, redirectUrl, onRedirectCallBack) => {
         if (authResult.user.email) {
-            //Save the user to the database if they don't already exist there
-            API.getUserByEmail(authResult.user.email)
-                .then(user => {
-                    if (!user.data || user.data.length === 0) {
+            authResult.user.getIdToken(/* forceRefresh */ true)
+                .then(idToken => {
+                    //Save the user to the database if they don't already exist there
+                    API.getUserByEmail(authResult.user.email, idToken)
+                        .then(user => {
+                            if (!user.data || user.data.length === 0) {
 
-                        const newUser = {
-                            email: authResult.user.email,
-                            displayName: authResult.user.displayName
-                        }
-                        API.createUser(newUser)
-                            .catch((err) => console.log("Error saving user to database: ", err))
-                            .finally(() => {
-                                window.location.href = "/profile";
-                                return false;
-                            });
-                    } else {
-                        if (onRedirectCallBack) {
-                            onRedirectCallBack();
-                        } else {
-                            window.location.href = "/";
-                        }
-                    }
-                })
-                .catch(err => {
-                    console.log("Error getting user from database: ", err);
-                    window.location.href = "/";
+                                const newUser = {
+                                    email: authResult.user.email,
+                                    displayName: authResult.user.displayName
+                                }
+                                API.createUser(newUser, idToken)
+                                    .catch((err) => console.log("Error saving user to database: ", err))
+                                    .finally(() => {
+                                        window.location.href = "/profile";
+                                        return false;
+                                    });
+                            } else {
+                                if (onRedirectCallBack) {
+                                    onRedirectCallBack();
+                                } else {
+                                    window.location.href = "/";
+                                }
+                            }
+                        })
+                        .catch(err => {
+                            console.log("Error getting user from database: ", err);
+
+                            if (onRedirectCallBack) {
+                                onRedirectCallBack();
+                            } else {
+                                window.location.href = "/";
+                            }
+                        });
                 });
+
         } else {
             window.M.toast({ html: 'Email not obtained from firebase authentication!' });
         }

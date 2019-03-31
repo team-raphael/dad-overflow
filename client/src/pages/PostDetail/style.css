@@ -20,3 +20,7 @@
 #postDetailPostAuthor {
     font-weight: bold;
 }
+
+.postDetailPage .post-body {
+    white-space: pre-wrap;
+}
