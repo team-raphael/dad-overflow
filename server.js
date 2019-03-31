@@ -10,9 +10,6 @@ var http = require("http").Server(app);
 const io = require("socket.io")(http);
 const firebaseAdmin = require('firebase-admin');
 const firebaseServiceAccount = require('./dad-overflow-firebase-adminsdk-uiegk-47747a9fa1');
-console.log("==========================================");
-console.log(firebaseServiceAccount);
-console.log("==========================================");
 
 //Initialize firebase admin
 firebaseAdmin.initializeApp({
