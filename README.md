@@ -128,10 +128,10 @@ You can delete task in Incomplete/Complete simply with trash can button.
   | React.js              | FireBase Authentication | 
   | Node.js               | Google Domain           |
   | Materialize           | Flaticon                |
-  | JavaScript            |                         |  
-  | Jquery                |                         |
-  | Cascading Style Sheet |                         |
-  | Html 5                |                         |
+  | JavaScript            | Moment.js               |  
+  | jQuery                | Font Awesome            |
+  | Cascading Style Sheet | AOS Animate Scroll Library|
+  | HTML5                 |                         |
 
 # Create React Express App
 

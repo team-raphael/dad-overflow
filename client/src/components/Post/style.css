@@ -40,3 +40,8 @@
 .postcard .postDate {
     font-size: .7rem;
 }
+
+.comment-length {
+    margin-top: 1.4rem;
+    font-size: 1.1rem;
+}

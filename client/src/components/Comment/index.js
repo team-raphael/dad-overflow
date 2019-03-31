@@ -3,7 +3,6 @@ import Moment from 'react-moment';
 import './style.css';
 
 const Comment = props => {
-  console.log(props)
   let userLiked = false;
   if(props.likedUserIds.includes(props.userId)) {
     userLiked = true;
