@@ -167,8 +167,8 @@ class PostDetail extends React.Component {
                       body={comment.body}
                       date={comment.date}
                       userId={firebase && firebase.dbUserInfo ? firebase.dbUserInfo._id : ""}
-                      user={comment.userId.displayName}
-                      userImage={comment.userId.image}
+                      user={comment.userId ? comment.userId.displayName : ""}
+                      userImage={comment.userId ? comment.userId.image : ""}
                       likedUserIds={comment.userIds_that_liked_comment}
 
                       handleThumbClick={() =>
