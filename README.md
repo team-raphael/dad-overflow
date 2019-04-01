@@ -35,7 +35,7 @@ npm install
 
 | Table of Content      |                 
 | ----------------------|
-| A. Sign up            | 
+| A. [Sign up](#a-signing-up)            | 
 | B. Logging in         | 
 | C. Forum Page         |
 | D. Commenting..       |                        
