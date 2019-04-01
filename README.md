@@ -37,9 +37,9 @@ npm install
 | ----------------------|
 | A. [Sign up](#a-signing-up)            | 
 | B. [Logging in](#b-logging-in)         | 
-| C. Forum Page         |
-| D. Commenting..       |                        
-| E. To Do's            |                         
+| C. [Forum Page](#c-forum-page)         |
+| D. [Commenting..](#d-commenting-on-a-topic)       |                        
+| E. [To Do's](#e-to-dos-page)            |                         
 
 ## A. Signing up 
 ### Using Desktop 
