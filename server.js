@@ -42,8 +42,11 @@ mongoose.connect(
 //Connect to socket io
 io.on('connection', function(socket){
   console.log("User connected");
-  socket.on('message', function(msg){
-    io.emit('message', msg);
+  socket.on('newPost', function(msg){
+    io.emit('newPost', msg);
+  });
+  socket.on('newComment', function(msg){
+    io.emit('newComment', msg);
   });
 });
 

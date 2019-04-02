@@ -13,6 +13,7 @@ export class Post extends React.Component {
   toolTipInstances;
 
   componentDidMount() {
+    this.postComponentMounted = true;
     this.refreshCommentData();
     const toolTipElems = document.querySelectorAll(".tooltipped");
     this.toolTipInstances = window.M.Tooltip.init(toolTipElems);
@@ -25,20 +26,25 @@ export class Post extends React.Component {
   };
 
   refreshCommentData = () => {
-    API.getCommentsByPostId(this.props.postId).then(res => {
-      let userDisplayNames = res.data.map(res => res.userId ? res.userId.displayName : "");
-      if (userDisplayNames && userDisplayNames.length > 10) {
-        userDisplayNames = userDisplayNames.splice(0, 10);
-      }
+    if (this.postComponentMounted) {
+      API.getCommentsByPostId(this.props.postId).then(res => {
+        let userDisplayNames = res.data.map(res => res.userId ? res.userId.displayName : "");
+        if (userDisplayNames && userDisplayNames.length > 10) {
+          userDisplayNames = userDisplayNames.splice(0, 10);
+        }
 
-      this.setState({
-        lengthOfComments: res.data.length,
-        commentUsers: [...new Set(userDisplayNames)]
+        if (this.postComponentMounted) {
+          this.setState({
+            lengthOfComments: res.data.length,
+            commentUsers: [...new Set(userDisplayNames)]
+          });
+        }
       });
-    });
+    }
   };
 
   componentWillUnmount = () => {
+    this.postComponentMounted = false;
     this.toolTipInstances.forEach(instance => {
       instance.destroy();
     })
