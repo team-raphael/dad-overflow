@@ -26,7 +26,7 @@ export class Post extends React.Component {
 
   refreshCommentData = () => {
     API.getCommentsByPostId(this.props.postId).then(res => {
-      let userDisplayNames = res.data.map(res => res.userId.displayName);
+      let userDisplayNames = res.data.map(res => res.userId ? res.userId.displayName : "");
       if (userDisplayNames && userDisplayNames.length > 10) {
         userDisplayNames = userDisplayNames.splice(0, 10);
       }
