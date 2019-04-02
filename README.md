@@ -132,7 +132,7 @@ You can delete task in Incomplete/Complete simply with trash can button.
   | JavaScript            | Moment.js               |  
   | jQuery                | Font Awesome            |
   | Cascading Style Sheet | AOS Animate Scroll Library|
-  | HTML5                 |                         |
+  | HTML5                 | Animate.css               |
 
 # Create React Express App
 
