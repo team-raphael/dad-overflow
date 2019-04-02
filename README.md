@@ -6,6 +6,7 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
  * Read and search posts from other dads
  * Create posts to ask or answer questions
  * Comment on existing posts
+ * Like your favorite comments
  * Make To-do lists to complete tasks
  * Pick a unique user icon
 
@@ -35,11 +36,11 @@ npm install
 
 | Table of Content      |                 
 | ----------------------|
-| A. Sign up            | 
-| B. Logging in         | 
-| C. Forum Page         |
-| D. Commenting..       |                        
-| E. To Do's            |                         
+| A. [Sign up](#a-signing-up)            | 
+| B. [Logging in](#b-logging-in)         | 
+| C. [Forum Page](#c-forum-page)         |
+| D. [Commenting..](#d-commenting-on-a-topic)       |                        
+| E. [To Do's](#e-to-dos-page)            |                         
 
 ## A. Signing up 
 ### Using Desktop 
