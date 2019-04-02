@@ -41,7 +41,7 @@ npm install
 | C. [Forum Page](#c-forum-page)         |
 | D. [Commenting..](#d-commenting-on-a-topic)       |                        
 | E. [To Do's](#e-to-dos-page)            |  
-| E. [Powered By](#powered-by-the-following) | 
+| D. [Powered By](#powered-by-the-following) | 
 
 ## A. Signing up 
 ### Using Desktop 
