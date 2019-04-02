@@ -22,14 +22,24 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
 
 # Steps to Run Application
 ## For Online Usage
-Must be a member thats is logged in to use most of website features.
+Must be a member thats is logged in to use most website features.
 ## For Local Usage
-1. 'git Clone or download files'
-2. "git pull"  
-3. Install node packages with command line using:
-  ```
+Start by installing front and backend dependencies. While in this directory, run the following command:
+
+```
 npm install
-  ```
+```
+
+This should install node modules within the server and the client folder.
+
+After both installations complete, run the following command in your terminal:
+
+```
+npm start
+```
+
+Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+
 # How to use Dad-Overflow(In-Progress)
 
 ## Index
@@ -135,32 +145,4 @@ You can delete task in Incomplete/Complete simply with trash can button.
   | Cascading Style Sheet | AOS Animate Scroll Library|
   | HTML5                 | Animate.css               |
 
-# Create React Express App
 
-## About This Boilerplate
-
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
-
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
-
-## Starting the app locally
-
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
