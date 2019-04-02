@@ -32,7 +32,6 @@ export class Post extends React.Component {
         if (userDisplayNames && userDisplayNames.length > 10) {
           userDisplayNames = userDisplayNames.splice(0, 10);
         }
-        console.log(userDisplayNames);
 
         this.setState({ 
           lengthOfComments: res.data.length,
@@ -74,7 +73,7 @@ export class Post extends React.Component {
                 </div>
               </div>
             </div>
-            <Link to={`/postdetail/${this.props.postId}`}>
+            <Link id="comment-link" to={`/postdetail/${this.props.postId}`}>
             <div data-postid={this.props.postId} className="col s12 m3 comment-length right-align hide-on-small-only tooltipped" data-position="top" data-tooltip={this.state.lengthOfComments < 1 ? "no comments" : this.state.commentUsers.join('<br/>') }>{this.state.lengthOfComments === 1 ? `${'1 comment'}` : `${this.state.lengthOfComments} ${'comments'}`}</div>
             <div className="col s12 small-comment left-align hide-on-med-and-up">{this.state.lengthOfComments === 1 ? `${'1 comment'}` : `${this.state.lengthOfComments} ${'comments'}`}</div>
           </Link>

@@ -40,7 +40,8 @@
 .postcard .postDate {
     font-size: .7rem;
 }
-a {
+
+#comment-link {
     text-decoration: none;
     color: inherit;
 }
