@@ -40,10 +40,15 @@
 .postcard .postDate {
     font-size: .7rem;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .comment-length {
     margin-top: 3.5rem;
     font-size: 1.1rem;
+    
 }
 
 .postcard .body {

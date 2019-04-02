@@ -39,4 +39,3 @@ export class PostCollection extends React.Component {
     );
   }
 }
-
