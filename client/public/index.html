@@ -43,7 +43,11 @@
     var ioSocket = io();
 
     $(document).ready(() => {
-      ioSocket.on('message', function (msg) {
+      ioSocket.on('newPost', function (msg) {
+        M.toast({ html: msg });
+      });
+
+      ioSocket.on('newComment', function (msg) {
         M.toast({ html: msg });
       });
     });

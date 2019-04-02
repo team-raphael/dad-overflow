@@ -45,7 +45,15 @@ class PostDetail extends React.Component {
       this.lockScreen.unlock();
     });
     this.refreshComments();
+
+    //Refresh comments when we get a message that a new comment was added
+    window.ioSocket.on('newComment', this.refreshComments);
   };
+
+  componentWillUnmount = () => {
+    //Remove the socket io listener
+    window.ioSocket.off('newComment', this.refreshComments);
+}
 
   refreshComments = () => {
     this.lockScreen.lock();
@@ -91,7 +99,7 @@ class PostDetail extends React.Component {
       API.createAComment(postId, newComment, this.firebase.firebaseUserToken)
         .then(() => {
           window.ioSocket.emit(
-            "message",
+            "newComment",
             `${this.firebase.dbUserInfo.displayName} just added a comment to "${
             this.state.title
             }!"`

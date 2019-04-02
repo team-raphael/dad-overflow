@@ -45,7 +45,7 @@ class AddaPost extends Component {
 
       API.createPost(newPost, this.firebase.firebaseUserToken)
         .then(() => {
-          window.ioSocket.emit('message', `${this.firebase.dbUserInfo.displayName} just added a post titled '${newPost.title}'!`);
+          window.ioSocket.emit('newPost', `${this.firebase.dbUserInfo.displayName} just added a post titled '${newPost.title}'!`);
           this.setState({ goBack: true });
         })
         .catch(err => {

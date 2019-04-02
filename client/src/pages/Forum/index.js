@@ -16,6 +16,14 @@ class Forum extends React.Component {
     componentDidMount = () => {
         window.scrollTo(0, 0);
         this.getAllPosts();
+
+        //Refresh posts when we get a message that a new post was added
+        window.ioSocket.on('newPost', this.getAllPosts);
+    }
+
+    componentWillUnmount = () => {
+        //Remove the socket io listener
+        window.ioSocket.off('newPost', this.getAllPosts);
     }
 
     getAllPosts = () => {
