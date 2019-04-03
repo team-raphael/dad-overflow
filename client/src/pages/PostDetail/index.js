@@ -50,18 +50,16 @@ class PostDetail extends React.Component {
     window.ioSocket.on('refreshComments', this.socketIORefreshComments);
   };
 
-  socketIORefreshComments = (userId) => {
-    // if (this.firebase &&
-    //   this.firebase.dbUserInfo && 
-    //   userId !== this.firebase.dbUserInfo._id) {
-        this.refreshComments();
-      // }
+  socketIORefreshComments = (userId, postId) => {
+    if (postId === this.props.match.params.postId) {
+      this.refreshComments();
+    }
   }
 
   componentWillUnmount = () => {
     //Remove the socket io listener
     window.ioSocket.off('refreshComments', this.socketIORefreshComments);
-}
+  }
 
   refreshComments = () => {
     this.lockScreen.lock();
