@@ -48,8 +48,8 @@ io.on('connection', function(socket){
   socket.on('refreshPosts', function(userId){
     io.emit('refreshPosts', userId);
   });
-  socket.on('refreshComments', function(userId){
-    io.emit('refreshComments', userId);
+  socket.on('refreshComments', function(userId, postId){
+    io.emit('refreshComments', userId, postId);
   });
 });
 
