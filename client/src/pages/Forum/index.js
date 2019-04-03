@@ -18,12 +18,20 @@ class Forum extends React.Component {
         this.getAllPosts();
 
         //Refresh posts when we get a message that a new post was added
-        window.ioSocket.on('newPost', this.getAllPosts);
+        window.ioSocket.on('refreshPosts', this.getAllPosts);
     }
 
     componentWillUnmount = () => {
         //Remove the socket io listener
-        window.ioSocket.off('newPost', this.getAllPosts);
+        window.ioSocket.off('refreshPosts', this.getAllPosts);
+    }
+
+    socketIORefreshPosts = (userId) => {
+        // if (this.firebase &&
+        //     this.firebase.dbUserInfo &&
+        //     userId !== this.firebase.dbUserInfo._id) {
+            this.getAllPosts();
+        // }
     }
 
     getAllPosts = () => {

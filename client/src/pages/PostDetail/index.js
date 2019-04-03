@@ -47,13 +47,19 @@ class PostDetail extends React.Component {
     this.refreshComments();
 
     //Refresh comments when we get a message that a new comment was added
-    window.ioSocket.on('newComment', this.refreshComments);
+    window.ioSocket.on('refreshComments', this.socketIORefreshComments);
   };
+
+  socketIORefreshComments = (userId, postId) => {
+    if (postId === this.props.match.params.postId) {
+      this.refreshComments();
+    }
+  }
 
   componentWillUnmount = () => {
     //Remove the socket io listener
-    window.ioSocket.off('newComment', this.refreshComments);
-}
+    window.ioSocket.off('refreshComments', this.socketIORefreshComments);
+  }
 
   refreshComments = () => {
     this.lockScreen.lock();
@@ -74,7 +80,10 @@ class PostDetail extends React.Component {
 
 
     API.addUserIdToCommentDb(userId, commentId, this.firebase.firebaseUserToken)
-      .then(() => this.refreshComments());
+      .then(() => {
+        this.refreshComments();
+        window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id);
+      });
   };
 
   handleInputChange = e => {
@@ -99,11 +108,12 @@ class PostDetail extends React.Component {
       API.createAComment(postId, newComment, this.firebase.firebaseUserToken)
         .then(() => {
           window.ioSocket.emit(
-            "newComment",
+            "message",
             `${this.firebase.dbUserInfo.displayName} just added a comment to "${
             this.state.title
             }!"`
           );
+          window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id);
           this.setState({ inputValue: "" });
           this.refreshComments();
         })
