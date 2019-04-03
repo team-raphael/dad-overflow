@@ -82,7 +82,7 @@ class PostDetail extends React.Component {
     API.addUserIdToCommentDb(userId, commentId, this.firebase.firebaseUserToken)
       .then(() => {
         this.refreshComments();
-        window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id);
+        window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id, this.props.match.params.postId);
       });
   };
 
