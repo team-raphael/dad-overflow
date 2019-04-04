@@ -141,7 +141,7 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 5. Click the *Reply* button when you are ready.
 ## E. To-Dos Page 
 A page where dads can keep track of task that must be done. Be a dad on his "A" game with this feature.
-![}(https://github.com/team-raphael/dad-overflow/blob/master/screenshots/todos_instructionsedit.gif)
+![](https://github.com/team-raphael/dad-overflow/blob/master/screenshots/todos_instructionsedit.gif)
 ### Adding a task
 1. look for the yellow plus circle sign.
 2. click *Add a task*
