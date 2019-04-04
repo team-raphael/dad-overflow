@@ -55,6 +55,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 ## A. Signing up 
 ### Using Desktop 
+
+![alt text](https://github.com/team-raphael/dad-overflow/tree/master/screenshots/login_signupfinal.gif)
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose 
 * Sign in with email
@@ -62,6 +64,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Sign in with Facebook
 * Sign in with Twitter
 ### Using Mobile
+![alt text](https://github.com/team-raphael/dad-overflow/tree/master/screenshots/phonefinal.gif)
 1. On the Top left click hamburger icon to access login/signup button
 2. Four options is avalable for User to choose 
 * Sign in with E-mail
@@ -78,7 +81,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 6. Press save to finally be a member
 
 ## B. Logging In 
-### Using Desktop 
+### Using Desktop
+![alt text](https://github.com/team-raphael/dad-overflow/tree/master/screenshots/login_signupfinal.gif) 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose log-in 
 * Sign in with email
