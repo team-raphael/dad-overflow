@@ -56,7 +56,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## A. Signing up 
 ### Using Desktop 
 
-![alt text](https://github.com/team-raphael/dad-overflow/tree/master/screenshots/login_signupfinal.gif)
+![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
+
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose 
 * Sign in with email
@@ -119,6 +120,9 @@ In order ask dads a questions:
 4. Press *Submit* when your done.
 ## D. Commenting on a topic
 Commenting on posts is simple. This feature is Available in the the forum page.
+
+![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/MakeAcomment_final.gif)
+
 1. Click on post you would like to comment in by pressing the header or subject title underlined with green.
 2. You will be directed to a more detailed pager of the post.
 3. Click *Post a reply*
