@@ -17,7 +17,7 @@ module.exports = {
     db.Post
       .find(conditions)
       .limit(limit)
-      .populate('userId')
+      .populate('userId', 'displayName image')
       .sort({ date: -1 })
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));    
@@ -33,7 +33,7 @@ module.exports = {
   findOne: (req, res) => {
     db.Post
       .findOne({_id: req.params.id})
-      .populate('userId')
+      .populate('userId', 'displayName image')
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));
     

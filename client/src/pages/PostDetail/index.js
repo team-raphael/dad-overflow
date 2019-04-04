@@ -113,7 +113,7 @@ class PostDetail extends React.Component {
             this.state.title
             }!"`
           );
-          window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id);
+          window.ioSocket.emit("refreshComments", this.firebase.dbUserInfo._id, this.props.match.params.postId);
           this.setState({ inputValue: "" });
           this.refreshComments();
         })
