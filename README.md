@@ -65,7 +65,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Sign in with Facebook
 * Sign in with Twitter
 ### Using Mobile
-![alt text](https://github.com/team-raphael/dad-overflow/tree/master/screenshots/phonefinal.gif)
+![alt text](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/phonefinal.gif)
 1. On the Top left click hamburger icon to access login/signup button
 2. Four options is avalable for User to choose 
 * Sign in with E-mail
