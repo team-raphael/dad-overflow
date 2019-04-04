@@ -17,7 +17,7 @@ module.exports = {
     db.Post
       .find(conditions)
       .limit(limit)
-      .populate('userId')
+      .populate('userId', 'displayName image')
       .sort({ date: -1 })
       .then(dbPost => res.json(dbPost))
       .catch(err => res.status(422).json(err));    
