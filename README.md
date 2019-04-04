@@ -40,7 +40,7 @@ npm start
 
 Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-# How to use Dad-Overflow(In-Progress)
+# How to use Dad-Overflow
 
 ## Index
 
@@ -109,6 +109,9 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Press *Trouble signing in?*
 * Type Dad-Overflow associated E-mail to recieve directions to change password.
 4. Welcome back to Dad-Overflow!
+
+[Back To Index](#index)
+
 ## C. Forum Page
 This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
 ### On Desktop computer
