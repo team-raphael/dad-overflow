@@ -163,7 +163,8 @@ You can delete task in Incomplete/Complete simply with trash can button.
   | JavaScript            | Moment.js               |  
   | jQuery                | Font Awesome            |
   | Cascading Style Sheet | AOS Animate Scroll Library|
-  | HTML5                 | Animate.css               |
+  | Mongo DB              |                         |
+  
 
 [Back To Index](#how-to-use-dad-overflow)
 
