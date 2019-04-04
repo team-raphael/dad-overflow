@@ -81,6 +81,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 5. Select Profile Image
 6. Press save to finally be a member
 
+[Back To Index](#how-to-use-dad-overflow)
+
 ## B. Logging In 
 ### Using Desktop
 
@@ -110,7 +112,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Type Dad-Overflow associated E-mail to recieve directions to change password.
 4. Welcome back to Dad-Overflow!
 
-[Back To Index](#index)
+[Back To Index](#how-to-use-dad-overflow)
 
 ## C. Forum Page
 This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
@@ -124,6 +126,7 @@ In order ask dads a questions:
 2. Type title to create name the subject.
 3. Type in details bout the subject of your post.
 4. Press *Submit* when your done.
+[Back To Index](#how-to-use-dad-overflow)
 ## D. Commenting on a topic
 Commenting on posts is simple. This feature is Available in the the forum page.
 
@@ -147,6 +150,7 @@ a. In incomplete, pressing the box takes the task to complete.
 b. In complete,  pressing the box brings it back to incomplete. 
 ### Deleting task
 You can delete task in Incomplete/Complete simply with trash can button.
+[Back To Index](#how-to-use-dad-overflow)
 # Powered By The Following 
 
   | Tech                  |  New Tech               |
@@ -159,4 +163,7 @@ You can delete task in Incomplete/Complete simply with trash can button.
   | Cascading Style Sheet | AOS Animate Scroll Library|
   | HTML5                 | Animate.css               |
 
+[Back To Index](#how-to-use-dad-overflow)
+
+[Back To Top](#dad-overflow)
 
