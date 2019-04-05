@@ -1,6 +1,6 @@
 # Dad-Overflow
 ## About
-The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to *Dad Overflow*. Developed by Dads for dads.
+The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to [Dad Overflow](https://www.dad-overflow.com). Developed by Dads for dads.
 
 ## FEATURES
  * Read and search posts from other dads
