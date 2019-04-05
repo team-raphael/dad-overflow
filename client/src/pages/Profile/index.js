@@ -10,6 +10,8 @@ class Profile extends React.Component {
         displayName: null
     }
 
+    carouselDefaultSet = false;
+
     //Function that will require all the images into the code
     requireAll = requireContext => {
         return requireContext.keys().map(requireContext);
@@ -37,20 +39,24 @@ class Profile extends React.Component {
     }
 
     initializeCarousel = () => {
-        //Initialize the materialize carousel
-        var elems = document.querySelectorAll('.carousel');
-        window.M.Carousel.init(elems);
-        this.profileImageCarouselInstance = window.M.Carousel.getInstance(document.querySelector('#profileImageCarousel'));
+        if (this.firebase.dbUserInfo && this.carouselDefaultSet === false) {
+            //Initialize the materialize carousel
+            var elems = document.querySelectorAll('.carousel');
+            window.M.Carousel.init(elems);
+            this.profileImageCarouselInstance = window.M.Carousel.getInstance(document.querySelector('#profileImageCarousel'));
 
-        //Set the carousel item image to whatever the user has in the database
-        if (this.firebase.dbUserInfo && this.firebase.dbUserInfo.image) {
+            //Set the carousel item image to whatever the user has in the database
+            if (this.firebase.dbUserInfo && this.firebase.dbUserInfo.image) {
 
-            document.querySelectorAll('.carousel-item')
-                .forEach((carouselItem, index) => {
-                    if (carouselItem.firstChild.getAttribute("src") === this.firebase.dbUserInfo.image) {
-                        this.profileImageCarouselInstance.set(index);
-                    }
-                });
+                document.querySelectorAll('.carousel-item')
+                    .forEach((carouselItem, index) => {
+                        if (carouselItem.firstChild.getAttribute("src") === this.firebase.dbUserInfo.image) {
+                            this.profileImageCarouselInstance.set(index);
+                        }
+                    });
+
+                this.carouselDefaultSet = true
+            }
         }
     }
 
