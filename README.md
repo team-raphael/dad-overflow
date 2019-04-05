@@ -151,9 +151,15 @@ A page where dads can keep track of task that must be done. Be a dad on his "A" 
 You have the choice to either check  or uncheck a task by pressing on the box next to your task.
 a. In incomplete, pressing the box takes the task to complete.
 b. In complete,  pressing the box brings it back to incomplete. 
+
+### Reedit a task
+Simply click on the text in either complete/incomplete sections to make any changes.
+
 ### Deleting task
-You can delete task in Incomplete/Complete simply with trash can button.
+You can delete a task in either Incomplete/Complete section simply with the trash can button.
+
 [Back To Index](#how-to-use-dad-overflow)
+
 # Powered By The Following 
 
   | Tech                  |  New Tech               |
