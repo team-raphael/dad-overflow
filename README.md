@@ -24,7 +24,8 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
 ## For Online Usage
 Must be a member thats is logged in to use most website features.
 ## For Local Usage
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Before you start, be sure to be in command line and "cd" to app's file location
+Start by installing front and backend dependencies. While in this app's directory, run the following command:
 
 ```
 npm install
@@ -166,8 +167,8 @@ You can delete a task in either Incomplete/Complete section simply with the tras
   | ----------------------|:-----------------------:|
   | React.js              | FireBase Authentication | 
   | Node.js               | Google Domain           |
-  | Materialize           | Flaticon                |
-  | JavaScript            | Moment.js               |  
+  | Moment.js             | Flaticon                |
+  | JavaScript            | Materialize             |  
   | jQuery                | Font Awesome            |
   | Cascading Style Sheet | AOS Animate Scroll Library|
   | Mongo DB              |                         |
