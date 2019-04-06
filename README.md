@@ -90,7 +90,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 5. Select Profile Image
 6. Press save to finally be a member
 
-![Back To Index](#how-to-use-dad-overflow)
+[Back To Index](#how-to-use-dad-overflow)
 
 ## B. Logging In 
 ### Using Desktop
