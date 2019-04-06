@@ -162,6 +162,10 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 3. Click *Post a reply*
 4. type in comment
 5. Click the *Reply* button when you are ready.
+
+
+[Back To Index](#how-to-use-dad-overflow)
+
 ## E. To-Dos Page 
 A page where dads can keep track of task that must be done. Be a dad on his "A" game with this feature.
 ![](https://github.com/team-raphael/dad-overflow/blob/master/screenshots/todos_instructionsedit.gif)
