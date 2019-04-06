@@ -201,7 +201,7 @@ You can delete a task in either Incomplete/Complete section simply with the tras
   | JavaScript            | Materialize             |  
   | jQuery                | Font Awesome            |
   | Cascading Style Sheet | AOS Animate Scroll Library|
-  | Mongo DB              |                         |
+  | Mongo DB              | Socket.io               |
   
 
 [Back To Index](#how-to-use-dad-overflow)
