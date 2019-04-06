@@ -130,6 +130,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## C. Forum Page
 
 This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
+
 ![Forum Function](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/ForumIntro.gif)
 
 ### On Desktop computer
