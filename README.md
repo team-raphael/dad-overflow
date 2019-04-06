@@ -116,7 +116,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 ### Logging in With E-mail
 
-![Logging in](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
+![Logging in](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login.gif)
 
 1. After clicking sign up with E-mail, type the email previously used and press the *Next button.
 * If approached with name and choose password question, you likely never signed in with us. Please follow "Signing up" Directions/qustions or use another E-mail address.
