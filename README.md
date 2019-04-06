@@ -87,7 +87,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 2. Type in your first and last name
 3. Type desired password under 'choose password'
 4. Click save  
-5. Select Profile Image
+5. Select desired profile image using left or right side of the Image Carousel
 6. Press save to finally be a member
 
 [Back To Index](#how-to-use-dad-overflow)
