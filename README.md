@@ -95,7 +95,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## B. Logging In 
 ### Using Desktop
 
-![Logging in](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
+![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose log-in 
@@ -115,6 +115,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Sign in with Twitter Forum
 
 ### Logging in With E-mail
+
+![Logging in](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
 
 1. After clicking sign up with E-mail, type the email previously used and press the *Next button.
 * If approached with name and choose password question, you likely never signed in with us. Please follow "Signing up" Directions/qustions or use another E-mail address.
