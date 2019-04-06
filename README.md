@@ -2,6 +2,8 @@
 ## About
 The life of a parent can be an overflow-ing mess. Need help to sort it out? Then head to *Dad Overflow*. Developed by Dads for dads.
 
+![intro](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/intro.gif)
+
 ## FEATURES
  * Read and search posts from other dads
  * Create posts to ask or answer questions
@@ -24,7 +26,7 @@ The life of a parent can be an overflow-ing mess. Need help to sort it out? Then
 ## For Online Usage
 Must be a member thats is logged in to use most website features.
 ## For Local Usage
-Before you start, be sure to be in command line and "cd" to app's file location
+Before you start, be sure to be in command line and "cd" to app's file location.
 Start by installing front and backend dependencies. While in this app's directory, run the following command:
 
 ```
@@ -57,7 +59,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## A. Signing up 
 ### Using Desktop 
 
-![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
+![INTRO](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose 
@@ -66,14 +68,20 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Sign in with Facebook
 * Sign in with Twitter
 ### Using Mobile
+
 ![alt text](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/phonefinal.gif)
+
 1. On the Top left click hamburger icon to access login/signup button
 2. Four options is avalable for User to choose 
 * Sign in with E-mail
 * Sign in with Google
 * Sign in with Facebook
 * Sign in with Twitter
+
 ### If signing in with E-mail for the first time
+
+![Signing up the 1st time](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/signupfinal.gif)
+
 1. Type your desired E-mail address and click next
 * If you never signed up, name and password questions will appear 
 2. Type in your first and last name
@@ -82,12 +90,12 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 5. Select Profile Image
 6. Press save to finally be a member
 
-[Back To Index](#how-to-use-dad-overflow)
+![Back To Index](#how-to-use-dad-overflow)
 
 ## B. Logging In 
 ### Using Desktop
 
-![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
+![Logging in](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/login_signup%20final.gif)
 
 1. On the Top right click login/signup
 2. Four options is avalable for User to choose log-in 
@@ -96,14 +104,18 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * Sign in with Facebook
 * Sign in with Twitter
 ### Using Mobile
+
 ![](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/phonefinal.gif)
+
 1. On the Top left click hamburger icon to access login/signup button
 2. Four options is avalable for User to choose to log-in
 * Sign in with E-mail
 * Sign in with Google
 * Sign in with Facebook
 * Sign in with Twitter Forum
+
 ### Logging in With E-mail
+
 1. After clicking sign up with E-mail, type the email previously used and press the *Next button.
 * If approached with name and choose password question, you likely never signed in with us. Please follow "Signing up" Directions/qustions or use another E-mail address.
 2. Password question should appear.
@@ -116,11 +128,21 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 [Back To Index](#how-to-use-dad-overflow)
 
 ## C. Forum Page
+
 This is the homepage where you find all the posts posted by Dad-Overflow members. This is the is the core feature thats runs this site. 
+![Forum Function](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/ForumIntro.gif)
+
 ### On Desktop computer
+
 Link to "Forum" page is located on the top right of the nav bar.
+![Destop view Forum](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/getToforumDesktop.gif)
+
 ### On mobile 
+
 The link is located in hamburger icon when clicked.
+
+![Mobile](https://github.com/team-raphael/dad-overflow/blob/screenshots/screenshots/forumMobile.gif)
+
 ### Creating a post in the Forum page
 In order ask dads a questions:
 1. Press the yellow circle containing a plus sign on bottom right of the page.
@@ -143,6 +165,7 @@ Commenting on posts is simple. This feature is Available in the the forum page.
 ## E. To-Dos Page 
 A page where dads can keep track of task that must be done. Be a dad on his "A" game with this feature.
 ![](https://github.com/team-raphael/dad-overflow/blob/master/screenshots/todos_instructionsedit.gif)
+
 ### Adding a task
 1. look for the yellow plus circle sign.
 2. click *Add a task*
